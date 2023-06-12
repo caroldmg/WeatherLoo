@@ -14,6 +14,16 @@ const routes: Routes = [
   {
     path: 'weather',
     loadChildren: () => import('./users/users.module').then(m =>WeatherModule)
+  },
+  {
+    path: '',
+    redirectTo: 'weather',
+    pathMatch: 'full'
+  },
+  {
+    path: '**',
+    redirectTo: 'weather',
+    pathMatch: 'full'
   }
 ];
 
