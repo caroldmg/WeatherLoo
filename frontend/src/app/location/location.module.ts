@@ -16,7 +16,8 @@ import { TownListComponent } from './town-list/town-list.component';
   ],
   imports: [
     CommonModule,
-    LocationRoutingModule
+    LocationRoutingModule,
+    HttpClientModule
   ]
 })
 export class LocationModule { }
