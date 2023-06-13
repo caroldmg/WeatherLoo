@@ -1,7 +1,8 @@
 export interface IProvince {
     id: number;
-    provinceName: string;
+    name: string;
     autonomyId: number;
     autonomyName: string;
-    capital: string
+    capital: string;
+    photo: string
 }

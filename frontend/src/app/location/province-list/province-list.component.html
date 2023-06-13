@@ -1,2 +1,13 @@
-<p>province-list works!</p>
-<!-- Mostrar lista de provincias -->
+
+<!-- DE MOMENTO SE MUESTRAN TODAS, HAY QUE PAGINAR -->
+
+<table>
+    <tr>
+        <th>Provincia</th>
+        <th>Comunidad Autónoma</th>
+      </tr>
+    <tr *ngFor="let province of provinces">
+        <td> {{province.name}} </td>
+        <td> {{province.autonomyName}} </td>
+    </tr>
+</table>
