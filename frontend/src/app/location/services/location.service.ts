@@ -19,4 +19,5 @@ export class LocationService {
   findProvinceById(id: number): Observable <IProvince>{
     return this.httpClient.get<IProvince>(`${this.url}/id`)
   }
+  //añadir filtro por comunidad autónoma
 }
