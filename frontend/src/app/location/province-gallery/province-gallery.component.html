@@ -1,7 +1,8 @@
 
 <div class="parent">
     <div class="province" *ngFor="let province of provinces">
-        <a [routerLink]="[]">
+        <a [routerLink]="['/weather', province.id]">
+            <!-- esto debería dirigir a l detalle del tiempo en la provincia -->
             <img src="https://picsum.photos/301" alt="{{province.name}}" width="250px">
             <h2>{{province.name}}</h2>
             <p> {{province.autonomyName}} </p>
