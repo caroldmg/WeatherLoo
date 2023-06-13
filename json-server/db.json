@@ -1,0 +1,367 @@
+{"provincias":[
+    {
+      "id": "01",
+      "provinceName": "Araba\/\u00c1lava",
+      "autonomyId": "16",
+      "autonomyName": "Pa\u00eds Vasco\/Euskadi",
+      "capital": "Vitoria-Gasteiz"
+    },
+    {
+      "id": "02",
+      "provinceName": "Albacete",
+      "autonomyId": "08",
+      "autonomyName": "Castilla-La Mancha",
+      "capital": "Albacete"
+    },
+    {
+      "id": "03",
+      "provinceName": "Alacant\/Alicante",
+      "autonomyId": "10",
+      "autonomyName": "Comunitat Valenciana",
+      "capital": "Alicante\/Alacant"
+    },
+    {
+      "id": "04",
+      "provinceName": "Almer\u00eda",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "Almer\u00eda"
+    },
+    {
+      "id": "05",
+      "provinceName": "\u00c1vila",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "\u00c1vila"
+    },
+    {
+      "id": "06",
+      "provinceName": "Badajoz",
+      "autonomyId": "11",
+      "autonomyName": "Extremadura",
+      "capital": "Badajoz"
+    },
+    {
+      "id": "07",
+      "provinceName": "Illes Balears",
+      "autonomyId": "04",
+      "autonomyName": "Illes Balears",
+      "capital": "Palma de Mallorca"
+    },
+    {
+      "id": "08",
+      "provinceName": "Barcelona",
+      "autonomyId": "09",
+      "autonomyName": "Catalu\u00f1a\/Catalunya",
+      "capital": "Barcelona"
+    },
+    {
+      "id": "09",
+      "provinceName": "Burgos",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Burgos"
+    },
+    {
+      "id": "10",
+      "provinceName": "C\u00e1ceres",
+      "autonomyId": "11",
+      "autonomyName": "Extremadura",
+      "capital": "C\u00e1ceres"
+    },
+    {
+      "id": "11",
+      "provinceName": "C\u00e1diz",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "C\u00e1diz"
+    },
+    {
+      "id": "12",
+      "provinceName": "Castell\u00f3\/Castell\u00f3n",
+      "autonomyId": "10",
+      "autonomyName": "Comunitat Valenciana",
+      "capital": "Castell\u00f3n de la Plana\/Castell\u00f3 de la Plana"
+    },
+    {
+      "id": "13",
+      "provinceName": "Ciudad Real",
+      "autonomyId": "08",
+      "autonomyName": "Castilla-La Mancha",
+      "capital": "Ciudad Real"
+    },
+    {
+      "id": "14",
+      "provinceName": "C\u00f3rdoba",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "C\u00f3rdoba"
+    },
+    {
+      "id": "15",
+      "provinceName": "A Coru\u00f1a",
+      "autonomyId": "12",
+      "autonomyName": "Galicia",
+      "capital": "A Coru\u00f1a"
+    },
+    {
+      "id": "16",
+      "provinceName": "Cuenca",
+      "autonomyId": "08",
+      "autonomyName": "Castilla-La Mancha",
+      "capital": "Cuenca"
+    },
+    {
+      "id": "17",
+      "provinceName": "Girona",
+      "autonomyId": "09",
+      "autonomyName": "Catalu\u00f1a\/Catalunya",
+      "capital": "Girona"
+    },
+    {
+      "id": "18",
+      "provinceName": "Granada",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "Granada"
+    },
+    {
+      "id": "19",
+      "provinceName": "Guadalajara",
+      "autonomyId": "08",
+      "autonomyName": "Castilla-La Mancha",
+      "capital": "Guadalajara"
+    },
+    {
+      "id": "20",
+      "provinceName": "Gipuzkoa",
+      "autonomyId": "16",
+      "autonomyName": "Pa\u00eds Vasco\/Euskadi",
+      "capital": "Donostia\/San Sebasti\u00e1n"
+    },
+    {
+      "id": "21",
+      "provinceName": "Huelva",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "Huelva"
+    },
+    {
+      "id": "22",
+      "provinceName": "Huesca",
+      "autonomyId": "02",
+      "autonomyName": "Arag\u00f3n",
+      "capital": "Huesca"
+    },
+    {
+      "id": "23",
+      "provinceName": "Ja\u00e9n",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "Ja\u00e9n"
+    },
+    {
+      "id": "24",
+      "provinceName": "Le\u00f3n",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Le\u00f3n"
+    },
+    {
+      "id": "25",
+      "provinceName": "Lleida",
+      "autonomyId": "09",
+      "autonomyName": "Catalu\u00f1a\/Catalunya",
+      "capital": "Lleida"
+    },
+    {
+      "id": "26",
+      "provinceName": "La Rioja",
+      "autonomyId": "17",
+      "autonomyName": "La Rioja",
+      "capital": "Logro\u00f1o"
+    },
+    {
+      "id": "27",
+      "provinceName": "Lugo",
+      "autonomyId": "12",
+      "autonomyName": "Galicia",
+      "capital": "Lugo"
+    },
+    {
+      "id": "28",
+      "provinceName": "Madrid",
+      "autonomyId": "13",
+      "autonomyName": "Comunidad de Madrid",
+      "capital": "Madrid"
+    },
+    {
+      "id": "29",
+      "provinceName": "M\u00e1laga",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "M\u00e1laga"
+    },
+    {
+      "id": "30",
+      "provinceName": "Murcia",
+      "autonomyId": "14",
+      "autonomyName": "Regi\u00f3n de Murcia",
+      "capital": "Murcia"
+    },
+    {
+      "id": "31",
+      "provinceName": "Navarra",
+      "autonomyId": "15",
+      "autonomyName": "Comunidad Foral de Navarra",
+      "capital": "Pamplona\/Iru\u00f1a"
+    },
+    {
+      "id": "32",
+      "provinceName": "Ourense",
+      "autonomyId": "12",
+      "autonomyName": "Galicia",
+      "capital": "Ourense"
+    },
+    {
+      "id": "33",
+      "provinceName": "Asturias",
+      "autonomyId": "03",
+      "autonomyName": "Principado de Asturias",
+      "capital": "Oviedo"
+    },
+    {
+      "id": "34",
+      "provinceName": "Palencia",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Palencia"
+    },
+    {
+      "id": "35",
+      "provinceName": "Las Palmas",
+      "autonomyId": "05",
+      "autonomyName": "Canarias",
+      "capital": "Las Palmas de Gran Canaria"
+    },
+    {
+      "id": "36",
+      "provinceName": "Pontevedra",
+      "autonomyId": "12",
+      "autonomyName": "Galicia",
+      "capital": "Pontevedra"
+    },
+    {
+      "id": "37",
+      "provinceName": "Salamanca",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Salamanca"
+    },
+    {
+      "id": "38",
+      "provinceName": "Santa Cruz de Tenerife",
+      "autonomyId": "05",
+      "autonomyName": "Canarias",
+      "capital": "Santa Cruz de Tenerife"
+    },
+    {
+      "id": "39",
+      "provinceName": "Cantabria",
+      "autonomyId": "06",
+      "autonomyName": "Cantabria",
+      "capital": "Santander"
+    },
+    {
+      "id": "40",
+      "provinceName": "Segovia",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Segovia"
+    },
+    {
+      "id": "41",
+      "provinceName": "Sevilla",
+      "autonomyId": "01",
+      "autonomyName": "Andaluc\u00eda",
+      "capital": "Sevilla"
+    },
+    {
+      "id": "42",
+      "provinceName": "Soria",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Soria"
+    },
+    {
+      "id": "43",
+      "provinceName": "Tarragona",
+      "autonomyId": "09",
+      "autonomyName": "Catalu\u00f1a\/Catalunya",
+      "capital": "Tarragona"
+    },
+    {
+      "id": "44",
+      "provinceName": "Teruel",
+      "autonomyId": "02",
+      "autonomyName": "Arag\u00f3n",
+      "capital": "Teruel"
+    },
+    {
+      "id": "45",
+      "provinceName": "Toledo",
+      "autonomyId": "08",
+      "autonomyName": "Castilla-La Mancha",
+      "capital": "Toledo"
+    },
+    {
+      "id": "46",
+      "provinceName": "Val\u00e8ncia\/Valencia",
+      "autonomyId": "10",
+      "autonomyName": "Comunitat Valenciana",
+      "capital": "Valencia"
+    },
+    {
+      "id": "47",
+      "provinceName": "Valladolid",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Valladolid"
+    },
+    {
+      "id": "48",
+      "provinceName": "Bizkaia",
+      "autonomyId": "16",
+      "autonomyName": "Pa\u00eds Vasco\/Euskadi",
+      "capital": "Bilbao"
+    },
+    {
+      "id": "49",
+      "provinceName": "Zamora",
+      "autonomyId": "07",
+      "autonomyName": "Castilla y Le\u00f3n",
+      "capital": "Zamora"
+    },
+    {
+      "id": "50",
+      "provinceName": "Zaragoza",
+      "autonomyId": "02",
+      "autonomyName": "Arag\u00f3n",
+      "capital": "Zaragoza"
+    },
+    {
+      "id": "51",
+      "provinceName": "Ceuta",
+      "autonomyId": "18",
+      "autonomyName": "Ciudad Aut\u00f3noma de Ceuta",
+      "capital": "Ceuta"
+    },
+    {
+      "id": "52",
+      "provinceName": "Melilla",
+      "autonomyId": "19",
+      "autonomyName": "Ciudad Aut\u00f3noma de Melilla",
+      "capital": "Melilla"
+    }
+  ]
+}
