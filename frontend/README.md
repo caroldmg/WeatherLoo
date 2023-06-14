@@ -26,3 +26,6 @@ ng generate component users/user-detail
 ng generate component users/user-form
 ng generate interface users/models/user --type=model --prefix=I
 ng generate service users/services/users
+
+## Agregando Angular Material
+ng add @angular/material -y --theme=indigo-pink --typography=true

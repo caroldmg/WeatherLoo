@@ -1,1 +1,36 @@
-<p>footer works!</p>
+<footer>
+    <mat-grid-list cols="3" rowHeight="125px">
+        <mat-grid-tile rowspan="2">
+          <nav>
+            <h3>Productos</h3>
+            <a routerLink="/">Enlace 1</a>
+            <a routerLink="/">Enlace 2</a>
+            <a routerLink="/">Enlace 3</a>
+          </nav>
+        </mat-grid-tile>
+    
+        <mat-grid-tile rowspan="2">
+          <nav>
+            <h3>Servicios</h3>
+            <a routerLink="/">Enlace 1</a>
+            <a routerLink="/">Enlace 2</a>
+            <a routerLink="/">Enlace 3</a>
+          </nav>
+        </mat-grid-tile>
+    
+        <mat-grid-tile rowspan="2">
+          <nav>
+            <h3>Sobre nosotros</h3>
+            <a routerLink="/">Enlace 1</a>
+            <a routerLink="/">Enlace 2</a>
+            <a routerLink="/">Enlace 3</a>
+          </nav>
+        </mat-grid-tile>
+    
+        <!-- fila que ocupa 3 columnas -->
+        <mat-grid-tile colspan="3" rowspan="1">
+          <p>Copyright 1990-2023. Jobify Tech Inc. Todos los derechos reservados.</p>
+        </mat-grid-tile>
+    
+      </mat-grid-list>
+</footer>
