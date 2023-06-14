@@ -1,4 +1,7 @@
 mat-toolbar {
     background-color: #FFB703;
     color: #ffff;
+    display: flex;
+    justify-content: space-between;
 }
+
