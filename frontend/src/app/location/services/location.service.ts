@@ -10,6 +10,7 @@ export class LocationService {
 
   url: string = "http://localhost:3000/provinces"
 
+
   constructor(private httpClient: HttpClient) { }
 
   findAllProvinces(): Observable <IProvince[]>{
@@ -20,4 +21,8 @@ export class LocationService {
     return this.httpClient.get<IProvince>(`${this.url}/id`)
   }
   //añadir filtro por comunidad autónoma
+
+  
+
+
 }
