@@ -8,7 +8,11 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { WeatherModule } from './weather/weather.module';
 import { LocationModule } from './location/location.module';
 import { UsersModule } from './users/users.module';
-
+import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +24,13 @@ import { UsersModule } from './users/users.module';
     AppRoutingModule,
     WeatherModule,
     LocationModule,
-    UsersModule
+    UsersModule,
+    MatIconModule,
+    MatButtonModule,
+    MatToolbarModule,
+    BrowserAnimationsModule,
+    MatGridListModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -36,3 +36,5 @@ La api que estamos usando es
 * Seguún la propia página: 
 "El [ID] son los primeros cinco dígitos del dato CODIGOINE que podrás encontrar, por ejemplo, en el comando anterior. Debes sustituir el [ID] por los cincos primeros dígitos del CODIGOINE."
 * el listado de municipios y de provincias los hemos extraido de la página de la api (el-tiempo.net/api)
+## Agregando Angular Material
+ng add @angular/material -y --theme=indigo-pink --typography=true
