@@ -22,12 +22,20 @@ export class LocationService {
   findProvinceById(id: number): Observable <IProvince>{
     return this.httpClient.get<IProvince>(`${this.urlProvinces}/id`)
   }
+
   findAllTowns(): Observable <ITown[]> {
     return this.httpClient.get<ITown[]>(this.urlTowns);
   }
-  //añadir filtro por comunidad autónoma
 
+  findTownById(id: number): Observable <ITown>{
+    return this.httpClient.get<ITown>(this.urlTowns)
+  }//findalltownsbyprovinceid
+
+  //añadir filtro por comunidad autónoma
   
+  findAllByAutonomyId(id: number): Observable <IProvince[]>{
+    return this.httpClient.get<IProvince[]>(`${this.urlProvinces}?autonomyId=${id}`)
+  }
 
 
 }

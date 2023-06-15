@@ -1,17 +1,22 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { IWeather } from '../models/weather.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherService {
 
-  url= "https://www.el-tiempo.net/api/json/v2/provincias"
+  url= "https://www.el-tiempo.net/api/json/v2"
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
-  /**
-   * getWeather(idProvincia: number, idMunicipio: number): Observable IWeather (cuando tengamos los atributos de cómo lo devuelve){
-    return this.httpClient.get<IWeather>(`${this.url}/${idProvincia}/municipios/${idMunicipio}`)
+  getProvinceWeather(provinceId: number): Observable <IWeather> {
+    return this.httpClient.get<IWeather>(`${this.url}/provincias/${provinceId}`)
   }
-   */
+
+  getLocalWeather(townId: number): Observable <IWeather> {
+    return this.httpClient.get<IWeather>(`${this.url}/municipios/${townId}`)
+  }
 }

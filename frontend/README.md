@@ -18,6 +18,7 @@ ng generate component location/province-gallery
 ng generate component location/town-list
 ng generate interface location/models/province --type=model --prefix=I
 ng generate interface location/models/town --type=model --prefix=I
+ng generate interface location/models/autonomy --type=model --prefix=I
 ng generate service location/services/location
 
 ng generate module users --routing --module app.module
