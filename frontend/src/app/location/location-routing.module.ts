@@ -10,9 +10,17 @@ const routes: Routes = [
     component: ProvinceGalleryComponent
   },
   {
+    path: ':autonomyId',
+    component: ProvinceGalleryComponent
+  }
+  {
     path: 'list',
     component: ProvinceListComponent
   },
+  {
+    path: 'list/:autonomyId',
+    component: ProvinceListComponent
+  }
   {
     path: 'town-list',
     component: TownListComponent

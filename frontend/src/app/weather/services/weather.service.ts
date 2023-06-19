@@ -10,7 +10,7 @@ export class WeatherService {
   constructor() { }
 
   /**
-   * getWeather(idProvincia: number, idMunicipio: number): Observable IWeather (cuando tengamos los atributos de cómo lo devuelve){
+   * getWeather(idMunicipio: number): Observable IWeather (cuando tengamos los atributos de cómo lo devuelve){
     return this.httpClient.get<IWeather>(`${this.url}/${idProvincia}/municipios/${idMunicipio}`)
   }
    */
