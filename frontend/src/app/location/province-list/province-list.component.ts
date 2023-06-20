@@ -32,7 +32,14 @@ export class ProvinceListComponent {
       const autonomyId = params['autonomyId'];
       if (autonomyId) {
         
-        this.locationService.findProvincesByAutonomyId(autonomyId).subscribe(data => this.provinces = data)
+        this.locationService.findProvincesByAutonomyId(autonomyId).subscribe(data => {
+          this.provinces = data;
+          this.autonomy = {
+            autonomyName: this.provinces[0].autonomyName,
+            autonomyId: this.provinces[0].autonomyId.toString()}
+          console.log(this.autonomy);
+          
+        })
       } else {
         this.locationService.findAllProvinces().subscribe(data => this.provinces = data)
       }
