@@ -1,4 +1,4 @@
 export interface IAutonomy {
-    autonomyId: number;
+    autonomyId: string;
     autonomyName: string;
 }

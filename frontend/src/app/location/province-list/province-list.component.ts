@@ -29,10 +29,10 @@ export class ProvinceListComponent {
 
   loadProvinces(){
     this.activatedRoute.params.subscribe((params) => {
-      const autonomyIdStr = params['autonomyId'];
-      if (autonomyIdStr) {
-        const id = parseInt(autonomyIdStr, 10);
-        this.locationService.findProvincesByAutonomyId(id).subscribe(data => this.provinces = data)
+      const autonomyId = params['autonomyId'];
+      if (autonomyId) {
+        
+        this.locationService.findProvincesByAutonomyId(autonomyId).subscribe(data => this.provinces = data)
       } else {
         this.locationService.findAllProvinces().subscribe(data => this.provinces = data)
       }

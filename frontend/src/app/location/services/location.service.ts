@@ -32,7 +32,7 @@ export class LocationService {
     return this.httpClient.get<ITown[]>(`${this.urlTowns}?CODPROV=${provinceId}`)
   }
 
-  findProvincesByAutonomyId(autonomyId: number): Observable <IProvince[]>{
+  findProvincesByAutonomyId(autonomyId: string): Observable <IProvince[]>{
     return this.httpClient.get<IProvince[]>(`${this.urlProvinces}?autonomyId=${autonomyId}`)
   }
 
