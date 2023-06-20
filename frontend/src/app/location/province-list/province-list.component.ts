@@ -11,6 +11,11 @@ import { IAutonomy } from '../models/autonomy.model';
 })
 export class ProvinceListComponent {
 
+  displayedColumns: string[]= [
+    'province',
+    'autonomy'
+  ]
+
   provinces: IProvince[] = []
   autonomy: IAutonomy | undefined;
 
@@ -19,24 +24,19 @@ export class ProvinceListComponent {
 
   ngOnInit(): void {
     //mostrar todas las provincias
-    this.loadProvinces()
+    this.loadProvinces();
   }
 
   loadProvinces(){
-    this.activatedRoute.params.subscribe(params => {
+    this.activatedRoute.params.subscribe((params) => {
       const autonomyIdStr = params['autonomyId'];
-
-      if (autonomyIdStr){
+      if (autonomyIdStr) {
         const id = parseInt(autonomyIdStr, 10);
-        this.locationService.findProvincesByAutonomyId(id).subscribe(data =>{
-          this.provinces = data,
-          this.autonomy = {
-            autonomyId: this.provinces[0].autonomyId,
-            autonomyName: this.provinces[0].autonomyName}
-        })
+        this.locationService.findProvincesByAutonomyId(id).subscribe(data => this.provinces = data)
+      } else {
+        this.locationService.findAllProvinces().subscribe(data => this.provinces = data)
       }
     })
 
-    this.locationService.findAllProvinces().subscribe(data => this.provinces = data)
   }
 }

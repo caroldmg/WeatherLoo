@@ -22,13 +22,13 @@ export class LocationService {
   }
 
   findProvinceById(id: number): Observable <IProvince>{
-    return this.httpClient.get<IProvince>(`${this.urlProvinces}/id`)
+    return this.httpClient.get<IProvince>(`${this.urlProvinces}/${id}`)
   }
   findAllTowns(): Observable <ITown[]> {
     return this.httpClient.get<ITown[]>(this.urlTowns);
   }
 
-  findTownByProvinceId(provinceId: number): Observable <ITown[]>{
+  findTownsByProvinceId(provinceId: number): Observable <ITown[]>{
     return this.httpClient.get<ITown[]>(`${this.urlTowns}?CODPROV=${provinceId}`)
   }
 
