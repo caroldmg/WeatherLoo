@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class WeatherService {
 
-  url= "https://www.el-tiempo.net/api/json/v2/provincias"
+  url= "https://www.el-tiempo.net/api/json/v2"
+  
+  //https://www.el-tiempo.net/api/json/v2/municipios/01001 trae el tiempo del municipio
 
   constructor() { }
 
