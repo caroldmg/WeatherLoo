@@ -10,6 +10,8 @@ export class WeatherService {
 
   url= "https://www.el-tiempo.net/api/json/v2"
 
+
+
   constructor(private httpClient: HttpClient) { }
 
   getProvinceWeather(provinceId: number): Observable <IWeather> {
@@ -18,5 +20,10 @@ export class WeatherService {
 
   getLocalWeather(townId: number): Observable <IWeather> {
     return this.httpClient.get<IWeather>(`${this.url}/municipios/${townId}`)
+
+  /**
+   * getWeather(idMunicipio: number): Observable IWeather (cuando tengamos los atributos de cómo lo devuelve){
+    return this.httpClient.get<IWeather>(`${this.url}/${idProvincia}/municipios/${idMunicipio}`)
+
   }
 }

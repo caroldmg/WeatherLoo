@@ -1,7 +1,8 @@
 
 <!-- DE MOMENTO SE MUESTRAN TODAS, HAY QUE PAGINAR -->
 
-<table>
+<!-- <table>
+    <div *ngIf="autonomy"> {{autonomy.autonomyName}} </div>
     <tr>
         <th>Provincia</th>
         <th>Comunidad Autónoma</th>
@@ -10,5 +11,26 @@
         <td> {{province.name}} </td>
         <td> {{province.autonomyName}} </td>
     </tr>
-</table>
+
 <!--  hacer mat grid con tarjetas -->
+
+</table> -->
+<div *ngIf="autonomy" > {{autonomy.autonomyName}} </div>
+
+<table mat-table [dataSource]="provinces" class="mat-elevation-z8">
+
+
+    <ng-container matColumnDef="province">
+      <th mat-header-cell *matHeaderCellDef>Provincia</th>
+      <td mat-cell *matCellDef="let province">{{ province.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="autonomy">
+      <th mat-header-cell *matHeaderCellDef>Autonomía</th>
+      <td mat-cell *matCellDef="let province">{{ province.autonomyName }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

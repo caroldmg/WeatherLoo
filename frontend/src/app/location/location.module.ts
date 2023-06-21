@@ -7,6 +7,7 @@ import { ProvinceListComponent } from './province-list/province-list.component';
 import { ProvinceGalleryComponent } from './province-gallery/province-gallery.component';
 import { TownListComponent } from './town-list/town-list.component';
 
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TownListComponent } from './town-list/town-list.component';
   imports: [
     CommonModule,
     LocationRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ]
 })
 export class LocationModule { }
