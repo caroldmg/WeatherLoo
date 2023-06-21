@@ -1,27 +1,29 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserListComponent } from './user-list/user-list.component';
-import { UserFormComponent } from './user-form/user-form.component';
-import { UserDetailComponent } from './user-detail/user-detail.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+
+
 
 const routes: Routes = [
   {
-    path: 'user-form',
-    component: UserFormComponent
+    path: 'user-login',
+    component: UserLoginComponent
   },
   {
-    path:'user-detail',
-    component:UserDetailComponent
+    path:'user-registration',
+    component:UserRegistrationComponent
   },
   {
-    path: 'user-list',
-    component: UserListComponent
+    path: 'user-profile',
+    component: UserProfileComponent
   } , 
   {
-    path:'', redirectTo: 'userForm' ,pathMatch: 'full'
+    path:'', redirectTo: 'user-login' ,pathMatch: 'full'
   },
   {
-    path:'**', redirectTo: 'user-Form', pathMatch:'full'
+    path:'**', redirectTo: 'user-login', pathMatch:'full'
   }
   
  

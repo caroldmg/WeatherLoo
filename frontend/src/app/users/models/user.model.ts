@@ -5,5 +5,5 @@ export interface IUser {
     email: string;
     gender: string;
     location: string;
-    pasword: string
+    password: string
 }
