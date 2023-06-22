@@ -18,7 +18,10 @@ import { UserProfileComponent } from './user-profile/user-profile.component'
   imports: [
     CommonModule,
     UsersRoutingModule,
-    ReactiveFormsModule,FormsModule  
+    ReactiveFormsModule,FormsModule,
+
   ]
 })
-export class UsersModule { }
+export class UsersModule { 
+  
+}
