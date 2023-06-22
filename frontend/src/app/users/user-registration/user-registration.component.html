@@ -1,0 +1,23 @@
+<p>user-registration works!</p>
+<form [formGroup]="userRegistre" (ngSubmit)="save()">
+    <div>
+        <label for="fullName">Nombre Completo: <span>*</span></label>
+        <input type="text" id="fullName" formControlName="fullName">
+        <div>
+          <span *ngIf="userRegistre.get('fullName')?.getError('required') && userRegistre.get('fullName')?.touched">
+            Nombre obligatorio.
+          </span>
+          <span *ngIf="userRegistre.get('fullName')?.getError('whitespaceError') && userRegistre.get('fullName')?.touched">
+            Nombre no puede tener espacios en blanco.
+          </span>
+
+          <label for="email">Email: <span>*</span></label>
+          <input type="text" id="email" formControlName="email">
+          <label for="email">Género: <span>*</span></label>
+          <input type="RADIO" id="gender" formControlName="gender">
+
+
+
+        </div>
+      </div>
+</form>
