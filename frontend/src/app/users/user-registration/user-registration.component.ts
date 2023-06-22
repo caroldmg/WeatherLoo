@@ -19,7 +19,11 @@ export class UserRegistrationComponent {
 
   }, { validators: this.passwordConfirmValidator })
 
-
+//------- usar formulario steps---
+// agregar preguntas opcionales: tienes mascotas 
+//lugares favorito
+//medios de transporte : coche,bici,metro,transporte publico
+//
 
 
 
