@@ -1,7 +1,8 @@
 mat-toolbar {
     background-color: #FFB703;
-    color: #ffff;
+    color: #fff1d0;
     display: flex;
     justify-content: space-between;
+    font-family: 'Abril Fatface', cursive;
 }
 
