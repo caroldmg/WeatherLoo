@@ -1,5 +1,5 @@
 import { Autonomy } from "src/autonomy/autonomy.entity";
-import { Column, Entity, JoinColumn, ManyToMany, ManyToOne, PrimaryColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
 
 @Entity()
@@ -12,8 +12,8 @@ export class Province{
     name: string;
 
     @ManyToOne(() => Autonomy)
-    @JoinColumn()
-    autonomyId: number;
+    @JoinColumn({name: 'autonomy_id'})
+    autonomy: number;
 
     @Column()
     capital: string;
