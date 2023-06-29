@@ -6,9 +6,10 @@ import { ProvincesModule } from './provinces/provinces.module';
 import { TownsModule } from './towns/towns.module';
 import { UsersModule } from './users/users.module';
 import { FavLocationsModule } from './fav-locations/fav-locations.module';
+import { LocalWeatherModule } from './local-weather/local-weather.module';
 
 @Module({
-  imports: [DatabaseModule, ProvincesModule, TownsModule, UsersModule, FavLocationsModule],
+  imports: [DatabaseModule, ProvincesModule, TownsModule, UsersModule, FavLocationsModule, LocalWeatherModule],
   controllers: [AppController],
   providers: [AppService],
 })
