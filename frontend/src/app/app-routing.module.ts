@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { WeatherModule } from './weather/weather.module';
+import { UsersModule } from './users/users.module';
 
 const routes: Routes = [
   {

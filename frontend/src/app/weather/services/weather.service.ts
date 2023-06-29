@@ -4,13 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class WeatherService {
-
-  url= "https://www.el-tiempo.net/api/json/v2/provincias"
+  url= "https://www.el-tiempo.net/api/json/v2"
+  
+  //https://www.el-tiempo.net/api/json/v2/municipios/01001 trae el tiempo del municipio
 
   constructor() { }
 
   /**
-   * getWeather(idProvincia: number, idMunicipio: number): Observable IWeather (cuando tengamos los atributos de cómo lo devuelve){
+   * getWeather(idMunicipio: number): Observable IWeather (cuando tengamos los atributos de cómo lo devuelve){
     return this.httpClient.get<IWeather>(`${this.url}/${idProvincia}/municipios/${idMunicipio}`)
   }
    */

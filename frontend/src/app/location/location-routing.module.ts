@@ -6,16 +6,24 @@ import { TownListComponent } from './town-list/town-list.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ProvinceGalleryComponent
+    path: 'list',
+    component: ProvinceListComponent
   },
   {
-    path: 'list',
+    path: 'list/:autonomyId',
     component: ProvinceListComponent
   },
   {
     path: 'town-list',
     component: TownListComponent
+  },
+  {
+    path: ':autonomyId',
+    component: ProvinceGalleryComponent
+  },
+  {
+    path: '',
+    component: ProvinceGalleryComponent
   },
   {
     path: '', redirectTo: '', pathMatch: 'full'
