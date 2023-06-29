@@ -10,7 +10,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
             username: 'root',
             password: 'admin', // sustituir por variable de entorno
             // password: process.env.NEST_PASSWORD,
-            database: 'backend_nest',
+            database: 'backend_weatherloo',
             entities: [
                 // __dirname + 'src/**/*.model.ts'
                 //AGREGAR LAS ENTIDADES
