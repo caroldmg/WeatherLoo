@@ -10,6 +10,12 @@ Añadir configuración mySQL
 <!-- La contraseña de mySQL deberá ser como variable de entorno para que podamos acceder todas sin modificar el archivo -->
 Crear base de datos backend_weatherloo en mySQL workbench
 
+- Autonomy
+nest generate module autonomy
+nest generate controller autonomy
+nest generate service autonomy
+Crear autonomy.entity.ts a mano 
+
 - Provinces
 nest generate module provinces
 nest generate controller provinces
