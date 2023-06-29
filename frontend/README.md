@@ -27,6 +27,8 @@ ng generate component users/user-form
 ng generate interface users/models/user --type=model --prefix=I
 ng generate service users/services/users
 
+-- Recordemos hacer NPM INSTALL 
+
 ## API
 
 La api que estamos usando es 
