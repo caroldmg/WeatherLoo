@@ -13,11 +13,14 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
+import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
+import {MatStepperModule} from '@angular/material/stepper';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatButtonModule,
     MatToolbarModule,
     BrowserAnimationsModule,
-    MatGridListModule
+    MatGridListModule,
+    ReactiveFormsModule,FormsModule,
+    MatStepperModule
 
   ],
   providers: [],

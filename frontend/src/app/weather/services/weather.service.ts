@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WeatherService {
-
   url= "https://www.el-tiempo.net/api/json/v2"
 
 
