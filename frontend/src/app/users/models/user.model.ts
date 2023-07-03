@@ -1,11 +1,14 @@
 export interface IUser {
     id: number;
     fullName: string;
-    age: number;
+    birthday: Date;
     email: string;
     gender: string;
     location: string;
     password: string;
-    avatar: null
+    avatar: null,
+    mascotas: string,
+    transporte: string,
+    lugaresFav:string[]
 }
 //duda ----- ¿aquíñ debemos poner un atributo lugaresfavoritos? 

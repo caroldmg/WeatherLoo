@@ -1,23 +1,78 @@
-<p>user-registration works!</p>
-<form [formGroup]="userRegistre" (ngSubmit)="save()">
-    <div>
-        <label for="fullName">Nombre Completo: <span>*</span></label>
-        <input type="text" id="fullName" formControlName="fullName">
+<p>Registrarme</p>
+<form>
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstGroup" [editable]="isEditable">
+      <form [formGroup]="firstGroup">
+        <ng-template matStepLabel>Datos personales</ng-template>
+        <mat-form-field>
+          <mat-label>Name</mat-label>
+          <input matInput formControlName="fullName" placeholder="Last name, First name" required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput formControlName="email" placeholder="example@...." required>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>password</mat-label>
+          <input matInput   [type]="hide ? 'password' : 'text'" formControlName="password"  required>
+        </mat-form-field>
         <div>
-          <span *ngIf="userRegistre.get('fullName')?.getError('required') && userRegistre.get('fullName')?.touched">
-            Nombre obligatorio.
-          </span>
-          <span *ngIf="userRegistre.get('fullName')?.getError('whitespaceError') && userRegistre.get('fullName')?.touched">
-            Nombre no puede tener espacios en blanco.
-          </span>
-
-          <label for="email">Email: <span>*</span></label>
-          <input type="text" id="email" formControlName="email">
-          <label for="email">Género: <span>*</span></label>
-          <input type="RADIO" id="gender" formControlName="gender">
-
-
-
-        </div>
+          <mat-label>Género</mat-label>
+          <mat-radio-group formControlName="gender">
+        <mat-radio-button value="hombre"> Hombre </mat-radio-button>
+        <mat-radio-button value="mujer"> Mujer</mat-radio-button>
+        <mat-radio-button value="otro"> otro</mat-radio-button>
+        </mat-radio-group>
       </div>
+      <mat-form-field>
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthday">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondGroup" [editable]="isEditable">
+      <form [formGroup]="secondGroup">
+        <ng-template matStepLabel>Opcionales</ng-template>
+        <div>
+          <mat-label>¿ Que medio de transporte utilizas?</mat-label>
+          <mat-radio-group formControlName="transporte">
+                 <mat-radio-button value="voy en coche"> coche </mat-radio-button>
+                 <mat-radio-button value="metro"> metro </mat-radio-button>
+                 <mat-radio-button value="bicicleta"> bicicleta</mat-radio-button>
+                </mat-radio-group>
+        </div>
+        <div>
+          <mat-label>¿Tienes Mascotas?</mat-label>
+        <mat-radio-group formControlName="mascotas">
+                 <mat-radio-button value="si"> si </mat-radio-button>
+                 <mat-radio-button value="no"> no</mat-radio-button>
+       </mat-radio-group>
+       </div>
+        <mat-form-field>
+          <mat-label>¿lugares favoritos?</mat-label>
+          <input matInput formControlName="lugaresFav" placeholder="E"
+                 required>
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>listo! Gracias por tu respuesta!</p>
+      <div>
+        <button mat-button matStepperPrevious>Regresar</button>
+        <button mat-button (click)="stepper.reset()">Empezar de Nuevo</button>
+      </div>
+    </mat-step>
+  
+  </mat-stepper>
 </form>

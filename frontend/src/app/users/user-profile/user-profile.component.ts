@@ -14,12 +14,15 @@ export class UserProfileComponent {
   user: IUser = {
     id: 1,
     fullName: 'Usuario técnico',
-    age: 0,
+    birthday: new Date('1999-09-01'),
     email: '',
     gender: '',
     location: '',
     password: '',
-    avatar: null
+    avatar: null,
+    mascotas: '',
+    transporte: '',
+    lugaresFav: []
   }
 
 }

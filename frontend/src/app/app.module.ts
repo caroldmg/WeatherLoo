@@ -14,6 +14,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
 import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
+import {MatStepperModule} from '@angular/material/stepper';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
     MatToolbarModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    ReactiveFormsModule,FormsModule
+    ReactiveFormsModule,FormsModule,
+    MatStepperModule
 
   ],
   providers: [],

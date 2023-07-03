@@ -8,17 +8,26 @@ import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/fo
 })
 // aqui solicitamos mas información: nombre,email,genero,edad,y preguntas opcionales
 export class UserRegistrationComponent {
-  userRegistre = new FormGroup({
-    fullName: new FormControl('', [Validators.required, this.notWhiteSpacesValidator]),
-    email: new FormControl('', [Validators.required, Validators.email]),
+  isEditable = false;
+  hide = true;
+  
 
-    gender: new FormControl('', [Validators.required]),
-    age: new FormControl('', [Validators.required]),
+  firstGroup = new FormGroup({
+    fullName: new FormControl(''),
+    email: new FormControl(''),
+    password: new FormControl(''),
+    gender: new FormControl('otro'),
+    birthday: new FormControl(new Date()),
 
-    password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
+    
+  });
 
-  }, { validators: this.passwordConfirmValidator })
+  secondGroup = new FormGroup({
+    mascotas : new FormControl(''),
+    transporte : new FormControl('coche'),
+    lugaresFav: new FormControl([])
 
+  })
 //------- usar formulario steps---
 // agregar preguntas opcionales: tienes mascotas 
 //lugares favorito
@@ -49,7 +58,7 @@ export class UserRegistrationComponent {
 
 
   save(): void {
-    if (this.userRegistre.valid) {
+    if (this.firstGroup.valid) {
       // Crear objeto con los datos del formulario y enviar al backend
 
       console.log("Formulario correcto");
