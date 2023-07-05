@@ -6,7 +6,7 @@ export interface IUser {
     birthday: Date;
     email: string;
     gender: string;
-    location: ITown;
+    location: ITown| undefined;
     password: string;
     profilePic: string,
     pets: boolean,

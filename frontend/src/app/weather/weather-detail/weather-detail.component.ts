@@ -16,8 +16,14 @@ export class WeatherDetailComponent implements OnInit{
 
   ngOnInit(): void {
     this.weatherService.getWeatherRealTime("01001").subscribe(data => {
-      this.weather?.temperatura_actual = data.temperatura_actual
-      console.log(this.weather);
+      this.weather = data
+      console.log(this.weather.temperatura_actual);
+      console.log(this.weather.humedad);
+      console.log(this.weather.viento);
+      console.log(this.weather.precipitacion);
+      console.log(this.weather.lluvia);
+      console.log("Max " + this.weather.temperaturas.max);
+      console.log("Min " + this.weather.temperaturas.min);
       
     })
   }
