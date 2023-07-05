@@ -13,16 +13,10 @@ export class WeatherService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getProvinceWeather(provinceId: number): Observable <IWeather> {
-    return this.httpClient.get<IWeather>(`${this.url}/provincias/${provinceId}`)
-  }
 
-  getLocalWeather(townId: number): Observable <IWeather> {
+  getWeatherRealTime(townId: string): Observable <IWeather> {
     return this.httpClient.get<IWeather>(`${this.url}/municipios/${townId}`)
 
-  /**
-   * getWeather(idMunicipio: number): Observable IWeather (cuando tengamos los atributos de cómo lo devuelve){
-    return this.httpClient.get<IWeather>(`${this.url}/${idProvincia}/municipios/${idMunicipio}`)
-
+  
   }
 }

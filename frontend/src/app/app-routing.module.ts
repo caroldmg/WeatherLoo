@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   {
     path: 'weather',
-    loadChildren: () => import('./users/users.module').then(m =>WeatherModule)
+    loadChildren: () => import('./weather/weather.module').then(m =>WeatherModule)
   },
   {
     path: '',

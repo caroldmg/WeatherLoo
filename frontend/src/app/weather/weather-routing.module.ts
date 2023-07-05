@@ -1,7 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { WeatherDetailComponent } from './weather-detail/weather-detail.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'weather-detail',
+component: WeatherDetailComponent
+},
+{
+  path: '', redirectTo: 'weather-detail', pathMatch: 'full'
+},
+{
+  path: '**', redirectTo: 'weather-detail', pathMatch: 'full'
+}
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

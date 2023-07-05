@@ -28,10 +28,10 @@ export class ProvinceGalleryComponent implements OnInit{
     this.activatedRoute.params.subscribe(params => {
       const autonomyIdStr = params['autonomyId'];
 
-      if(autonomyIdStr) {
-        const id = parseInt(autonomyIdStr, 10);
-        this.locationService.findAllByAutonomyId(id).subscribe ( data => this.provinces = data);
-      }
+      // if(autonomyIdStr) {
+      //   const id = parseInt(autonomyIdStr, 10);
+      //   this.locationService.findAllByAutonomyId(id).subscribe ( data => this.provinces = data);
+      // }
     })
 
     this.locationService.findAllProvinces().subscribe(data => this.provinces = data)
