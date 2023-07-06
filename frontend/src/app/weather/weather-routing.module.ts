@@ -4,9 +4,10 @@ import { WeatherDetailComponent } from './weather-detail/weather-detail.componen
 
 const routes: Routes = [
   {
-    path: 'weather-detail',
+    path: 'weather-detail/:townCode',
     component: WeatherDetailComponent
 },
+
 {
   path: '', redirectTo: 'weather-detail', pathMatch: 'full'
 },

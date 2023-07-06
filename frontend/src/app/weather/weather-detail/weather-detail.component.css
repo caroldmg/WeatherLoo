@@ -1,11 +1,42 @@
 .detailToday{
-    
+   
     margin: 30px;
+    font-family:  'Abril Fatface', 'Chakra Petch', cursive,sans-serif;
+    justify-content: center;  
     
 }
+
 .TRealtime{
     display: flex;
+    flex-direction: column;
+    margin: 15px;
+    padding: 20px;
 }
-.realtimeToday{
+.MaxandMinT{
+    display: flex;
+    flex-direction: row;
     
 }
+p{
+    margin: 10px;
+    color: #219EBC;
+
+}
+h2{
+    font-size: 2.5rem;
+    color: #086788;
+    
+}
+h3{
+    font-size: 2.5rem;
+    margin-left: 15px;
+    color: #219EBC;
+    
+}
+h4{
+    font-size: 1.5rem;
+    margin-left: 15px;
+    color: #219EBC;
+
+}
+

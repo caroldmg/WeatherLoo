@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 import { IWeather } from '../models/weather.model';
+import { ActivatedRoute } from '@angular/router';
+import { ITown } from 'src/app/location/models/town.model';
 
 @Component({
   selector: 'app-weather-detail',
@@ -11,23 +13,33 @@ import { IWeather } from '../models/weather.model';
 export class WeatherDetailComponent implements OnInit{
 
   weather: IWeather|undefined;
+  municipio: ITown | undefined
+  
   
 
-  constructor(private weatherService: WeatherService){}
+  constructor(private weatherService: WeatherService,
+              private activatedRoute: ActivatedRoute){}
+            
+  
 
-  ngOnInit(): void {
-    this.weatherService.getWeatherRealTime("01001").subscribe(data => {
-      this.weather = data
-      console.log(this.weather.temperatura_actual);
-      console.log(this.weather.humedad);
-      console.log(this.weather.viento);
-      console.log(this.weather.precipitacion);
-      console.log(this.weather.lluvia);
-      console.log("Max " + this.weather.temperaturas.max);
-      console.log("Min " + this.weather.temperaturas.min);
+
+
+
+  
+
+   ngOnInit(): void {
+     this.loadWeather();
+   
+     }
     
-    })
-    
-  }
+  
+   loadWeather(){    
+     this.activatedRoute.params.subscribe((params) => {     
+      const townCode = params['townCode']
+       this.weatherService.getWeatherRealTime(townCode).subscribe(data => this.weather = data)
+   })
+
+ }
 
 }
+
