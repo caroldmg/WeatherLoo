@@ -2,20 +2,26 @@
 <div class="detailToday" *ngIf="weather">
     <h2>Hoy en {{this.weather.municipio.NOMBRE}}, {{this.weather.municipio.NOMBRE_PROVINCIA}}</h2>
     <div class="TRealtime">
-        <label>Temperatura actual </label>
-        <p>{{weather.temperatura_actual}}° C</p>
+        <h3>{{weather.temperatura_actual}}°C</h3>
+        <div>
+            <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
+            <div class="MaxandMinT">
+                <p>Max: {{weather.temperaturas.max}}°C</p>
+                <p>Min: {{weather.temperaturas.min}}°C</p>
+            </div>
+            <img src="../../../assets/images/provinces/almeria.jpg" alt="">
+            
+        </div>
 
     </div>
     <div class="realtimeToday">
-        <h3>Estado del cielo</h3>
+        <h4>Estado del cielo</h4>
          <p>{{weather.stateSky.description}}</p> 
-        <p>Max: {{weather.temperaturas.max}}° C</p>
-        <p>Min: {{weather.temperaturas.min}}° C</p>
-
+        
     </div>
     <div class="descriptionToday">
         <p>Humedad {{weather.humedad}} %</p>
-        <p>Viento {{weather.viento}}</p>
+        <p>Viento {{weather.viento}} km/h</p>
         <p>Probabilidad de lluvia {{weather.lluvia}} %</p>
         
     </div>
