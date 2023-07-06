@@ -1,6 +1,7 @@
 export interface ITown {
     townId: number| undefined;
-    CODIGOINE: string;
+    townCode: string;
+    CODIGOINE: number;
     CODPROV: string;
     NOMBRE_PROVINCIA: string;
     NOMBRE: string;
