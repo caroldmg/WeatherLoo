@@ -1,15 +1,17 @@
 <form [formGroup]="userLogin" (ngSubmit)="save()">
 
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" name="email" ngModel email>
+  </mat-form-field>
    
-    <div>
-      <label for="email">Correo Electrónico:</label>
-      <input type="email" id="email" formControlName="email">
-    </div>
-  
-  
-    <div>
-      <label for="age">Password:</label>
-      <input type="password" id="password" formControlName="password" >
-    </div>
-<button type="submit"> Iniciar Sesión</button>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput type="password" name="password" ngModel password>
+  </mat-form-field>
+   
+      
+  <button mat-button color="primary">Iniciar Sesión</button>
+
+  <button mat-button color="primary">Crear cuenta</button>
   </form>

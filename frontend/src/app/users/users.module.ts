@@ -3,7 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
 
-import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
+import {ReactiveFormsModule,FormsModule ,FormControl} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+
 import { UserLoginComponent } from './user-login/user-login.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserProfileComponent } from './user-profile/user-profile.component'
@@ -25,6 +28,8 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
   ],
   imports: [
     CommonModule,
+    MatIconModule,
+    MatMenuModule,
     UsersRoutingModule,
     ReactiveFormsModule,FormsModule,
     MatStepperModule,
@@ -33,7 +38,9 @@ import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
     MatNativeDateModule,
     MatInputModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    
+    
 
 
 

@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
 import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
+import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     BrowserAnimationsModule,
     MatGridListModule,
     ReactiveFormsModule,FormsModule,
-    MatStepperModule
+    MatStepperModule,
+    MatMenuModule
 
   ],
   providers: [],

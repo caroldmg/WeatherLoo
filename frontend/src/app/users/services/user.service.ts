@@ -7,3 +7,4 @@ export class UserService {
 
   constructor() { }
 }
+// TENADRIAMOS Q TENER UN SERVICE UN CONTROLER

@@ -9,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 //
 export class UserLoginComponent {
   userLogin= new FormGroup({
-    email: new FormControl('',[Validators.required]),
+    email: new FormControl('',[Validators.required, Validators.email]),
     fullName: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required,Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
     
