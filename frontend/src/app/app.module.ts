@@ -15,11 +15,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
 import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
+import { FavLocationsComponent } from './locations/fav-locations/fav-locations.component';
+import { SearchComponent } from './locations/search/search.component';
+import { PopularLocationsComponent } from './locations/popular-locations/popular-locations.component';
+import { RecommendationsModule } from './recommendations/recommendations.module';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    FavLocationsComponent,
+    SearchComponent,
+    PopularLocationsComponent,
     
   ],
   imports: [
@@ -34,7 +41,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     BrowserAnimationsModule,
     MatGridListModule,
     ReactiveFormsModule,FormsModule,
-    MatStepperModule
+    MatStepperModule,
+    RecommendationsModule
 
   ],
   providers: [],

@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TownListComponent } from './town-list.component';
+import { SearchComponent } from './search.component';
 
-describe('TownListComponent', () => {
-  let component: TownListComponent;
-  let fixture: ComponentFixture<TownListComponent>;
+describe('SearchComponent', () => {
+  let component: SearchComponent;
+  let fixture: ComponentFixture<SearchComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [TownListComponent]
+      declarations: [SearchComponent]
     });
-    fixture = TestBed.createComponent(TownListComponent);
+    fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -4,6 +4,7 @@ ng new frontend --routing --skip-git --style=css
 ng generate component layout/navbar
 ng generate component layout/footer
 
+## Weather
 ng generate module weather --routing --module app.module
 ng generate component weather/weather-detail
 ng generate component weather/weather-list-hours
@@ -11,22 +12,33 @@ ng generate component weather/weather-list-sevenDays
 ng generate interface weather/models/weather --type=model --prefix=I
  ng generate service weather/services/weather
 
-
+## Location
 ng generate module location --routing --module app.module
 ng generate component location/province-list
-ng generate component location/province-gallery
-ng generate component location/town-list
+ng generate component location/fav-locations
+ng generate component location/search
+ng generate component location/popular-locations
 ng generate interface location/models/province --type=model --prefix=I
 ng generate interface location/models/town --type=model --prefix=I
 ng generate interface location/models/autonomy --type=model --prefix=I
 ng generate service location/services/location
 
+## Users
 ng generate module users --routing --module app.module
-ng generate component users/user-list
-ng generate component users/user-detail
-ng generate component users/user-form
+ng generate component users/user-login
+ng generate component users/user-profile
+ng generate component users/user-register
 ng generate interface users/models/user --type=model --prefix=I
 ng generate service users/services/users
+
+MÓDULO RECOMENDACIONES - PROPAGANDA REGISTRO Y RECOMENDACIONES PERSONALES
+n
+## Recommendation
+ng generate module recommendations --routing --module app.module
+ng generate component recommendations/personal-recommendations
+ng generate component recommendations/user-prop
+ng generate interface recommendations/models/recommendation
+ng generate service recommendations/servcices/recommendation
 
 ## Agregando Angular Material
 ng add @angular/material -y --theme=indigo-pink --typography=true
