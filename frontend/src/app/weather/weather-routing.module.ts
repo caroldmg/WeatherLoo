@@ -5,7 +5,7 @@ import { WeatherDetailComponent } from './weather-detail/weather-detail.componen
 const routes: Routes = [
   {
     path: 'weather-detail',
-component: WeatherDetailComponent
+    component: WeatherDetailComponent
 },
 {
   path: '', redirectTo: 'weather-detail', pathMatch: 'full'
