@@ -20,9 +20,6 @@ import {MatStepperModule} from '@angular/material/stepper';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    FavLocationsComponent,
-    SearchComponent,
-    PopularLocationsComponent,
     
   ],
   imports: [

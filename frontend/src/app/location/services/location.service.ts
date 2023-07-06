@@ -38,6 +38,6 @@ export class LocationService {
     return this.httpClient.get<IProvince[]>(`${this.urlProvinces}?autonomyId=${autonomyId}`)
 
   }
-
+  
 
 }
