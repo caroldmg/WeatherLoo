@@ -6,7 +6,10 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "t
 export class Town{
 
     @PrimaryGeneratedColumn()
-    townId: number
+    townId: number;
+
+    @Column()
+    townCode: string;
 
     @Column()
     CODIGOINE: number;
