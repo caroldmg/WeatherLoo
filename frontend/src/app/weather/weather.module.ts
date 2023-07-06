@@ -6,6 +6,8 @@ import { WeatherDetailComponent } from './weather-detail/weather-detail.componen
 import { WeatherListHoursComponent } from './weather-list-hours/weather-list-hours.component';
 import { WeatherListSevenDaysComponent } from './weather-list-seven-days/weather-list-seven-days.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -15,7 +17,8 @@ import { WeatherListSevenDaysComponent } from './weather-list-seven-days/weather
   ],
   imports: [
     CommonModule,
-    WeatherRoutingModule
+    WeatherRoutingModule,
+    HttpClientModule
   ]
 })
 export class WeatherModule { }

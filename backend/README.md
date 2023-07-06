@@ -51,3 +51,8 @@ nest generate module  recomendation
 nest generate controller  recomendation
 nest generate service  recomendation
 Crear recomendation.model.ts a mano
+
+## DATOS
+
+Para introducir los datos en las tablas (pasar de json a sql) he utilizado esta página: 
+https://www.convertjson.com/json-to-sql.htm - 

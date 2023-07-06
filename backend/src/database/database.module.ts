@@ -10,8 +10,7 @@ import { Province } from 'src/provinces/provinces.entity';
             host: 'localhost',
             port: 3306,
             username: 'root',
-            password: 'admin', // sustituir por variable de entorno
-            // password: process.env.NEST_PASSWORD,
+            password: process.env.NEST_PASSWORD, 
             database: 'backend_weatherloo',
             entities: [
                 // __dirname + 'src/**/*.model.ts'
