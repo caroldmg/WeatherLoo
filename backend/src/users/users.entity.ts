@@ -1,3 +1,4 @@
+import { Town } from "src/towns/towns.entity";
 import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
 export enum Gender{
     FEM= 'fem',
@@ -7,7 +8,7 @@ export enum Gender{
 
 }
 @Entity()
-export class Town{
+export class User{
 
 
     @PrimaryGeneratedColumn()
