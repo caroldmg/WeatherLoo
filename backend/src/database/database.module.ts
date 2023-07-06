@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Autonomy } from 'src/autonomy/autonomy.entity';
 import { Province } from 'src/provinces/provinces.entity';
+import { Town } from 'src/towns/towns.entity';
+import { User } from 'src/users/users.entity';
 
 @Module({
     imports: [
@@ -15,7 +17,7 @@ import { Province } from 'src/provinces/provinces.entity';
             entities: [
                 // __dirname + 'src/**/*.model.ts'
                 //AGREGAR LAS ENTIDADES
-               Autonomy, Province
+               Autonomy, Province, User, Town
             ],
             synchronize: true, // generar tablas automáticamente en base a entidades
             logging: true
