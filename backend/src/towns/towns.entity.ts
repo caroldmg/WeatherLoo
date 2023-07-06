@@ -12,7 +12,7 @@ export class Town{
     townCode: string;
 
     @Column()
-    CODIGOINE: number;
+    CODIGOINE: string;
 
     @ManyToOne(()=> Province)
     @JoinColumn({name: 'id_province'})
