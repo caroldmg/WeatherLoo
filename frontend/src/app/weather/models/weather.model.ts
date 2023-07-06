@@ -1,5 +1,10 @@
 export interface IWeather {
-    statesky: {
+    municipio: {
+        NOMBRE_PROVINCIA: string;
+        NOMBRE: string;
+
+    }
+    stateSky: {
         description: string;
         id: number;
     }
