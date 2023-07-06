@@ -13,7 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     WeatherDetailComponent,
     WeatherListHoursComponent,
-    WeatherListSevenDaysComponent
+    WeatherListSevenDaysComponent,
+  
+ 
   ],
   imports: [
     CommonModule,

@@ -15,12 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
 import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
 import {MatStepperModule} from '@angular/material/stepper';
-import {MatMenuModule} from '@angular/material/menu';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
+    FavLocationsComponent,
+    SearchComponent,
+    PopularLocationsComponent,
     
   ],
   imports: [
@@ -35,8 +37,7 @@ import {MatMenuModule} from '@angular/material/menu';
     BrowserAnimationsModule,
     MatGridListModule,
     ReactiveFormsModule,FormsModule,
-    MatStepperModule,
-    MatMenuModule
+    MatStepperModule
 
   ],
   providers: [],

@@ -1,1 +1,29 @@
-<p>weather-detail works!</p>
+
+<div class="detailToday" *ngIf="weather">
+    <h2>Hoy en {{this.weather.municipio.NOMBRE}}, {{this.weather.municipio.NOMBRE_PROVINCIA}}</h2>
+    <div class="TRealtime">
+        <label>Temperatura actual </label>
+        <p>{{weather.temperatura_actual}}° C</p>
+
+    </div>
+    <div class="realtimeToday">
+        <h3>Estado del cielo</h3>
+         <p>{{weather.stateSky.description}}</p> 
+        <p>Max: {{weather.temperaturas.max}}° C</p>
+        <p>Min: {{weather.temperaturas.min}}° C</p>
+
+    </div>
+    <div class="descriptionToday">
+        <p>Humedad {{weather.humedad}} %</p>
+        <p>Viento {{weather.viento}}</p>
+        <p>Probabilidad de lluvia {{weather.lluvia}} %</p>
+        
+    </div>
+
+</div>
+
+
+
+<div *ngIf="weather">
+
+</div>

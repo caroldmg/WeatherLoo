@@ -11,6 +11,7 @@ import { IWeather } from '../models/weather.model';
 export class WeatherDetailComponent implements OnInit{
 
   weather: IWeather|undefined;
+  
 
   constructor(private weatherService: WeatherService){}
 
@@ -24,9 +25,9 @@ export class WeatherDetailComponent implements OnInit{
       console.log(this.weather.lluvia);
       console.log("Max " + this.weather.temperaturas.max);
       console.log("Min " + this.weather.temperaturas.min);
-      
+    
     })
+    
   }
-
 
 }
