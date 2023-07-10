@@ -1,3 +1,7 @@
 *{
     margin: 20px;
 }
+
+mat-grid-list{
+    row-gap: 50px;
+}

@@ -1,22 +1,27 @@
-
+<div *ngIf="autonomy"> 
+  <h2> {{autonomy.autonomyName}}</h2> 
+</div>
 <!-- DE MOMENTO SE MUESTRAN TODAS, HAY QUE PAGINAR -->
+<mat-accordion>
 
-<!-- <table>
-    <div *ngIf="autonomy"> {{autonomy.autonomyName}} </div>
-    <tr>
-        <th>Provincia</th>
-        <th>Comunidad Autónoma</th>
-      </tr>
-    <tr *ngFor="let province of provinces">
-        <td> {{province.name}} </td>
-        <td> {{province.autonomyName}} </td>
-    </tr>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Filtrar por autonomía
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+      <mat-chip-listbox>
+        <a *ngFor="let autonomy of autonomies" [routerLink]="['/location/provinces', autonomy.autonomyId]">
+          <mat-chip-option>
+            {{autonomy.autonomyName}}
+          </mat-chip-option>
+        </a>
+      </mat-chip-listbox>
+  </mat-expansion-panel>
+</mat-accordion>
 
-  hacer mat grid con tarjetas -->
 
-
-<div *ngIf="autonomy" > {{autonomy.autonomyName}} </div>
-
+<!-- 
 <table mat-table [dataSource]="provinces" class="mat-elevation-z8">
 
 
@@ -32,5 +37,8 @@
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-</table>
+</table> -->
 
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let province of provinces" > {{province.name}} </mat-grid-tile>
+</mat-grid-list>

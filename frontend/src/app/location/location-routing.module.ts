@@ -4,11 +4,11 @@ import { ProvinceListComponent } from './province-list/province-list.component';
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: 'provinces',
     component: ProvinceListComponent
   },
   {
-    path: 'list/:autonomyId',
+    path: 'provinces/:autonomyId',
     component: ProvinceListComponent
   },
   
