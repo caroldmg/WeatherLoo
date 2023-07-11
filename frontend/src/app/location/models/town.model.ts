@@ -1,5 +1,5 @@
 export interface ITown {
-    townId: number| undefined;
+    townId: string| undefined;
     townCode: string;
     CODIGOINE: number;
     CODPROV: number;

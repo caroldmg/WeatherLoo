@@ -7,6 +7,7 @@ const routes: Routes = [
     path: 'weather-detail/:townCode',
     component: WeatherDetailComponent
 },
+  
 
 {
   path: '', redirectTo: 'weather-detail', pathMatch: 'full'
