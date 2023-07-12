@@ -17,13 +17,17 @@ const routes: Routes = [
     loadChildren: () => import('./weather/weather.module').then(m =>WeatherModule)
   },
   {
+    path: 'recommendations',
+    loadChildren: () => import('./recommendations/recommendations.module').then(m =>m.RecommendationsModule)
+  },
+  {
     path: '',
-    redirectTo: 'weather',
+    redirectTo: 'location',
     pathMatch: 'full'
   },
   {
     path: '**',
-    redirectTo: 'weather',
+    redirectTo: 'location',
     pathMatch: 'full'
   }
 ];

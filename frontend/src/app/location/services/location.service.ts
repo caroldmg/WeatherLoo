@@ -14,6 +14,7 @@ export class LocationService {
   urlProvinces: string = "http://localhost:3000/provinces";
   urlTowns: string = "http://localhost:3000/towns";
   urlAutonomies: string = "http://localhost:3000/autonomies";
+  urlPopularTowns: string = "http://localhost:3000/popularTowns";
 
 
   constructor(private httpClient: HttpClient) { }
@@ -51,4 +52,7 @@ export class LocationService {
     return this.httpClient.get<IAutonomy>(`${this.urlAutonomies}?autonomyId=${id}`)
   }
 
+  findAllPopularTowns(): Observable <ITown[]>{
+    return this.httpClient.get<ITown[]>(this.urlPopularTowns)
+  }
 }

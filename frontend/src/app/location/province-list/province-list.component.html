@@ -24,7 +24,6 @@
 <!-- 
 <table mat-table [dataSource]="provinces" class="mat-elevation-z8">
 
-
     <ng-container matColumnDef="province">
       <th mat-header-cell *matHeaderCellDef>Provincia</th>
       <td mat-cell *matCellDef="let province">{{ province.name}}</td>
@@ -40,5 +39,7 @@
 </table> -->
 
 <mat-grid-list cols="4">
-  <mat-grid-tile *ngFor="let province of provinces" > {{province.name}} </mat-grid-tile>
+  <mat-grid-tile *ngFor="let province of provinces" > <a [routerLink]="['/location/search',province.id]">
+    {{province.name}}</a> 
+  </mat-grid-tile>
 </mat-grid-list>
