@@ -16,7 +16,7 @@ const routes: Routes = [
     path: 'popular-location',
     component: PopularLocationsComponent
   },
-  
+   
   {
     path: '', redirectTo: '', pathMatch: 'full'
   },
