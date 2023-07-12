@@ -13,6 +13,7 @@ export class LocationService {
   //db.json 
   urlProvinces: string = "http://localhost:3000/provinces";
   urlTowns: string = "http://localhost:3000/towns";
+  urlPopularTowns: string = "http://localhost:3000/popularTowns";
 
 
   constructor(private httpClient: HttpClient) { }
@@ -43,5 +44,7 @@ export class LocationService {
 
   }
   
-
+  findAllPopularTowns(): Observable <ITown[]>{
+    return this.httpClient.get<ITown[]>(this.urlPopularTowns)
+  }
 }
