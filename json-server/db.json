@@ -98031,6 +98031,18 @@
       "PERIMETRO": "36161"
     },
     {
+      "townCode": "28079",
+      "CODIGOINE": "28079000000",
+      "provinceId": "28",
+      "provinceName": "Madrid",
+      "NOMBRE": "Madrid",
+      "NOMBRE_CAPITAL": "Madrid",
+      "SUPERFICIE": "60577.2354",
+      "POBLACION_MUNI": "3165235",
+      "ALTITUD": "657",
+      "PERIMETRO": "172242"
+    },
+    {
       "townCode": "29067",
       "CODIGOINE": "29067000000",
       "provinceId": "29",
