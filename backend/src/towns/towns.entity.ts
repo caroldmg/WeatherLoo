@@ -1,38 +1,35 @@
 import { Province } from "src/provinces/provinces.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
 
 @Entity()
 export class Town{
 
-    @PrimaryGeneratedColumn()
-    townId: number;
-
-    @Column()
+    @PrimaryColumn()
     townCode: string;
 
-    @Column()
-    CODIGOINE: string;
+    // @Column()
+    // CODIGOINE: string;
 
     @ManyToOne(()=> Province)
     @JoinColumn({name: 'id_province'})
-    CODPROV: number;
+    province: Province;
 
     @Column()
-    NOMBRE: string;
+    name: string;
 
     @Column()
-    NOMBRE_CAPITAL: string;
+    capitalName: string;
 
     @Column()
-    SUPERFICIE: number;
+    surface: number;
 
     @Column()
-    POBLACION_MUNI: number;
+    townPopulation: number;
 
     @Column()
-    ALTITUD: number;
+    altitude: number;
 
     @Column()
-    PERIMETRO: number
+    perimeter: number
 }
