@@ -39,4 +39,15 @@ export class TownsService {
             }
         })
     }
+
+    findAllByPopularTrue(): Promise <Town[]>{
+        return this.townRepo.find({
+            relations: {
+                province: true
+            },
+            where: {
+                isPopular: true
+            }
+        })
+    }
 }

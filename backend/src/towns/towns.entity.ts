@@ -24,7 +24,7 @@ export class Town{
     @Column()
     surface: number;
 
-    @Column()
+    @Column({type: 'int'})
     townPopulation: number;
 
     @Column()
@@ -32,4 +32,7 @@ export class Town{
 
     @Column()
     perimeter: number
+
+    @Column({type: 'boolean', default: false})
+    isPopular: boolean
 }

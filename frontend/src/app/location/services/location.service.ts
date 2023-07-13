@@ -27,26 +27,25 @@ export class LocationService {
     return this.httpClient.get<IProvince>(`${this.urlProvinces}/${id}`)
   }
 
+  findProvincesByAutonomyId(autonomyId: string): Observable <IProvince[]>{
+    return this.httpClient.get<IProvince[]>(`${this.urlProvinces}?autonomyId=${autonomyId}`)
+  
+  }
 
   findAllTowns(): Observable <ITown[]> {
     return this.httpClient.get<ITown[]>(this.urlTowns);
   }
 
-  findTownById(id: number): Observable <ITown>{
-    return this.httpClient.get<ITown>(`${this.urlTowns}/${id}`)
+  findTownsByTownsCode(townCode: string): Observable <ITown[]>{
+    return this.httpClient.get<ITown[]>(`${this.urlTowns}?townCode=${townCode}`)
   }
 
   findTownsByProvinceId(provinceId: number): Observable <ITown[]>{
     return this.httpClient.get<ITown[]>(`${this.urlTowns}?CODPROV=${provinceId}`)
   }
   
-  findTownsByTownsCode(townCode: string): Observable <ITown[]>{
-    return this.httpClient.get<ITown[]>(`${this.urlTowns}?townCode=${townCode}`)
-  }
-
-  findProvincesByAutonomyId(autonomyId: string): Observable <IProvince[]>{
-    return this.httpClient.get<IProvince[]>(`${this.urlProvinces}?autonomyId=${autonomyId}`)
-
+  findTownsByPopularTrue(): Observable <ITown[]>{
+    return this.httpClient.get<ITown[]>(`${this.urlTowns}?isPopular=true`)
   }
   
   findAllAutonomies(): Observable <IAutonomy[]>{
@@ -57,7 +56,8 @@ export class LocationService {
     return this.httpClient.get<IAutonomy>(`${this.urlAutonomies}?autonomyId=${id}`)
   }
 
-  findAllPopularTowns(): Observable <ITown[]>{
+
+  findPopularTowns(): Observable <ITown[]>{
     return this.httpClient.get<ITown[]>(this.urlPopularTowns)
   }
   
