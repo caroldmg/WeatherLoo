@@ -11,39 +11,38 @@ import { LocationService } from '../services/location.service';
 
 export class PopularLocationsComponent {
 
-  municipio: ITown [] = [];
+
+  popularTowns: ITown[] = []
+
+
+
+
+  constructor(private activatedRoute: ActivatedRoute,
+    private locationService: LocationService) { 
+      
+    }
+
+  ngOnInit(): void {
+    
+    //mostrar todas las localidades
+    this.loadPopularTowns()
+    
  
-  
+  }
 
- 
- constructor(private activatedRoute: ActivatedRoute,
-  private locationService: LocationService){}
 
-              ngOnInit(): void {
-                //mostrar todas las provincias
-                loadPopularTowns()
-                
-              }
-            
-              
-              
-              
-              loadPopularTowns(){
-                
-                
-                  
-                  for(let i = 0; i < this.popularTowns.length; i++ ){
-                    for(let j = 0; j < this.popularTowns.length; j++){
 
-                      let popularTown = this.popularTowns[i].townCode
-                      
-                    }
 
-                  }
-                  } 
-                
-              
-              
- 
+  loadPopularTowns() {
+    this.locationService.findAllPopularTowns().subscribe(data => this.popularTowns = data)
+
+  }
+  viewPopularTowns(){
+  }
+
+
+
+
+
 
 }

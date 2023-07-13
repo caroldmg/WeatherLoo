@@ -9,6 +9,6 @@ export interface ITown {
     SUPERFICIE: number;
     POBLACION_MUNI: number;
     ALTITUD: number;
-    PERIMETRO: number
+    PERIMETRO: number;
     
 }

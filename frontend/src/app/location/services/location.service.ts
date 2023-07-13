@@ -47,4 +47,5 @@ export class LocationService {
   findAllPopularTowns(): Observable <ITown[]>{
     return this.httpClient.get<ITown[]>(this.urlPopularTowns)
   }
+  
 }

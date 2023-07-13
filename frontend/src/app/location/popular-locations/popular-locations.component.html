@@ -1,7 +1,14 @@
-<p>popular-locations works!</p>
-<div *ngIf="municipio">
+
+
+<div *ngIf="popularTowns">
+    <h2>Localidades mas buscadas</h2>
     <div *ngFor="let popularTown of popularTowns" >
-        <p>{{popularTown}}</p>
+        <div class="popularNamesTowns">
+            
+            <a [routerLink]="['/weather/weather-detail/',popularTown.townCode]">  {{popularTown.NOMBRE}}</a>
+            <p>{{popularTown.townCode}}</p>
+        </div>
+
     </div>
     
 </div>
