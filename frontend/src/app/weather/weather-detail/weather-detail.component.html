@@ -2,34 +2,38 @@
 <div class="detailToday" *ngIf="weather">
     <h2>Hoy en {{this.weather.municipio.NOMBRE}}, {{this.weather.municipio.NOMBRE_PROVINCIA}}</h2>
     <div class="TRealtime">
-        <h3>{{weather.temperatura_actual}}°C</h3>
-        <div>
-            <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
-            <div class="MaxandMinT">
-                <p>Max: {{weather.temperaturas.max}}°C</p>
-                <p>Min: {{weather.temperaturas.min}}°C</p>
+        <div class="tnum-outbox">
+            <div class="tnum-outbox">
+                <h3 class="tnum-outbox">{{weather.temperatura_actual}}°C</h3>
+                <div>
+                    <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
+                    <div class="MaxandMinT">
+                        <p>Max: {{weather.temperaturas.max}}°C</p>
+                        <p>Min: {{weather.temperaturas.min}}°C</p>
+                    </div>
+                    
+                    
+                </div>
+
             </div>
-            <img src="../../../assets/images/provinces/almeria.jpg" alt="">
-            
+            <img src="../../../assets/images/Iconos/nube.png" alt="" ngClass="iconTRealtime">
         </div>
 
     </div>
-    <div class="realtimeToday">
-        <h4>Estado del cielo</h4>
-         <p>{{weather.stateSky.description}}</p> 
-        
-    </div>
+    
+</div>
+<div class="realtimeToday" *ngIf="weather">
+    <h4>Estado del cielo</h4>
+     <p>{{weather.stateSky.description}}</p> 
+    
+</div>
+
+<div *ngIf="weather">
     <div class="descriptionToday">
         <p>Humedad {{weather.humedad}} %</p>
         <p>Viento {{weather.viento}} km/h</p>
         <p>Probabilidad de lluvia {{weather.lluvia}} %</p>
         
     </div>
-
-</div>
-
-
-
-<div *ngIf="weather">
 
 </div>

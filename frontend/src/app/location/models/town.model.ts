@@ -1,5 +1,5 @@
 export interface ITown {
-    townId: number| undefined;
+    townId: string| undefined;
     townCode: string;
     CODIGOINE: number;
     CODPROV: number;
@@ -9,6 +9,6 @@ export interface ITown {
     SUPERFICIE: number;
     POBLACION_MUNI: number;
     ALTITUD: number;
-    PERIMETRO: number
+    PERIMETRO: number;
     
 }
