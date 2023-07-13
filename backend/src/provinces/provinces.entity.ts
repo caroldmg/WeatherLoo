@@ -6,14 +6,14 @@ import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 export class Province{
 
     @PrimaryColumn({unique: true})
-    id: number;
+    id: string;
 
     @Column()
     name: string;
 
     @ManyToOne(() => Autonomy)
     @JoinColumn({name: 'autonomy_id'})
-    autonomy: number;
+    autonomy: Autonomy
 
     @Column()
     capital: string;

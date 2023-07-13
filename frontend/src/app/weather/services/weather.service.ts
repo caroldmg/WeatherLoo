@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IWeather } from '../models/weather.model';
 import { HttpClient } from '@angular/common/http';
+import { ITown } from 'src/app/location/models/town.model';
 
 @Injectable({
   providedIn: 'root'
@@ -19,4 +20,5 @@ export class WeatherService {
 
   
   }
+  
 }

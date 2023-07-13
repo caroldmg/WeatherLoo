@@ -5,7 +5,7 @@ import { Column, Entity, PrimaryColumn } from "typeorm";
 export class Autonomy {
 
     @PrimaryColumn()
-    autonomyId: number;
+    autonomyId: string;
 
     @Column()
     name: string;

@@ -25,6 +25,7 @@ export class ProvinceListComponent {
 
   ngOnInit(): void {
     //mostrar todas las provincias
+    
     this.loadProvinces();
   }
 
