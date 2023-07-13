@@ -6,5 +6,7 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor() { }
+
+  //el user service de aqui podría ser el authservice del proyecto books
 }
 // TENADRIAMOS Q TENER UN SERVICE UN CONTROLER

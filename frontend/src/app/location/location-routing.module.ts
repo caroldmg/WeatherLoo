@@ -7,11 +7,11 @@ import { SearchComponent } from './search/search.component';
 
 const routes: Routes = [
   {
-    path: 'list',
+    path: 'provinces',
     component: ProvinceListComponent
   },
   {
-    path: 'list/:autonomyId',
+    path: 'provinces/:autonomyId',
     component: ProvinceListComponent
   },
   {
