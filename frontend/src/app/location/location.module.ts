@@ -9,7 +9,9 @@ import { MatTableModule } from '@angular/material/table';
 import { FavLocationsComponent } from './fav-locations/fav-locations.component';
 import { SearchComponent } from './search/search.component';
 import { PopularLocationsComponent } from './popular-locations/popular-locations.component';
-
+import { MatChipsModule } from '@angular/material/chips';
+import { MatExpansionModule }from '@angular/material/expansion';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
   declarations: [
     ProvinceListComponent,
@@ -21,7 +23,10 @@ import { PopularLocationsComponent } from './popular-locations/popular-locations
     CommonModule,
     LocationRoutingModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
+    MatChipsModule,
+    MatExpansionModule,
+    MatGridListModule
   ]
 })
 export class LocationModule { }

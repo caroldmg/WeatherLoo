@@ -86,3 +86,6 @@ La api que estamos usando es
 Se habló de dos opciones de buscador
 * 1 - Buscador de escritura --> [x] Puede dar más errores ( si no existe la búsqueda) [v] Más libertad, aspecto más sencillo
 * 2 - Botón select con opciones de provincias y luego opciones de municipios (seleccionar primero provincia y espués municipio) --> [v] Es más seguro que la opción selecionada existe [x] Más feo
+
+## SHARED MODULE
+ Además de los posibles pipes, anotaciones y cosas comunes, es un buen lugar para poner un archivo de constantes y así evitar poner números mágicos
