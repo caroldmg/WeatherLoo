@@ -1,14 +1,11 @@
 import { Province } from "src/provinces/provinces.entity";
-import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
 
 
 @Entity()
 export class Town{
 
-    @PrimaryGeneratedColumn()
-    townId: number;
-
-    @Column()
+    @PrimaryColumn()
     townCode: string;
 
     @Column()
