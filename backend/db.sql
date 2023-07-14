@@ -73,7 +73,7 @@ INSERT INTO province(id,name,autonomy_id,capital) VALUES (50,'Zaragoza',02,'Zara
 INSERT INTO province(id,name,autonomy_id,capital) VALUES (51,'Ceuta',18,'Ceuta');
 INSERT INTO province(id,name,autonomy_id,capital) VALUES (52,'Melilla',19,'Melilla');
 
--- ESTO AUN NO FUNCIONA PERO BUENO, TOWNS CON APARTADO ISPOPULAR
+
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter) VALUES (01001,01,'Alegría-Dulantzi','Alegría-Dulantzi',1994.5872,2925,568,35069);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter) VALUES (01002,01,'Amurrio','Amurrio',9635.289,10239,219,65134);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter) VALUES (01003,01,'Aramaio','Ibarra',7327.4027,1478,333,41818);

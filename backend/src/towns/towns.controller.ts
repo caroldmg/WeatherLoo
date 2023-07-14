@@ -23,4 +23,9 @@ export class TownsController {
         return this.townService.findById(townCode)
     }
 
+    @Get('popular')
+    findAllByPopularTrue(): Promise <Town[]>{
+        return this.townService.findAllByPopularTrue()
+    }
+
 }
