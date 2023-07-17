@@ -3023,7 +3023,7 @@ INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,al
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19126','19','Galápagos','Galápagos',3398.5368,2339,738,29147,false);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19127','19','Galve de Sorbe','Galve de Sorbe',4936.1672,113,1366,39544,false);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19129','19','Gascueña de Bornova','Gascueña de Bornova',2651.6229,42,1235,21799,false);
-INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19130','19','Guadalajara','Guadalajara',23547.5516,83720,685,183979,false);
+INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19130','19','Guadalajara','Guadalajara',23547.5516,83720,685,183979,true);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19132','19','Henche','Henche',2304.5577,106,837,22166,false);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19133','19','Heras de Ayuso','Heras de Ayuso',1024.3724,262,707,14154,false);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('19134','19','Herrería','Herrería',1913.7301,20,1068,19499,false);

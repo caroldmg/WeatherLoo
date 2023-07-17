@@ -21,6 +21,9 @@ export class TownsService {
 
     findById(townCode: string): Promise <Town | null>{
         return this.townRepo.findOne({
+            relations: {
+                province: true
+            },
             where: {
                 townCode: townCode
             }
