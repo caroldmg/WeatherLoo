@@ -2267,7 +2267,7 @@
       "POBLACION_MUNI": "332067",
       "ALTITUD": "5",
       "PERIMETRO": "138902",
-      "isPopular": "true"
+      "isPopular": "true"      
     },
     {
       "townCode": "03015",
@@ -72730,7 +72730,8 @@
       "SUPERFICIE": "16359.2016",
       "POBLACION_MUNI": "53260",
       "ALTITUD": "1002",
-      "PERIMETRO": "104680"
+      "PERIMETRO": "104680",
+      "isPopular": "true"
     },
     {
       "townCode": "40195",
@@ -87155,7 +87156,8 @@
       "SUPERFICIE": "13668.2455",
       "POBLACION_MUNI": "786424",
       "ALTITUD": "16",
-      "PERIMETRO": "162683"
+      "PERIMETRO": "162683",
+      "isPopular": "true"
     },
     {
       "townCode": "46251",
@@ -97972,7 +97974,8 @@
       "SUPERFICIE": "1230.0063",
       "POBLACION_MUNI": "121739",
       "ALTITUD": "13",
-      "PERIMETRO": "52003"
+      "PERIMETRO": "52003",
+      "isPopular": "true"
     },
     {
       "townCode": "14021",
@@ -97984,7 +97987,8 @@
       "SUPERFICIE": "125524.4473",
       "POBLACION_MUNI": "328041",
       "ALTITUD": "106",
-      "PERIMETRO": "232963"
+      "PERIMETRO": "232963",
+      "isPopular": "true"
     },
     {
       "townCode": "16078",
@@ -97996,7 +98000,8 @@
       "SUPERFICIE": "91106.2163",
       "POBLACION_MUNI": "55738",
       "ALTITUD": "997",
-      "PERIMETRO": "576258"
+      "PERIMETRO": "576258",
+      "isPopular": "true"
     },
     {
       "townCode": "17079",
@@ -98008,7 +98013,8 @@
       "SUPERFICIE": "3897.2581",
       "POBLACION_MUNI": "97227",
       "ALTITUD": "69",
-      "PERIMETRO": "37522"
+      "PERIMETRO": "37522",
+      "isPopular": "true"
     },
     {
       "townCode": "18087",
@@ -98020,7 +98026,8 @@
       "SUPERFICIE": "8802.1295",
       "POBLACION_MUNI": "237540",
       "ALTITUD": "684",
-      "PERIMETRO": "59060"
+      "PERIMETRO": "59060",
+      "isPopular": "true"
     },
     {
       "townCode": "15030",

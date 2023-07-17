@@ -28,7 +28,7 @@ export class ProvincesService {
         })
     }
 
-    findAllByAutonomyId(autonomyId: string){
+    findAllByAutonomyId(autonomyId: string): Promise <Province[]>{
         return this.provinceRepo.find({
             relations: {
                 autonomy: true

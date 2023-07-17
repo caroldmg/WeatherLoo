@@ -15,7 +15,7 @@ export class ProvincesController {
     @Get('autonomy/:autonomyId')
     findAllByAutonomyId(
         @Param("autonomyId") autonomyId: string): Promise <Province[]>{
-            return this.provinceService,this.findAllByAutonomyId(autonomyId)
+            return this.provinceService.findAllByAutonomyId(autonomyId)
     }
 
     @Get('id/:id')
