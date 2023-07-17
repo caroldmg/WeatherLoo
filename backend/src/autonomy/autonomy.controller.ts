@@ -12,7 +12,7 @@ export class AutonomyController {
         return this.autonomyService.findAll()
     }
 
-    @Get('id:/autonomyId')
+    @Get('id/:autonomyId')
     findById( @Param ('autonomyId') autonomyId: string): Promise <Autonomy>{
         return this.autonomyService.findById(autonomyId)
     }
