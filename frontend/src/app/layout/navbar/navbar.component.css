@@ -1,44 +1,44 @@
 .navBox{
     background-color: #FFB703;
     color: #ffff;
+    display: flex;
+    flex-direction: row;
     padding: 10px;
     
 }
+
 .navbarBrand{
     color: #086788;
+    margin-top: 20px;
     text-decoration: none;
     font-size: 3rem;
     font-family: 'Montserrat', sans-serif;
+    font-weight: 600
 }
+
 .logoLoo{
     color:  #ffff;
     border-radius: 50% ;
-    border: black;
+    border: #000;
     font-size:  2.5rem;
-
+    
 }
+
 #forehead {
-    border: 3px solid black;
+    border: 3px solid 000;
     display: flex;
     flex-direction: row;
-    border-bottom: 0px solid var(--yellow);
-    width: 121px;
-    height: 90px;
     border-radius: 100px 100px 20px 0;
-    transform: rotate(-28deg);
-    top: 24px;
-    left: 102px;
-    background: var(--yellow);
   }
 
 .eye {
     border-radius: 100%;
-    border: 3px solid #000;
+    border: 3px solid #ffff;
     width: 55px;
     height: 55px;
     top: 86px;
     left: 149px;
-    background: black;
+    background: 000;
     box-shadow: inset -4px 1px 0 21px white;
   }
   
@@ -49,3 +49,47 @@
     height: 50px;
     box-shadow: inset 9px -3px 0 18.75px white;
   }
+
+  #smile {
+    width: 75px;
+    height: 15px;
+    border:3px solid transparent;
+    border-bottom: 3px solid #ffff;
+    border-radius: 100%;
+    
+    left: 159px;
+    
+    
+    
+  }
+  
+  #smile::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    border: 3px solid transparent;
+    border-radius: 100%;
+    bottom: -5px;
+    left: 4px;
+    transform: rotate(30deg);
+    
+  }
+  
+  
+  #smile::before {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    border: 3px solid transparent;
+    border-radius: 100%;
+    bottom: 5px;
+    right: 2px;
+    
+    
+  }
+  
+  

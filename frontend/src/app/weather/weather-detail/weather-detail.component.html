@@ -5,7 +5,7 @@
         <div class="tnum-outbox">
             <div class="tnum-outbox">
                 <h3 class="tnum-outbox">{{weather.temperatura_actual}}°C</h3>
-                <div>
+                <div >
                     <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
                     <div class="MaxandMinT">
                         <p>Max: {{weather.temperaturas.max}}°C</p>
@@ -28,8 +28,8 @@
     
 </div>
 
-<div *ngIf="weather">
-    <div class="descriptionToday">
+<div *ngIf="weather" class="d-flex">
+    <div class="descriptionToday d-flex">
         <p>Humedad {{weather.humedad}} %</p>
         <p>Viento {{weather.viento}} km/h</p>
         <p>Probabilidad de lluvia {{weather.lluvia}} %</p>
