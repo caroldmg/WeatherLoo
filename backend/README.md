@@ -52,6 +52,15 @@ nest generate controller  recomendation
 nest generate service  recomendation
 Crear recomendation.model.ts a mano
 
+- Auth 
+npm install @nestjs/jwt @nestjs/passport passport passport-jwt bcrypt
+
+nest generate module auth
+
+nest generate service auth
+
+nest generate controller auth
+
 ## DATOS
 
 Para introducir los datos en las tablas (pasar de json a sql) he utilizado esta página: 

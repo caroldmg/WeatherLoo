@@ -1,5 +1,5 @@
 import { Town } from "src/towns/towns.entity";
-import { Column, Entity, JoinTable, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, JoinTable, ManyToMany, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
 export enum Gender{
     FEM= 'fem',
@@ -13,12 +13,12 @@ export class User{
 
 
     @PrimaryGeneratedColumn()
-    userId: number
+    id: number
 
     @Column()
     fullName: string;
 
-    @Column()
+    @Column({nullable: true})
     birthday: Date;
 
     @Column()
@@ -26,19 +26,20 @@ export class User{
 
     @Column()
     password: string;
+    
+    @Column({nullable: true})
+    avatarImage?: string;
 
     @Column({
         type: 'enum',
         enum: Gender,
         default: Gender.UNDETERMINATED
     })
-   gender: Gender;
-
-   @Column()
-    location: number;
-
-    @Column()
-    profilePic: string;
+    gender: Gender;
+    
+    @ManyToOne(()=> Town)
+    @JoinColumn({name: 'codeTown'})
+    location: Town;
 
     @Column({type: 'boolean', default: false})
     pets: boolean;
@@ -48,6 +49,7 @@ export class User{
 
     @Column({type: 'boolean', default: false})
     privateTransport: boolean;
+
 
     // @ManyToMany(() => Town )
     // @JoinTable({
