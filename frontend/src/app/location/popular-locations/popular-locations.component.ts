@@ -11,19 +11,14 @@ import { LocationService } from '../services/location.service';
 
 export class PopularLocationsComponent {
 
-
   popularTowns: ITown[] = []
-
-
-
 
   constructor(private locationService: LocationService) {}
 
   ngOnInit(): void {
     
     //mostrar todas las localidades
-    this.loadPopularTowns()    
- 
+    this.loadPopularTowns()     
   }
 
   loadPopularTowns() {
