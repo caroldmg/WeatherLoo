@@ -49,9 +49,9 @@
 
 <div *ngIf="weather" class="d-flex">
     <div class="descriptionToday d-flex">
-        <p>Humedad {{weather.humedad}} %</p>
-        <p>Viento {{weather.viento}} km/h</p>
-        <p>Probabilidad de lluvia {{weather.lluvia}} %</p>
+        <p>Humedad {{weather.humedad}} <span>%</span></p>
+        <p>Viento {{weather.viento}} <span>km/h</span></p>
+        <p *ngIf="weather.lluvia">Probabilidad de lluvia {{weather.lluvia}} <span>%</span></p>
         
     </div>
 

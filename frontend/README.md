@@ -34,8 +34,19 @@ ng generate component users/user-register
 ng generate interface users/models/user --type=model --prefix=I
 ng generate service users/services/users
 
+npm install jwt-decode
+
 MÓDULO RECOMENDACIONES - PROPAGANDA REGISTRO Y RECOMENDACIONES PERSONALES
-n
+
+
+## Auth
+* ng generate module auth --routing --module app.module
+* ng generate service auth/auth
+* ng generate component auth/login
+* ng generate component auth/register
+* ng generate interceptor auth/jwt
+
+
 ## Recommendation
 ng generate module recommendations --routing --module app.module
 ng generate component recommendations/personal-recommendations

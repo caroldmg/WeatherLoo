@@ -1,0 +1,22 @@
+
+<h2>Iniciar sesión</h2>
+
+<form [formGroup]="userForm" (ngSubmit)="save()">
+
+
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput type="email" formControlName="email">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Contraseña</mat-label>
+    <input matInput type="password" formControlName="password">
+  </mat-form-field>
+
+  <button mat-fab extended type="submit"
+        [disabled]="userForm.invalid">
+      Enviar
+  </button>
+</form>
