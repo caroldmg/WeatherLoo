@@ -37,10 +37,7 @@ export class PopularLocationsComponent {
     this.locationService.findTownsByPopularTrue().subscribe(data => this.popularTowns = data)
 
   }
-  viewPopularTowns(){
-  }
-
-
+  
 
 
 
