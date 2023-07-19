@@ -17,29 +17,18 @@ export class PopularLocationsComponent {
 
 
 
-  constructor(private activatedRoute: ActivatedRoute,
-    private locationService: LocationService) { 
-      
-    }
+  constructor(private locationService: LocationService) {}
 
   ngOnInit(): void {
     
     //mostrar todas las localidades
-    this.loadPopularTowns()
-    
+    this.loadPopularTowns()    
  
   }
-
-
-
 
   loadPopularTowns() {
     this.locationService.findTownsByPopularTrue().subscribe(data => this.popularTowns = data)
 
   }
-  
-
-
-
 
 }
