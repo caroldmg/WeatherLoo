@@ -4,6 +4,7 @@ import { IWeather } from '../models/weather.model';
 import { ActivatedRoute } from '@angular/router';
 import { ITown } from 'src/app/location/models/town.model';
 import { MADRID_TOWNCODE } from 'src/app/shared/constants';
+import { LocationService } from 'src/app/location/services/location.service';
 
 @Component({
   selector: 'app-weather-detail',
@@ -14,12 +15,12 @@ import { MADRID_TOWNCODE } from 'src/app/shared/constants';
 export class WeatherDetailComponent implements OnInit{
 
   weather: IWeather|undefined;
-  municipio: ITown | undefined
-  
-  
+  municipio: ITown | undefined;
 
   constructor(private weatherService: WeatherService,
-              private activatedRoute: ActivatedRoute){}
+              private activatedRoute: ActivatedRoute,
+              private locationService: LocationService
+              ){}
 
 
   
@@ -33,9 +34,10 @@ export class WeatherDetailComponent implements OnInit{
    loadWeather(){    
      this.activatedRoute.params.subscribe((params) => {     
       const townCode = params['townCode']
-        if (!townCode){
-          // si no pones ningún valor en la url, debería dar el tiempo de MAdrid por defecto
-          const townCode = MADRID_TOWNCODE
+      // si no pones ningún valor en la url, debería dar el tiempo de MAdrid por defecto
+      // const townCode = MADRID_TOWNCODE
+        if (townCode){
+          this.locationService.findTownByTownCode(townCode).subscribe(data => this.municipio = data);
         }
        this.weatherService.getWeatherRealTime(townCode).subscribe(data => this.weather = data)
    })
