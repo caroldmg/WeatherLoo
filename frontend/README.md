@@ -18,6 +18,9 @@ ng generate component location/province-list
 ng generate component location/fav-locations
 ng generate component location/search
 ng generate component location/popular-locations
+
+ng generate component location/town-list
+
 ng generate interface location/models/province --type=model --prefix=I
 ng generate interface location/models/town --type=model --prefix=I
 ng generate interface location/models/autonomy --type=model --prefix=I
@@ -53,6 +56,7 @@ ng add @angular/material -y --theme=indigo-pink --typography=true
     - Ubicaciones favoritas 
     - Localidades más buscadas (lista/galería/carrusel?)
     - Listado provincias
+    - Listado de municipios -> acceso desde provincias 
     - Buscador (Provincia --> localidad)
 * WEATHER MODULE 
     - Detalle día

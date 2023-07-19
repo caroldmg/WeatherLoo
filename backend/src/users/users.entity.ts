@@ -49,13 +49,12 @@ export class User{
     @Column({type: 'boolean', default: false})
     privateTransport: boolean;
 
-    @ManyToMany(() => Town )
-    @JoinTable({
-        name: 'userFavTown',
-        joinColumn: {name: 'id_user'},
-        inverseJoinColumn: {name: 'id_town'}
-
-    })
-    favTowns: Town[]
+    // @ManyToMany(() => Town )
+    // @JoinTable({
+    //     name: 'userFavTown',
+    //     joinColumn: {name: 'id_user'},
+    //     inverseJoinColumn: {name: 'id_town'}
+    // })
+    // favTowns: Town[]
     
 }
