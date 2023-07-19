@@ -1,7 +1,9 @@
+import { IProvince } from "./province.model";
+
 export interface ITown {
     townId: string| undefined;
     townCode: string;
-    province: string;
+    province: IProvince;
     name: string;
     capitalName: string;
     surface: number;

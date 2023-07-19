@@ -1,8 +1,9 @@
+import { IAutonomy } from "./autonomy.model";
+
 export interface IProvince {
-    id: number;
+    id: string;
     name: string;
-    autonomyId: number;
-    autonomyName: string;
+    autonomy: IAutonomy;
     capital: string;
     // photo: string
 }
