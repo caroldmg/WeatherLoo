@@ -1,6 +1,25 @@
 
 <div class="detailToday" *ngIf="weather">
     <h2>Hoy en {{this.municipio?.name}}, {{provincia?.name}} </h2>
+    <div class=" d-flex">
+
+        <div class="d-flex">
+            <h3 class="">{{weather.temperatura_actual}}°C</h3>
+            <div class="">
+                <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
+                <div class="MaxandMinT">
+                    <p>Max: {{weather.temperaturas.max}}°C</p>
+                    <p>Min: {{weather.temperaturas.min}}°C</p>
+                </div>
+
+
+            </div>
+
+        </div>
+        <img src="../../../assets/images/Iconos/nube.png" alt="" ngClass="iconTRealtime">
+
+
+    </div>
     <div class="TRealtime">
         <div class="tnum-outbox">
             <div class="tnum-outbox">

@@ -97914,237 +97914,26 @@
       "PERIMETRO": "0"
     }
   ],
-  "popularTowns": [
+  
+  "recomendation": [
     {
-      "townCode": "03014",
-      "CODIGOINE": "03014000000",
-      "provinceId": "03",
-      "provinceName": "Alacant/Alicante",
-      "NOMBRE": "Alicante/Alacant",
-      "NOMBRE_CAPITAL": "Alicante/Alacant",
-      "SUPERFICIE": "20126.5845",
-      "POBLACION_MUNI": "332067",
-      "ALTITUD": "5",
-      "PERIMETRO": "138902"
-    },
-    {
-      "townCode": "08019",
-      "CODIGOINE": "08019000000",
-      "provinceId": "08",
-      "provinceName": "Barcelona",
-      "NOMBRE": "Barcelona",
-      "NOMBRE_CAPITAL": "Barcelona",
-      "SUPERFICIE": "9821.1086",
-      "POBLACION_MUNI": "1602386",
-      "ALTITUD": "13",
-      "PERIMETRO": "96341"
-    },
-    {
-      "townCode": "48020",
-      "CODIGOINE": "48020000000",
-      "provinceId": "48",
-      "provinceName": "Bizkaia",
-      "NOMBRE": "Bilbao",
-      "NOMBRE_CAPITAL": "Bilbao",
-      "SUPERFICIE": "4130.864",
-      "POBLACION_MUNI": "346574",
-      "ALTITUD": "6",
-      "PERIMETRO": "35301"
-    },
-    {
-      "townCode": "09059",
-      "CODIGOINE": "09059000000",
-      "provinceId": "09",
-      "provinceName": "Burgos",
-      "NOMBRE": "Burgos",
-      "NOMBRE_CAPITAL": "Burgos",
-      "SUPERFICIE": "10706.2581",
-      "POBLACION_MUNI": "177776",
-      "ALTITUD": "859",
-      "PERIMETRO": "66261",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "11012",
-      "CODIGOINE": "11012000000",
-      "provinceId": "11",
-      "provinceName": "Cádiz",
-      "NOMBRE": "Cádiz",
-      "NOMBRE_CAPITAL": "Cádiz",
-      "SUPERFICIE": "1230.0063",
-      "POBLACION_MUNI": "121739",
-      "ALTITUD": "13",
-      "PERIMETRO": "52003",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "14021",
-      "CODIGOINE": "14021000000",
-      "provinceId": "14",
-      "provinceName": "Córdoba",
-      "NOMBRE": "Córdoba",
-      "NOMBRE_CAPITAL": "Córdoba",
-      "SUPERFICIE": "125524.4473",
-      "POBLACION_MUNI": "328041",
-      "ALTITUD": "106",
-      "PERIMETRO": "232963",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "16078",
-      "CODIGOINE": "16078000000",
-      "provinceId": "16",
-      "provinceName": "Cuenca",
-      "NOMBRE": "Cuenca",
-      "NOMBRE_CAPITAL": "Cuenca",
-      "SUPERFICIE": "91106.2163",
-      "POBLACION_MUNI": "55738",
-      "ALTITUD": "997",
-      "PERIMETRO": "576258",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "17079",
-      "CODIGOINE": "17079000000",
-      "provinceId": "17",
-      "provinceName": "Girona",
-      "NOMBRE": "Girona",
-      "NOMBRE_CAPITAL": "Girona",
-      "SUPERFICIE": "3897.2581",
-      "POBLACION_MUNI": "97227",
-      "ALTITUD": "69",
-      "PERIMETRO": "37522",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "18087",
-      "CODIGOINE": "18087000000",
-      "provinceId": "18",
-      "provinceName": "Granada",
-      "NOMBRE": "Granada",
-      "NOMBRE_CAPITAL": "Granada",
-      "SUPERFICIE": "8802.1295",
-      "POBLACION_MUNI": "237540",
-      "ALTITUD": "684",
-      "PERIMETRO": "59060",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "15030",
-      "CODIGOINE": "15030000000",
-      "provinceId": "15",
-      "provinceName": "A Coruña",
-      "NOMBRE": "A Coruña",
-      "NOMBRE_CAPITAL": "A Coruña",
-      "SUPERFICIE": "3783.0149",
-      "POBLACION_MUNI": "244810",
-      "ALTITUD": "21",
-      "PERIMETRO": "51300",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "24089",
-      "CODIGOINE": "24089000000",
-      "provinceId": "24",
-      "provinceName": "León",
-      "NOMBRE": "León",
-      "NOMBRE_CAPITAL": "León",
-      "SUPERFICIE": "3903.4554",
-      "POBLACION_MUNI": "129551",
-      "ALTITUD": "837",
-      "PERIMETRO": "36161",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "28079",
-      "CODIGOINE": "28079000000",
-      "provinceId": "28",
-      "provinceName": "Madrid",
-      "NOMBRE": "Madrid",
-      "NOMBRE_CAPITAL": "Madrid",
-      "SUPERFICIE": "60577.2354",
-      "POBLACION_MUNI": "3165235",
-      "ALTITUD": "657",
-      "PERIMETRO": "172242",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "29067",
-      "CODIGOINE": "29067000000",
-      "provinceId": "29",
-      "provinceName": "Málaga",
-      "NOMBRE": "Málaga",
-      "NOMBRE_CAPITAL": "Málaga",
-      "SUPERFICIE": "39513.3771",
-      "POBLACION_MUNI": "566913",
-      "ALTITUD": "8",
-      "PERIMETRO": "145468",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "20069",
-      "CODIGOINE": "20069000000",
-      "provinceId": "20",
-      "provinceName": "Gipuzkoa",
-      "NOMBRE": "Donostia/San Sebastián",
-      "NOMBRE_CAPITAL": "Donostia/San Sebastián",
-      "SUPERFICIE": "6088.9045",
-      "POBLACION_MUNI": "186126",
-      "ALTITUD": "7",
-      "PERIMETRO": "82613",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "40194",
-      "CODIGOINE": "40194000000",
-      "provinceId": "40",
-      "provinceName": "Segovia",
-      "NOMBRE": "Segovia",
-      "NOMBRE_CAPITAL": "Segovia",
-      "SUPERFICIE": "16359.2016",
-      "POBLACION_MUNI": "53260",
-      "ALTITUD": "1002",
-      "PERIMETRO": "104680",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "41091",
-      "CODIGOINE": "41091000000",
-      "provinceId": "41",
-      "provinceName": "Sevilla",
-      "NOMBRE": "Sevilla",
-      "NOMBRE_CAPITAL": "Sevilla",
-      "SUPERFICIE": "14130.7289",
-      "POBLACION_MUNI": "696676",
-      "ALTITUD": "11",
-      "PERIMETRO": "74054",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "46250",
-      "CODIGOINE": "46250000000",
-      "provinceId": "46",
-      "provinceName": "València/Valencia",
-      "NOMBRE": "Valencia",
-      "NOMBRE_CAPITAL": "Valencia",
-      "SUPERFICIE": "13668.2455",
-      "POBLACION_MUNI": "786424",
-      "ALTITUD": "16",
-      "PERIMETRO": "162683",
-      "isPopular": "true"
-    },
-    {
-      "townCode": "38038",
-      "CODIGOINE": "38038000000",
-      "provinceId": "38",
-      "provinceName": "Santa Cruz de Tenerife",
-      "NOMBRE": "Santa Cruz de Tenerife",
-      "NOMBRE_CAPITAL": "Santa Cruz de Tenerife",
-      "SUPERFICIE": "15056.3317",
-      "POBLACION_MUNI": "205279",
-      "ALTITUD": "1",
-      "PERIMETRO": "111132",
-      "isPopular": "true"
+      "uso": {
+        "sol": ["Gafas de sol", "Protector solar", "Gorra"],
+        "lluvia": ["paraguas", "Chubasquero", "Botas", "Ropa impermeable"],
+        "frio": ["Ropa abrigada", "Uso de gorro y guantes", "Bufanda"],
+        "calor": ["Ropa ligera", "Abanico"]
+      },
+      "accion": {
+        "sol": ["Beber mucha agua", "Lavar ropa"],
+        "lluvia": ["Recoger la ropa tendida", "Cuidado al conducir", "Demoras en el transporte público"],
+        "frio": ["Recuerda que en epocas de frio con airear la casa 10 minutos es suficiente para ventilar"],
+        "calor": ["Bajar percianas y/o toldo para mantener temperaturas internas bajas"]
+      },
+      "alert":[
+        "Alerta lluvia", "Alerta de viento", "Alerta de Tormenta electrica", "Alerta de granizo", "Alerta de nieve", "Alerta de temperaturas altas", "Alerta de temperaturas bajas"
+      ]
+
+      
     }
   ]
 }
