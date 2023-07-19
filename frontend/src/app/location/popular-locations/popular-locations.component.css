@@ -1,17 +1,24 @@
 body{
     margin: 0px;
-    padding: 0px;
+    padding: 0px; 
     display: flex;
     flex-direction: column;
-    align-items: center;
-    
-    justify-content: center;
-    justify-items: center;
-    
-   
 }
+.titleStyle{
+    font-size: 3rem;
+    margin: 30px;
+}
+.outBox{
+    display: flex;
+    flex-direction: row;
+    
+    color: #023047;
+
+}
+
 .popularNamesTowns{
     display: flex;
     flex-direction: row;
-    color: blueviolet;
+    justify-content: center;
+   
 }
