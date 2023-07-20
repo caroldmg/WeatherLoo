@@ -28,4 +28,10 @@ export class TownsController {
         return this.townService.findAllByPopularTrue()
     }
 
+    @Get('name/:name')
+    searchByTownName(@Param('name') name: string): Promise<Town>{
+        return this.townService.searchByTownName(name)
+    }
+
+
 }

@@ -54,5 +54,8 @@ export class LocationService {
   findAutonomyById(id: string): Observable <IAutonomy>{
     return this.httpClient.get<IAutonomy>(`${this.urlAutonomies}/id/${id}`)
   }
+  searchByTownName(name: string): Observable <ITown>{
+    return this.httpClient.get<ITown>(`${this.urlTowns}/name/${name}`)
+  }
   
 }

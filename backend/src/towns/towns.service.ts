@@ -53,4 +53,15 @@ export class TownsService {
             }
         })
     }
+    searchByTownName(name: string): Promise <Town | null>{
+        return this.townRepo.findOne({
+            relations: {
+                province: true
+            },
+            where: {
+                name: name
+            }
+        })
+
+    }
 }
