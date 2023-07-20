@@ -50,9 +50,9 @@ npm install jwt-decode
 ## Recommendation
 ng generate module recommendations --routing --module app.module
 ng generate component recommendations/personal-recommendations
-ng generate component recommendations/user-prop
+ng generate component recommendations/banner
 ng generate interface recommendations/models/recommendation
-ng generate service recommendations/servcices/recommendation
+ng generate service recommendations/services/recommendation
 
 ## Agregando Angular Material
 ng add @angular/material -y --theme=indigo-pink --typography=true
