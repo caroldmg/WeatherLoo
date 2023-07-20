@@ -17,6 +17,13 @@
 
   <button mat-fab extended type="submit"
         [disabled]="userForm.invalid">
-      Enviar
+      Iniciar sesión
   </button>
 </form>
+<!-- REDIRIGIR AL FORMULARIO DE REGISTRO -->
+<div>
+  <button mat-fab extended color="primary" routerLink="/users/register">
+      Crear cuenta
+  </button>
+</div>
+

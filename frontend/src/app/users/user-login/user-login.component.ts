@@ -8,9 +8,11 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 //
 export class UserLoginComponent {
+  
   userLogin= new FormGroup({
     email: new FormControl('',[Validators.required, Validators.email]),
-    fullName: new FormControl('', [Validators.required]),
+    // fullName: new FormControl('', [Validators.required]),
+    // el servicio y controlador de backend solo toma el mail asi que eso vamos a usar en el login
     password: new FormControl('', [Validators.required,Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
     
   });

@@ -32,10 +32,10 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
-    path: '', redirectTo: '', pathMatch: 'full'
+    path: '', redirectTo: 'provinces', pathMatch: 'full'
   },
   {
-    path: '**', redirectTo: '', pathMatch: 'full'
+    path: '**', redirectTo: 'provinces', pathMatch: 'full'
   }
 ];
 

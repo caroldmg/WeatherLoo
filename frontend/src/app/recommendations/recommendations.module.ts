@@ -3,17 +3,20 @@ import { CommonModule } from '@angular/common';
 
 import { RecommendationsRoutingModule } from './recommendations-routing.module';
 import { PersonalRecommendationsComponent } from './personal-recommendations/personal-recommendations.component';
-import { UserPropComponent } from './user-prop/user-prop.component';
+import { BannerComponent } from './banner/banner.component';
 
 
 @NgModule({
   declarations: [
     PersonalRecommendationsComponent,
-    UserPropComponent
+    BannerComponent
   ],
   imports: [
     CommonModule,
     RecommendationsRoutingModule
+  ],
+  exports: [
+    BannerComponent
   ]
 })
 export class RecommendationsModule { }
