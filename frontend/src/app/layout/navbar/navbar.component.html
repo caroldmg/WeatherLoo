@@ -3,10 +3,9 @@
   <div class="container-fluid navBox">
     <div id="head" class="d-flex">
 
-      <a href="#" class="navbarBrand">Weather</a><span class="logoLoo">l</span>
+      <a routerLink="/location/popular-location" title="Inicio" class="navbarBrand">Weather<span class="logoLoo">l</span></a>
       <div>
         <div class="d-flex">
-  
           <div class="eye eyeleft"></div>
           <div class="eye"></div>
         </div>
@@ -22,4 +21,15 @@
       <button class="btn btn-outline-success" type="submit">Buscar</button>
     </form>
   </div>
+
+  <div id="menu">
+			<ul>
+        <!-- localidades más buscadas -->
+        <li><a routerLink="/location/popular-location">Inicio // Localidades más buscadas</a></li> 
+        <!-- Lista de todas las provincias -->
+        <li><a routerLink="/location/provinces"> Provincias </a></li>
+        <li><a routerLink="/users/profile"> Mi perfil </a></li>
+        <li><a routerLink="/location/fav-locations"> Favoritos </a></li>
+      </ul>
+		</div>
 </nav>
