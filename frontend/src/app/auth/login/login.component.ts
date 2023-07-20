@@ -11,8 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   userForm = new FormGroup({
-    email: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', [Validators.required, Validators.pattern('^[A-Za-z0-9$%&/()]{8,20}$')]),
   });
 
   constructor(
@@ -32,8 +32,12 @@ export class LoginComponent {
       // Guardar el token para utilizarlo en las posteriores peticiones
       this.authService.handleLoginResponse(data.token);
 
-      this.router.navigate(['/books']);
+      // cuando haces el login, te redirige a la lista de provincias
+      this.router.navigate(['/location/provinces']);
+
     });
+    
+    this.userForm.reset()
 
   }
 

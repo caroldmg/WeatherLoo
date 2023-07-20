@@ -8,15 +8,15 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   {
-    path: 'user-login',
+    path: 'login',
     component: UserLoginComponent
   },
   {
-    path:'user-registration',
+    path:'register',
     component:UserRegistrationComponent
   },
   {
-    path: 'user-profile',
+    path: 'profile',
     component: UserProfileComponent
   } , 
   {
