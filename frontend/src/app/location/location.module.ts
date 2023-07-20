@@ -13,7 +13,7 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule }from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BannerComponent } from '../recommendations/banner/banner.component';
-import { RecommendationService } from '../recommendations/services/recommendation.service';
+
 import { RecommendationsModule } from '../recommendations/recommendations.module';
 @NgModule({
   declarations: [
@@ -29,7 +29,8 @@ import { RecommendationsModule } from '../recommendations/recommendations.module
     MatTableModule,
     MatChipsModule,
     MatExpansionModule,
-    MatGridListModule
+    MatGridListModule,
+    RecommendationsModule
   ],
   exports:[
     SearchComponent,
