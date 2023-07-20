@@ -35,4 +35,7 @@ export class Town{
 
     @Column({type: 'boolean', default: false})
     isPopular: boolean
+
+    @Column({nullable: true})
+    image?: string;
 }
