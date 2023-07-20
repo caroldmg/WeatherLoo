@@ -27,6 +27,9 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatChipsModule,
     MatExpansionModule,
     MatGridListModule
+  ],
+  exports:[
+    SearchComponent
   ]
 })
 export class LocationModule { }
