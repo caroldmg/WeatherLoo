@@ -17,17 +17,18 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
-  
     UserLoginComponent,
     UserRegistrationComponent,
     UserProfileComponent
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     MatIconModule,
     MatMenuModule,
     UsersRoutingModule,
