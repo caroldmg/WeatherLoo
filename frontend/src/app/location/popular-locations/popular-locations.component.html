@@ -9,11 +9,12 @@
                 <div class="slide-track slide">
                     <div>
                         <div class="card" style="width: 18rem;">
-                            <img src="../../../assets/images/popularLocations/barcelona.jpeg" class="card-img-top" alt="...">
+                            <img src="assets/images/popularLocations/{{popularTown.image}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h2 class="card-title">{{popularTown.name}}</h2><!--cambiar el nombre de las propiedades-->
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                    card's content.</p>
+                                    card's content. <br> {{popularTown.image}}
+                                </p>
                                 <a [routerLink]="['/weather/weather-detail/',popularTown.townCode]" class="btn btn-dark">Go
                                     somewhere</a>
                             </div>

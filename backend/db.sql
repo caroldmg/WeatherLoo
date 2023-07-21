@@ -8205,7 +8205,7 @@ UPDATE `backend_weatherloo`.`town` SET `image` = 'laCoruna.jpeg' WHERE (`townCod
 UPDATE `backend_weatherloo`.`town` SET `image` = 'cuenca.jpeg' WHERE (`townCode` = '16078');
 UPDATE `backend_weatherloo`.`town` SET `image` = 'girona.jpeg' WHERE (`townCode` = '17079');
 UPDATE `backend_weatherloo`.`town` SET `image` = 'granada.jpeg' WHERE (`townCode` = '18087');
-UPDATE `backend_weatherloo`.`town` SET `image` = 'guadalajara.jpeg' WHERE (`townCode` = '19130');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'guadalajara.jpg' WHERE (`townCode` = '19130');
 UPDATE `backend_weatherloo`.`town` SET `image` = 'sanSebastian.jpeg' WHERE (`townCode` = '20069');
 UPDATE `backend_weatherloo`.`town` SET `image` = 'leon.jpeg' WHERE (`townCode` = '24089');
 UPDATE `backend_weatherloo`.`town` SET `image` = 'madrid.jpg' WHERE (`townCode` = '28079');

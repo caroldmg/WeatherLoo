@@ -10,5 +10,5 @@ export interface ITown {
     townPopulation: number;
     altitude: number;
     perimeter: number;
-    
+    image?: string
 }
