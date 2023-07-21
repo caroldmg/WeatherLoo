@@ -8194,3 +8194,24 @@ INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,al
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('50903','50','Villamayor de Gállego','Villamayor',8936.4544,2820,232,44874,false);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('51001','51','Ceuta','Ceuta',1947.682,84963,27,0,false);
 INSERT INTO town(townCode,id_province,name,capitalName,surface,townPopulation,altitude,perimeter,isPopular) VALUES ('52001','52','Melilla','Melilla',1341.3371,84509,30,0,false);
+
+UPDATE `backend_weatherloo`.`town` SET `image` = 'albacete.jpg' WHERE (`townCode` = '02003');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'alicante.jpeg' WHERE (`townCode` = '03014');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'barcelona.jpeg' WHERE (`townCode` = '08019');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'burgos.jpeg' WHERE (`townCode` = '09059');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'cadiz.jpeg' WHERE (`townCode` = '11012');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'cordoba.jpeg' WHERE (`townCode` = '14021');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'laCoruna.jpeg' WHERE (`townCode` = '15030');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'cuenca.jpeg' WHERE (`townCode` = '16078');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'girona.jpeg' WHERE (`townCode` = '17079');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'granada.jpeg' WHERE (`townCode` = '18087');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'guadalajara.jpeg' WHERE (`townCode` = '19130');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'sanSebastian.jpeg' WHERE (`townCode` = '20069');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'leon.jpeg' WHERE (`townCode` = '24089');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'madrid.jpg' WHERE (`townCode` = '28079');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'malaga.jpg' WHERE (`townCode` = '29067');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'tenerife.jpeg' WHERE (`townCode` = '38038');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'segovia.jpeg' WHERE (`townCode` = '40194');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'sevilla.jpeg' WHERE (`townCode` = '41091');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'valencia.jpeg' WHERE (`townCode` = '46250');
+UPDATE `backend_weatherloo`.`town` SET `image` = 'bilbao.jpeg' WHERE (`townCode` = '48020');
