@@ -11,25 +11,31 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  userForm = new FormGroup({
+  firstGroup = new FormGroup({
     username: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
-    isOwner: new FormControl(false),
   });
+
+  secondGroup = new FormGroup({
+    mascotas : new FormControl(''),
+    transporte : new FormControl('false'),
+    lugaresFav: new FormControl([]),
+    gender: new FormControl('underterminated'),
+    birthday: new FormControl(new Date()),
+  })
 
   constructor(
     private authService: AuthService,
     private router: Router
     ) {}
 
-  save() {
+  saveRegister() {
 
     let register = {
-      username: this.userForm.get('username')?.value ?? '',
-      email: this.userForm.get('email')?.value ?? '',
-      password: this.userForm.get('password')?.value ?? '',
-      isOwner: this.userForm.get('isOwner')?.value ?? false,
+      username: this.firstGroup.get('username')?.value ?? '',
+      email: this.firstGroup.get('email')?.value ?? '',
+      password: this.firstGroup.get('password')?.value ?? ''
     }
 
     this.authService.register(register).subscribe(data => {

@@ -17,15 +17,15 @@ export class User{
 
     @Column()
     fullName: string;
-
-    @Column({nullable: true})
-    birthday: Date;
-
+    
     @Column()
     email: string;
-
+    
     @Column()
     password: string;
+
+    @Column({nullable: true})
+    birthday?: Date;
     
     @Column({nullable: true})
     avatarImage?: string;
@@ -37,9 +37,9 @@ export class User{
     })
     gender: Gender;
     
-    @ManyToOne(()=> Town)
+    @ManyToOne(()=> Town, {nullable: true})
     @JoinColumn({name: 'codeTown'})
-    location: Town;
+    location?: Town;
 
     @Column({type: 'boolean', default: false})
     pets: boolean;
