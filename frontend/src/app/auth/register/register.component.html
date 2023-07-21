@@ -1,18 +1,27 @@
 
 <h2>Crear nueva cuenta</h2>
 
-<mat-stepper linear #stepper>
-  <mat-step [stepControl]="firstGroup">
-      <form>
-  <mat-form-field [formGroup]="firstGroup">
-    <ng-template matStepLabel>Datos personales</ng-template>
-    <mat-label>Nombre de usuario</mat-label>
+<form [formGroup]="userForm" (ngSubmit)="save()">
+
+  <mat-form-field>
+    <mat-label>Nombre de usuario (username)</mat-label>
     <input matInput type="text" formControlName="fullName">
+    <span *ngIf="userForm.get('fullName')?.getError('required') && userForm.get('fullName')?.touched">
+      Nombre obligatorio.
+    </span>
   </mat-form-field>
 
   <mat-form-field>
     <mat-label>Email</mat-label>
     <input matInput type="email" formControlName="email">
+    <div *ngIf="userForm.get('email')?.invalid && userForm.get('email')?.touched">
+      <span *ngIf="userForm.get('email')?.getError('required')">
+          Email obligatorio.
+      </span>
+      <span *ngIf="userForm.get('email')?.getError('email')">
+        Formato incorrecto, ejemplo: hola@example.com
+      </span>
+  </div>
   </mat-form-field>
 
 
@@ -21,45 +30,18 @@
     <input matInput type="password" formControlName="password">
   </mat-form-field>
 
-  <button mat-fab extended type="submit"
-        [disabled]="firstGroup.invalid" (click)="saveRegister()">
-      Registrarse
-  </button>
+  <mat-form-field>
+    <mat-label> Confirmar contraseña</mat-label>
+    <input matInput type="password" formControlName="passwordConfirm">
+    <div *ngIf="userForm.getError('confirmError') && userForm.get('passwordConfirm')?.touched">
+      <span>
+          Las contraseñas no coinciden.
+      </span>
+    </div>
+  </mat-form-field>
 
-  <div>
-    <button mat-button matStepperNext>Next</button>
-  </div>
+  <button mat-fab extended type="submit"
+        [disabled]="userForm.invalid">
+      Enviar
+  </button>
 </form>
-</mat-step>
-<!-- TODO: CAMBIAR EL ORDEN DE LOS STEPS PARA PREGUNTAR PRIMERO CIERTOS DATOS PERSONALES Y LUEGO HACER EL REGISTRO -->
-<mat-step [stepControl]="secondGroup" label="Unas preguntas más para tu perfil">
-  <form [formGroup]="secondGroup">
-    <ng-template matStepLabel>Completa tu perfil</ng-template>
-    <div>
-      <mat-label>¿ Que medio de transporte utilizas?</mat-label>
-      <mat-radio-group formControlName="transporte">
-             <mat-radio-button value="voy en coche"> coche </mat-radio-button>
-             <mat-radio-button value="metro"> metro </mat-radio-button>
-             <mat-radio-button value="bicicleta"> bicicleta</mat-radio-button>
-            </mat-radio-group>
-    </div>
-    <div>
-      <mat-label>¿Tienes Mascotas?</mat-label>
-    <mat-radio-group formControlName="mascotas">
-             <mat-radio-button value="si"> si </mat-radio-button>
-             <mat-radio-button value="no"> no</mat-radio-button>
-   </mat-radio-group>
-   </div>
-    <mat-form-field>
-      <mat-label>¿lugares favoritos?</mat-label>
-      <input matInput formControlName="lugaresFav" placeholder="E"
-             required>
-      </mat-form-field>
-    <div>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button matStepperNext>Next</button>
-    </div>
-  </form>
-</mat-step>
-</mat-stepper>

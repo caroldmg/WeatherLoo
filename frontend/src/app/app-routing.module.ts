@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { WeatherModule } from './weather/weather.module';
-import { UsersModule } from './users/users.module';
 
 const routes: Routes = [
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+  },
   {
     path: 'location',
     loadChildren: () => import('./location/location.module').then(m => m.LocationModule)
@@ -14,7 +16,7 @@ const routes: Routes = [
   },
   {
     path: 'weather',
-    loadChildren: () => import('./weather/weather.module').then(m =>WeatherModule)
+    loadChildren: () => import('./weather/weather.module').then(m=> m.WeatherModule)
   },
   {
     path: 'recommendations',
