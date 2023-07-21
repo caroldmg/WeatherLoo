@@ -44,6 +44,10 @@ export class ProvinceListComponent {
       }
     });
     
-    this.locationService.findAllAutonomies().subscribe(data => this.autonomies = data)
+    this.locationService.findAllAutonomies().subscribe(data =>{ 
+      this.autonomies = data;
+      console.log(this.autonomies);
+      
+    })
   }
 }

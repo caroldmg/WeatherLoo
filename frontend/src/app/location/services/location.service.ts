@@ -14,7 +14,7 @@ export class LocationService {
   //db.json 
   urlProvinces: string = `${BASE_URL}/provinces`;
   urlTowns: string = `${BASE_URL}/towns`;
-  urlAutonomies: string = `${BASE_URL}/autonomies`;
+  urlAutonomies: string = `${BASE_URL}/autonomy`;
   
   constructor(private httpClient: HttpClient) { }
 

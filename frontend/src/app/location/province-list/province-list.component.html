@@ -1,5 +1,5 @@
 <div *ngIf="autonomy"> 
-  <h2> {{autonomy.autonomyName}}</h2> 
+<h2> {{autonomy.name}}</h2> 
 </div>
 <!-- DE MOMENTO SE MUESTRAN TODAS, HAY QUE PAGINAR -->
 <mat-accordion>
@@ -13,7 +13,7 @@
       <mat-chip-listbox>
         <a *ngFor="let autonomy of autonomies" [routerLink]="['/location/provinces', autonomy.autonomyId]">
           <mat-chip-option>
-            {{autonomy.autonomyName}}
+            {{autonomy.name}}
           </mat-chip-option>
         </a>
       </mat-chip-listbox>
