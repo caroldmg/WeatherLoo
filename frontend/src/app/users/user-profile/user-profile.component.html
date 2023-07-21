@@ -1,9 +1,18 @@
-<!--<p>user-profile works!</p>
-<p>Id: {{user.id}}</p>
-<p>Full Name: {{user.fullName}} </p>
-<p>location: {{user.location}}</p>
-<p>avatar:{{user.avatar}}
-    <p>recomendadcion</p>
-aqui debemos mostrar el clima segun su posicion actual del user *****location******
-lugares favoritos     
--------           pedir confirmacion de password!-->
+<!-- SUBIDA DE IMAGEN AVATAR -->
+<div *ngIf="user && user.avatarImage">
+    <h2>Avatar actual</h2>
+    <img [src]="'http://localhost:3000/uploads/' + user!.avatarImage"
+    style="max-width: 200px;" alt="user avatar"/>
+  
+  </div>
+  
+  <div *ngIf="imagePreview">
+    <h2>Nuevo avatar</h2>
+    <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar"/>
+  </div>
+  
+  <input type="file" hidden (change)="onFileSelected($event)" #fileInput/>
+  <button mat-raised-button (click)="fileInput.click()">Adjuntar Imagen</button>
+  <div>
+    <button mat-raised-button (click)="save()">Enviar</button>
+  </div>
