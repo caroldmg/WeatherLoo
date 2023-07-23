@@ -11,7 +11,7 @@ export interface IUser {
     id: number;
     fullName: string;
     email: string;
-    password: string;
+    password?: string;
     birthday?: Date;
     gender?: string;
     // location?: ITown| undefined;

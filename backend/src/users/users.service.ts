@@ -50,6 +50,12 @@ export class UsersService {
             console.log(user);
             userFromDB.fullName = user.fullName;
             userFromDB.email = user.email;
+            userFromDB.birthday = user.birthday;
+            userFromDB.gender = user.gender;
+            userFromDB.pets = user.pets;
+            userFromDB.publicTransport = user.publicTransport;
+            userFromDB.privateTransport = user.privateTransport;
+
             return await this.userRepo.save(userFromDB);
 
          } catch (error) {

@@ -10,9 +10,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './user-profile.component.html',
   styleUrls: ['./user-profile.component.css']
 })
-//AQUI TENDRIA QUE IR : NOMBRE USUARIO, IMAGEN DEL AVATAR,,IMAGEN DEL TIEMPO REAL,MOSTRAR CLIMA POR HORAS,POR DIAS--------
-//MIS LUGARES FAVORITOS(LISTA DE LUGARES QUE GUARDO CON SUS CLIMAS SEGÚN FECHA)
-//------
+
 export class UserProfileComponent implements OnInit {
 
   //User avatar
@@ -52,19 +50,6 @@ export class UserProfileComponent implements OnInit {
       });
   }
 
-  loadUserform(){
-    this.userForm.reset({
-      id: this.user?.id,
-      fullName: this.user?.fullName,
-      email: this.user?.email,
-      birthday: this.user?.birthday,
-      gender: this.user?.gender,
-      pets: this.user?.pets,
-      privateTransport: this.user?.privateTransport,
-      publicTransport: this.user?.publicTransport
-    });
-  }
-
   save(): void {
     let id = this.userForm.get('id')?.value ?? 0;
     let fullName = this.userForm.get('fullName')?.value ?? '';
@@ -89,37 +74,37 @@ export class UserProfileComponent implements OnInit {
     this.userService.update(user)
       .subscribe(data => console.log('usuario actualizado'));
 
-        if(!this.imageFile) return;
+  //       if(!this.imageFile) return;
     
-        // La imagen no es un archivo texto, es binario por lo que necesitamos enviarla en un FormData
-        // para que se gestione correctamente
-        let formData = new FormData();
-        formData.append('file', this.imageFile);
+  //       // La imagen no es un archivo texto, es binario por lo que necesitamos enviarla en un FormData
+  //       // para que se gestione correctamente
+  //       let formData = new FormData();
+  //       formData.append('file', this.imageFile);
     
-        this.httpClient
-                    .post(`${BASE_URL}/users/avatar`, formData)
-                    .subscribe(data => {
-                      // Recargar el usuario con la nueva foto y recargar el formulario de avatar
-                      console.log(data);
-                      this.imageFile = undefined;
-                      this.imagePreview = undefined;
-                    });
-      }
+  //       this.httpClient
+  //                   .post(`${BASE_URL}/users/avatar`, formData)
+  //                   .subscribe(data => {
+  //                     // Recargar el usuario con la nueva foto y recargar el formulario de avatar
+  //                     console.log(data);
+  //                     this.imageFile = undefined;
+  //                     this.imagePreview = undefined;
+  //                   });
+  //     }
       
-      onFileSelected(event: Event) {
+  //     onFileSelected(event: Event) {
         
-        let target = event.target as HTMLInputElement;
+  //       let target = event.target as HTMLInputElement;
         
-        if (target.files !== null && target.files.length > 0) {
-          this.imageFile = target.files[0];
-      console.log(this.imageFile);
+  //       if (target.files !== null && target.files.length > 0) {
+  //         this.imageFile = target.files[0];
+  //     console.log(this.imageFile);
 
-      // Mostrar la imagen al usuario
-      let reader = new FileReader();
-      reader.onload = ev => this.imagePreview = reader.result as string;// qué hacer cuando se lea la imagen
-      reader.readAsDataURL(this.imageFile); // leer la imagen
-    }
-  }
+  //     // Mostrar la imagen al usuario
+  //     let reader = new FileReader();
+  //     reader.onload = ev => this.imagePreview = reader.result as string;// qué hacer cuando se lea la imagen
+  //     reader.readAsDataURL(this.imageFile); // leer la imagen
+  //   }
+   }
   
 
 }

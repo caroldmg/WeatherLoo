@@ -1,5 +1,5 @@
 <!-- SUBIDA DE IMAGEN AVATAR -->
-<div *ngIf="user && user.avatarImage">
+<!-- <div *ngIf="user && user.avatarImage">
     <h2>Avatar actual</h2>
     <img [src]="'http://localhost:3000/uploads/' + user!.avatarImage"
     style="max-width: 200px;" alt="user avatar"/>
@@ -9,10 +9,68 @@
   <div *ngIf="imagePreview">
     <h2>Nuevo avatar</h2>
     <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar"/>
-  </div>
+  </div> -->
   
-  <input type="file" hidden (change)="onFileSelected($event)" #fileInput/>
-  <button mat-raised-button (click)="fileInput.click()">Adjuntar Imagen</button>
+  <!-- <input type="file" hidden (change)="onFileSelected($event)" #fileInput/>
+  <button mat-raised-button (click)="fileInput.click()">Adjuntar Imagen</button> -->
+
+
+  <form [formGroup]="userForm" (ngSubmit)="save()">
+
+    <input type="hidden" formControlName="id">
+  
+    <mat-form-field>
+      <mat-label>Nombre </mat-label>
+      <input matInput formControlName="fullName" placeholder="Ejemplo: Domingo Minolas" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email"
+             placeholder="Ex. pat@example.com">
+      <mat-icon matSuffix>email</mat-icon>
+      <!-- <mat-hint>Te enviaremos un correo para la verificación.</mat-hint> -->
+      <mat-error *ngIf="userForm.get('email')?.invalid &&
+                        userForm.get('email')?.touched &&
+                        userForm.get('email')?.getError('required')">
+        Email obligatorio.
+      </mat-error>
+      <mat-error *ngIf="userForm.get('email')?.invalid &&
+                        userForm.get('email')?.touched &&
+                        userForm.get('email')?.getError('email')">
+      Formato email incorrecto.
+      </mat-error>
+    </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Fecha de Nacimiento</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="birthday">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <div>
+    <mat-label>Género</mat-label>
+    <mat-radio-group formControlName="gender">
+  <mat-radio-button value="masc"> Masculino </mat-radio-button>
+  <mat-radio-button value="fem"> Femenino</mat-radio-button>
+  <mat-radio-button value="nb"> No binario</mat-radio-button>
+  <mat-radio-button value="underterminated"> No determinado</mat-radio-button>
+  </mat-radio-group>
+</div>
+
+<mat-checkbox formControlName="pets">¿Tienes mascotas?</mat-checkbox>
+<mat-checkbox formControlName="privateTransport">¿Usas el tansporte público?</mat-checkbox>
+<mat-checkbox formControlName="publicTransport">¿Tienes un transporte privado? (coche, moto, etc.)</mat-checkbox>
+
+  
+    <button mat-fab extended type="submit"
+          [disabled]="userForm.invalid">
+      <mat-icon>send</mat-icon>
+        Enviar
+    </button>
+  </form>
   <div>
     <button mat-raised-button (click)="save()">Enviar</button>
   </div>
