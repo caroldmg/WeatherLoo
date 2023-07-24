@@ -7,6 +7,7 @@ import { WeatherListHoursComponent } from './weather-list-hours/weather-list-hou
 import { WeatherListSevenDaysComponent } from './weather-list-seven-days/weather-list-seven-days.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -14,13 +15,12 @@ import { HttpClientModule } from '@angular/common/http';
     WeatherDetailComponent,
     WeatherListHoursComponent,
     WeatherListSevenDaysComponent,
-  
- 
   ],
   imports: [
     CommonModule,
     WeatherRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule
   ]
 })
 export class WeatherModule { }

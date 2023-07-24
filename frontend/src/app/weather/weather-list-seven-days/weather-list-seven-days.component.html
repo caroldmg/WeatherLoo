@@ -1,1 +1,23 @@
 <p>weather-list-seven-days works!</p>
+
+<div *ngIf="weather" class="card-grid">
+    <mat-card class="example-card" *ngFor="let day of weather.proximos_dias">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Fecha: {{ day['@attributes'].fecha | date }}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image style="max-width: 100px;" src="../../../assets/images/Iconos/nube.png" alt="" ngClass="iconTRealtime">
+
+        <mat-card-content>
+          <ul>
+            <li>Temperatura máxima: {{day.temperatura.maxima}} </li>
+            <li>Temperatura mínima: {{day.temperatura.minima}} </li>
+            <li>Estado del cielo: {{day.estado_cielo_descripcion[3]}} </li>
+          </ul>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>LIKE</button>
+          <button mat-button>SHARE</button>
+        </mat-card-actions>
+      </mat-card>
+</div>

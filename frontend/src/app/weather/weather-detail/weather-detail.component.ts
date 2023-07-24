@@ -37,7 +37,6 @@ export class WeatherDetailComponent implements OnInit{
      this.activatedRoute.params.subscribe((params) => {     
       const townCode = params['townCode']
       // si no pones ningún valor en la url, debería dar el tiempo de MAdrid por defecto
-      // const townCode = MADRID_TOWNCODE
         if (townCode){
           this.locationService.findTownByTownCode(townCode).subscribe(data =>{ 
             this.municipio = data;
@@ -47,6 +46,9 @@ export class WeatherDetailComponent implements OnInit{
           console.log(this.provincia);
           
         }
+        // else {
+        //   const townCode = MADRID_TOWNCODE
+        // }
        this.weatherService.getWeatherRealTime(townCode).subscribe(data => this.weather = data)
    })
 

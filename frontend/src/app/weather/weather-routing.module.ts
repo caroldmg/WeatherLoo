@@ -22,10 +22,10 @@ const routes: Routes = [
   component: WeatherListHoursComponent
 },
 {
-  path: 'weather-sevenDays/:townCode',
+  path: 'fiveDays/:townCode',
   component: WeatherListSevenDaysComponent
 },{
-  path: 'weather-sevenDays',
+  path: 'Days',
   component: WeatherListSevenDaysComponent
 },
 

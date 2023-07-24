@@ -81,7 +81,8 @@ export interface IWeather {
     temperatura: Temperatura
     sens_termica: SensTermica
     humedad_relativa: HumedadRelativa
-    uv_max?: number
+    uv_max?: number;
+    estado_cielo_descripcion: string[]
   }
   
   export interface Attributes3 {
