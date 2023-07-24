@@ -15,6 +15,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { BannerComponent } from '../recommendations/banner/banner.component';
 
 import { RecommendationsModule } from '../recommendations/recommendations.module';
+import { WeatherModule } from '../weather/weather.module';
 @NgModule({
   declarations: [
     ProvinceListComponent,
@@ -30,7 +31,8 @@ import { RecommendationsModule } from '../recommendations/recommendations.module
     MatChipsModule,
     MatExpansionModule,
     MatGridListModule,
-    RecommendationsModule
+    RecommendationsModule,
+    WeatherModule
   ],
   exports:[
     SearchComponent,

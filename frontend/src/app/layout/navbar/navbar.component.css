@@ -91,5 +91,35 @@
     
     
   }
+ 
+
+ li a{
+    text-decoration: none;
+    color: #ffff;
+    font-size: 2rem;
+    margin: 15px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  li a:hover{
+    color: #086788;
+    
+  }
+
+  li{
+    list-style: none;
+    margin: 15px;
+
+  }
+  .btnstyle{
+    background-color: #086788;
+    margin-left: 15px;
+    color: #ffff;
+  }
+  .btnstyle:hover{
+    background-color: #ffff;
+    color: #086788;
+  }
+
   
   

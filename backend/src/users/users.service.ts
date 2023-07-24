@@ -38,7 +38,7 @@ export class UsersService {
         }
     }
 
-    async update(user: User): Promise<LoginDTO> {
+    async update(user: User): Promise<User> {
         let userFromDB = await this.userRepo.findOne({ 
             where: {
                 id: user.id

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
+
+import { ITown } from '../models/town.model';
 
 @Component({
   selector: 'app-search',
@@ -7,14 +9,22 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit{
-
-  constructor( private activatedRoute: ActivatedRoute){}
+  cities: ITown[] = [] ;
+  
+  constructor( private router: Router){}
+  
 
   ngOnInit(): void{}
 
   onSearch(value: string){
-    if(value && value.length > 3){
-     console.log(value)
+    for ( let city of this.cities){
+
+      if(value && value.length > 3){
+        this.router.navigate(['/weather/weather-detail/',city.name]),{
+          queryParams: {q: value}
+        }
+       console.log('Buscar =>',value)
+      }
     }
   }
   

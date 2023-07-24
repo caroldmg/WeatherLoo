@@ -1,5 +1,5 @@
 
-<nav class="navbar navBox">
+<nav class="navbar navBox"  (mouseover)="showMenu = true" (mouseleave)="showMenu = false" >
   <div class="container-fluid navBox">
     <div id="head" class="d-flex">
 
@@ -13,23 +13,26 @@
       </div>
         
     </div>
-    <app-search>
-    </app-search>
-    
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" >
-      <button class="btn btn-outline-success" type="submit">Buscar</button>
-    </form>
+    <div class="d-flex" role="search">
+
+      <app-search>
+      </app-search>
+      <button class="btn btnstyle" type="submit">Buscar</button>
+
+    </div>
   </div>
 
-  <div id="menu">
+  <div class="menu" *ngIf ="showMenu">
+    <div class="menu-inner">
+
 			<ul>
         <!-- localidades más buscadas -->
-        <li><a routerLink="/location/popular-location">Inicio // Localidades más buscadas</a></li> 
+        <li><a routerLink="/location/popular-location">Inicio</a></li> 
         <!-- Lista de todas las provincias -->
         <li><a routerLink="/location/provinces"> Provincias </a></li>
         <li><a routerLink="/users/profile"> Mi perfil </a></li>
         <li><a routerLink="/location/fav-locations"> Favoritos </a></li>
       </ul>
-		</div>
+    </div>
+	</div>
 </nav>
