@@ -1,0 +1,14 @@
+.searchBox{
+    display: flex;
+    flex-direction: row;
+}
+
+.btnstyle{
+    background-color: #086788;
+    margin-left: 15px;
+    color: #ffff;
+  }
+  .btnstyle:hover{
+    background-color: #ffff;
+    color: #086788;
+  }

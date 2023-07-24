@@ -22,6 +22,9 @@ body{
     border: solid rgb(78, 75, 75);
     box-shadow: 10px 10px 5px rgb(78, 75, 75);
 }
+.card:hover{
+    filter: opacity(75%);
+}
 
 .popularNamesTowns{
     display: flex;
@@ -31,4 +34,10 @@ body{
 }
 .banner{
     margin: 20px;
+}
+img{
+
+    height: 250px;
+    width: 285px;
+
 }

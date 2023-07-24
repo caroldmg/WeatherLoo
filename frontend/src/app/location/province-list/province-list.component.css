@@ -3,5 +3,34 @@
 }
 
 mat-grid-list{
-    row-gap: 50px;
+    
+   
+
 }
+mat-grid-tile{
+    
+    border: solid #086788;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;    text-decoration: none;
+    background-color: #848F46;
+    
+}
+mat-grid-tile:hover{
+    
+    border: solid #848F46;
+    
+    background-color: #086788;
+    
+}
+mat-grid-tile a{
+    
+    margin: 30px !important;
+    text-decoration: none;
+    color: #FFF;
+    
+}
+.provincesBox{
+    margin: 30px;
+    margin-bottom: 50px;
+}
+

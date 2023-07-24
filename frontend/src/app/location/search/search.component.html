@@ -1,8 +1,12 @@
-<input
-#inputSearch
-autofocus
-type="text"
-class="form-control me-2"
-placeholder="Escriba ciudad"
-(keyup)="onSearch(inputSearch.value)"
-/>
+<div class="searchBox">
+
+    <input
+    #inputSearch
+    autofocus
+    type="text"
+    class="form-control me-2"
+    placeholder="Escriba ciudad"
+    (keyup)="onSearch(inputSearch.value)"
+    />
+    <button [routerLink]="['/weather/weather-detail/', city?.townCode]" class="btn btnstyle" type="submit">Buscar</button>
+</div>

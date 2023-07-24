@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ITown } from '../models/town.model';
+import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-search',
@@ -10,23 +11,51 @@ import { ITown } from '../models/town.model';
 })
 export class SearchComponent implements OnInit{
   cities: ITown[] = [] ;
+  value: string = ""
+  city: ITown | undefined;
   
-  constructor( private router: Router){}
+  
+  constructor( private router: Router,
+                private locationService: LocationService){}
   
 
   ngOnInit(): void{}
 
-  onSearch(value: string){
-    for ( let city of this.cities){
+  
+  
+  
+  filterByTitle(name: string){
+    const nameFilter = this.cities.filter(city => city.name.includes(name));
+    return nameFilter
+    
+  }
+  
+  
+   onSearch(value: string){
+    
+    if (value && value.length > 1){
 
-      if(value && value.length > 3){
-        this.router.navigate(['/weather/weather-detail/',city.name]),{
-          queryParams: {q: value}
-        }
-       console.log('Buscar =>',value)
-      }
+      this.locationService.searchByTownName(value).subscribe(data => {
+        this.city = data;
+        console.log(this.city);
+        const cityCode = this.city.townCode
+        console.log(cityCode)
+        
+      })
+      console.log(value)
+      return 
+      
+    }
+
+
+
+    else{
+      alert("Ciudad mal escrita, pruebe nuevamente")
+      return console.log("fuck off")
     }
   }
+  
+  
   
 
 }
