@@ -6,4 +6,21 @@ footer{
 footer a{
     text-decoration: none;
     color: #219EBC;
+    
 }
+.menu-footer li {
+    list-style: none;
+    font-size: 2rem;
+    margin: 22px;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+
+}
+.linkAemet{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/*------------------------------------------------------------*/
