@@ -5,14 +5,12 @@ import { DatabaseModule } from './database/database.module';
 import { ProvincesModule } from './provinces/provinces.module';
 import { TownsModule } from './towns/towns.module';
 import { UsersModule } from './users/users.module';
-import { FavLocationsModule } from './fav-locations/fav-locations.module';
-import { LocalWeatherModule } from './local-weather/local-weather.module';
 import { RecomendationModule } from './recomendation/recomendation.module';
 import { AutonomyModule } from './autonomy/autonomy.module';
 import { AuthModule } from './auth/auth.module';
 
 @Module({
-  imports: [DatabaseModule, ProvincesModule, TownsModule, UsersModule, FavLocationsModule, LocalWeatherModule, RecomendationModule, AutonomyModule, AuthModule],
+  imports: [DatabaseModule, ProvincesModule, TownsModule, UsersModule,  RecomendationModule, AutonomyModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

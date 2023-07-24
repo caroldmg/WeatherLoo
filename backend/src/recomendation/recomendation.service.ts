@@ -21,7 +21,7 @@ export class RecomendationService {
             }
         })
     }
-    findByName(type: string): Promise<Recommendation>{
+    findByType(type: string): Promise<Recommendation>{
         return this.recommendationRepo.findOne({
             where: {
                 type: type
