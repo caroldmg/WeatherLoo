@@ -21,7 +21,6 @@ import {MatCardModule} from '@angular/material/card';
     WeatherRoutingModule,
     HttpClientModule,
     MatCardModule,
-    HttpClientModule
   ],
   exports: [
 
