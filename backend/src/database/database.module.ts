@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Autonomy } from 'src/autonomy/autonomy.entity';
 import { Province } from 'src/provinces/provinces.entity';
+import { Recommendation } from 'src/recomendation/recomendation.model';
 import { Town } from 'src/towns/towns.entity';
 import { User } from 'src/users/users.entity';
 
@@ -17,7 +18,7 @@ import { User } from 'src/users/users.entity';
             entities: [
                 // __dirname + 'src/**/*.model.ts'
                 //AGREGAR LAS ENTIDADES
-               Autonomy, Province, User, Town
+               Autonomy, Province, User, Town, Recommendation
             ],
             synchronize: true, // generar tablas automáticamente en base a entidades
             logging: true
