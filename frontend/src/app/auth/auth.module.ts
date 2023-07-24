@@ -15,6 +15,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatIconModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

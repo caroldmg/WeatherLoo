@@ -1,8 +1,11 @@
 
 <h2>Iniciar sesión</h2>
 
-<form [formGroup]="userForm" (ngSubmit)="save()">
+<mat-icon routerLink="/location/popular-location">
+  close
+  </mat-icon>
 
+<form [formGroup]="userForm" (ngSubmit)="save()">
 
   <mat-form-field>
     <mat-label>Email</mat-label>

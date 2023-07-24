@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BannerComponent } from './banner/banner.component';
+import { PersonalRecommendationsComponent } from './personal-recommendations/personal-recommendations.component';
 
 const routes: Routes = [
   {
@@ -8,10 +9,18 @@ const routes: Routes = [
     component: BannerComponent
   },
   {
-    path: '', redirectTo: 'banner', pathMatch: 'full'
+    path: 'personal',
+    component: PersonalRecommendationsComponent
   },
   {
-    path: '**', redirectTo: 'banner', pathMatch: 'full'
+    path: 'personal/:townCode',
+    component: PersonalRecommendationsComponent
+  },
+  {
+    path: '', redirectTo: 'personal', pathMatch: 'full'
+  },
+  {
+    path: '**', redirectTo: 'personal', pathMatch: 'full'
   }
 ];
 
