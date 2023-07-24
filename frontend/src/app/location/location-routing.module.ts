@@ -15,6 +15,10 @@ const routes: Routes = [
     component: ProvinceListComponent
   },
   {
+    path: 'provinces/:name',
+    component: ProvinceListComponent
+  },
+  {
     path: 'popular-location',
     component: PopularLocationsComponent
   },

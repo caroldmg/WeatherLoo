@@ -21,6 +21,10 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     WeatherRoutingModule,
     HttpClientModule
+  ],
+  exports: [
+
+    WeatherDetailComponent
   ]
 })
 export class WeatherModule { }
