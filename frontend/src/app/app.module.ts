@@ -8,14 +8,16 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { WeatherModule } from './weather/weather.module';
 import { LocationModule } from './location/location.module';
 import { UsersModule } from './users/users.module';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { AuthModule } from './auth/auth.module';
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
-import {ReactiveFormsModule,FormsModule  } from '@angular/forms';
-import {MatStepperModule} from '@angular/material/stepper';
-import { AuthModule } from './auth/auth.module';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,15 +31,12 @@ import { AuthModule } from './auth/auth.module';
     WeatherModule,
     LocationModule,
     UsersModule,
+    AuthModule,
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
     BrowserAnimationsModule,
     MatGridListModule,
-    ReactiveFormsModule,FormsModule,
-    MatStepperModule,
-    AuthModule
-
   ],
   providers: [],
   bootstrap: [AppComponent]

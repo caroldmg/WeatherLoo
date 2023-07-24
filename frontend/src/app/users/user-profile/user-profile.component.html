@@ -1,76 +1,42 @@
-<!-- SUBIDA DE IMAGEN AVATAR -->
-<!-- <div *ngIf="user && user.avatarImage">
-    <h2>Avatar actual</h2>
-    <img [src]="'http://localhost:3000/uploads/' + user!.avatarImage"
-    style="max-width: 200px;" alt="user avatar"/>
-  
-  </div>
-  
-  <div *ngIf="imagePreview">
-    <h2>Nuevo avatar</h2>
-    <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar"/>
-  </div> -->
-  
-  <!-- <input type="file" hidden (change)="onFileSelected($event)" #fileInput/>
-  <button mat-raised-button (click)="fileInput.click()">Adjuntar Imagen</button> -->
+<mat-grid-list cols="3" rowHeight="200px" *ngIf="user">
+  <mat-grid-tile>
+      <div>
+        <h2 *ngIf="user.avatarImage">Foto de perfil</h2>
+        <img src="{{ user.avatarImage }}" style="max-width: 150px;" />
+        
+        <button mat-menu-item *ngIf="isLoggedIn" routerLink="/users/avatar">
+          <mat-icon>photo_camera</mat-icon>
+          Mi avatar
+        </button>
+      </div>
 
+  </mat-grid-tile>
 
-  <form [formGroup]="userForm" (ngSubmit)="save()">
+  <mat-grid-tile rowspan="2">
+    <div>
+      <h2>{{ user.fullName }}</h2>
+      <p>Fecha nacimiento: {{ user.birthday| date : "dd/MM/YYYY" }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Género: {{ user.email }}</p>
 
-    <input type="hidden" formControlName="id">
-  
-    <mat-form-field>
-      <mat-label>Nombre </mat-label>
-      <input matInput formControlName="fullName" placeholder="Ejemplo: Domingo Minolas" required>
-    </mat-form-field>
-  
-    <mat-form-field>
-      <mat-label>Email</mat-label>
-      <input type="email" matInput formControlName="email"
-             placeholder="Ex. pat@example.com">
-      <mat-icon matSuffix>email</mat-icon>
-      <!-- <mat-hint>Te enviaremos un correo para la verificación.</mat-hint> -->
-      <mat-error *ngIf="userForm.get('email')?.invalid &&
-                        userForm.get('email')?.touched &&
-                        userForm.get('email')?.getError('required')">
-        Email obligatorio.
-      </mat-error>
-      <mat-error *ngIf="userForm.get('email')?.invalid &&
-                        userForm.get('email')?.touched &&
-                        userForm.get('email')?.getError('email')">
-      Formato email incorrecto.
-      </mat-error>
-    </mat-form-field>
+    </div>
+  </mat-grid-tile>
 
-  <mat-form-field>
-    <mat-label>Fecha de Nacimiento</mat-label>
-    <input matInput [matDatepicker]="picker" formControlName="birthday">
-    <mat-hint>MM/DD/YYYY</mat-hint>
-    <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+  <mat-grid-tile rowspan="2">
+    <div *ngIf="user.pets || user.privateTransport || user.publicTransport">
+      <h2>Más información:</h2>
+      <p *ngIf="user.pets"> Mascotas <mat-icon>done</mat-icon></p>
+      <p *ngIf="user.publicTransport"> Utiliza transporte público <mat-icon>done</mat-icon> </p>
+      <p *ngIf="user.privateTransport"> Utiliza transporte privado <mat-icon>done</mat-icon></p>
 
-  <div>
-    <mat-label>Género</mat-label>
-    <mat-radio-group formControlName="gender">
-  <mat-radio-button value="masc"> Masculino </mat-radio-button>
-  <mat-radio-button value="fem"> Femenino</mat-radio-button>
-  <mat-radio-button value="nb"> No binario</mat-radio-button>
-  <mat-radio-button value="underterminated"> No determinado</mat-radio-button>
-  </mat-radio-group>
-</div>
+    </div>
+  </mat-grid-tile>
 
-<mat-checkbox formControlName="pets">¿Tienes mascotas?</mat-checkbox>
-<mat-checkbox formControlName="privateTransport">¿Usas el tansporte público?</mat-checkbox>
-<mat-checkbox formControlName="publicTransport">¿Tienes un transporte privado? (coche, moto, etc.)</mat-checkbox>
-
-  
-    <button mat-fab extended type="submit"
-          [disabled]="userForm.invalid">
-      <mat-icon>send</mat-icon>
-        Enviar
-    </button>
-  </form>
-  <div>
-    <button mat-raised-button (click)="save()">Enviar</button>
-  </div>
+  <mat-grid-tile>
+    <button mat-raised-button color="primary"
+        style="width: 100%;" routerLink="/users/register"> <!-- esto debería llevar a un fromulario para cambiar los datos -->
+          <mat-icon>manage_accounts</mat-icon>
+        Editar perfil 
+        </button>
+  </mat-grid-tile>
+</mat-grid-list>

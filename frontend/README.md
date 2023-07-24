@@ -31,6 +31,9 @@ ng generate module users --routing --module app.module
 ng generate component users/user-login
 ng generate component users/user-profile
 ng generate component users/user-register
+
+ng generate component users/avatar
+
 ng generate interface users/models/user --type=model --prefix=I
 ng generate service users/services/users
 
@@ -104,3 +107,6 @@ Se habló de dos opciones de buscador
 
 ## SHARED MODULE
  Además de los posibles pipes, anotaciones y cosas comunes, es un buen lugar para poner un archivo de constantes y así evitar poner números mágicos
+
+## AVATAR
+Aprovechand el código de ejemplo de Alan, podemos añadir una imagen de perfil editable en un formulario aparte

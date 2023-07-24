@@ -2,6 +2,7 @@ import { ConflictException, Injectable, NotFoundException } from '@nestjs/common
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './users.entity';
+import { LoginDTO } from 'src/auth/dto/login.dto';
 
 @Injectable()
 export class UsersService {
@@ -37,7 +38,7 @@ export class UsersService {
         }
     }
 
-    async update(user: User): Promise<User> {
+    async update(user: User): Promise<LoginDTO> {
         let userFromDB = await this.userRepo.findOne({ 
             where: {
                 id: user.id

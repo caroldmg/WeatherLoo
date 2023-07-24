@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { UsersRoutingModule } from './users-routing.module';
 
-import {ReactiveFormsModule,FormsModule ,FormControl} from '@angular/forms';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-
-import { UserLoginComponent } from './user-login/user-login.component';
+import { AvatarComponent } from './avatar/avatar.component';
 import { UserRegistrationComponent } from './user-registration/user-registration.component';
 import { UserProfileComponent } from './user-profile/user-profile.component'
+
+import {ReactiveFormsModule,FormsModule } from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatStepperModule} from '@angular/material/stepper';
@@ -18,13 +18,16 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatListModule } from '@angular/material/list';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 
 @NgModule({
   declarations: [
-    UserLoginComponent,
     UserRegistrationComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AvatarComponent
   ],
   imports: [
     CommonModule,
@@ -32,7 +35,7 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatMenuModule,
     UsersRoutingModule,
-    ReactiveFormsModule,FormsModule,
+    ReactiveFormsModule,
     MatStepperModule,
     MatRadioModule,
     MatDatepickerModule,
@@ -40,7 +43,9 @@ import { HttpClientModule } from '@angular/common/http';
     MatInputModule,
     MatFormFieldModule,
     MatButtonModule,
-
+    MatGridListModule,
+    MatListModule,
+    MatCheckboxModule
   ],
   providers: [
     { provide:  MAT_DATE_LOCALE, useValue : 'es-ES'}

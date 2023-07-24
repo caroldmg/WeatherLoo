@@ -19,14 +19,6 @@ export class RegisterComponent {
     //Validators.pattern('^[A-Za-z0-9$%&/()]$')
   }, {validators: this.passwordConfirmValidator}  );
 
-  // secondGroup = new FormGroup({
-  //   mascotas : new FormControl(''),
-  //   transporte : new FormControl('false'),
-  //   lugaresFav: new FormControl([]),
-  //   gender: new FormControl('underterminated'),
-  //   birthday: new FormControl(new Date()),
-  // })
-
   constructor(
     private authService: AuthService,
     private router: Router

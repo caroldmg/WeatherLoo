@@ -1,0 +1,20 @@
+
+<h2>Imagen de perfil de usuario</h2>
+
+<div *ngIf="user && user.avatarImage">
+  <h2>Avatar actual</h2>
+  <img [src]="'http://localhost:3000/uploads/' + user!.avatarImage"
+  style="max-width: 200px;" alt="user avatar"/>
+
+</div>
+
+<div *ngIf="imagePreview">
+  <h2>Nuevo avatar</h2>
+  <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar"/>
+</div>
+
+<input type="file" hidden (change)="onFileSelected($event)" #fileInput/>
+<button mat-raised-button (click)="fileInput.click()">Adjuntar Imagen</button>
+<div>
+  <button mat-raised-button (click)="save()">Enviar</button>
+</div>
