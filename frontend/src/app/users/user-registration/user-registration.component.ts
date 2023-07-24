@@ -1,73 +1,86 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { IUser } from '../models/user.model';
+import { UserService } from '../services/user.service';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-user-registration',
   templateUrl: './user-registration.component.html',
   styleUrls: ['./user-registration.component.css']
 })
-// aqui solicitamos mas información: nombre,email,genero,edad,y preguntas opcionales
+
 export class UserRegistrationComponent {
-  isEditable = false;
-  hide = true;
-  
 
-  firstGroup = new FormGroup({
-    fullName: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    gender: new FormControl('otro'),
-    birthday: new FormControl(new Date()),
+  user: IUser | undefined;
 
-    
+  userForm = new FormGroup({
+    id: new FormControl<number>(0),
+    fullName: new FormControl<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]),
+    email: new FormControl<string>('', [Validators.required, Validators.minLength(5), Validators.maxLength(100)]),
+    birthday: new FormControl<Date>(new Date()),
+    gender: new FormControl('undeterminated'),
+    pets: new FormControl(false),
+    privateTransport: new FormControl(false),
+    publicTransport: new FormControl(false)
   });
 
-  secondGroup = new FormGroup({
-    mascotas : new FormControl(''),
-    transporte : new FormControl('coche'),
-    lugaresFav: new FormControl([])
+  constructor(
+    private userService: UserService, 
+    private router: Router,
+    private authService: AuthService
+    ) { }
 
-  })
-//------- usar formulario steps---
-// agregar preguntas opcionales: tienes mascotas 
-//lugares favorito
-//medios de transporte : coche,bici,metro,transporte publico
-//
-
-
-
-
-
-
-
-  // Validator personalizado a nivel de FormGroup: dos campos distintos
-  passwordConfirmValidator(control: AbstractControl) {
-    if (control.get('password')?.value === control.get('passwordConfirm')?.value)
-      return null; // si son iguales no hay error
-    else
-      return { 'confirmError': true }; // si son distintas sí hay error
+  ngOnInit(): void {
+    this.userService.findCurrentUser()
+      .subscribe(data => {
+        this.user = data;
+        this.userForm.reset({
+          id: this.user.id,
+          fullName: this.user.fullName,
+          email: this.user.email,
+          birthday: this.user.birthday,
+          gender: this.user.gender,
+          pets: this.user.pets,
+          privateTransport: this.user.privateTransport,
+          publicTransport: this.user.publicTransport
+        });
+      });
   }
-  // Validador personalizado a nivel de FormControl: si hay espacios mostrará error
-  notWhiteSpacesValidator(control: AbstractControl) {
-    let containSpaces = (control.value || '').includes(' ');
-    if (containSpaces)
-      return { 'whitespaceError': true }; // Si contiene espacios sí hay un error
-    else
-      return null; // si no contiene espacios está bien
-  }
-
 
   save(): void {
-    if (this.firstGroup.valid) {
-      // Crear objeto con los datos del formulario y enviar al backend
+    let id = this.userForm.get('id')?.value ?? 0;
+    let fullName = this.userForm.get('fullName')?.value ?? '';
+    let email = this.userForm.get('email')?.value ?? '';
+    let birthday = this.userForm.get('birthday')?.value ?? new Date();
+    let gender =  this.userForm.get('gender')?.value ?? 'undeterminated';
+    let pets =  this.userForm.get('pets')?.value ?? false;
+    let privateTransport = this.userForm.get('privateTransport')?.value ?? false;
+    let publicTransport = this.userForm.get('publicTransport')?.value ?? false;
 
-      console.log("Formulario correcto");
-    } else {
-      console.log("Formulario incorrecto, tiene errores de validación");
+    let user: IUser = {
+      id: id,
+      fullName: fullName,
+      email: email,
+      birthday: birthday,
+      gender: gender,
+      pets: pets,
+      privateTransport: privateTransport,
+      publicTransport: publicTransport
     }
 
-  }
+    this.userService.update(user)
+      .subscribe(data =>{ 
+        console.log('usuario actualizado');
+        this.router.navigate(['/users/profile']);
+      });
 
+    
+
+   }
+  
 
 
 

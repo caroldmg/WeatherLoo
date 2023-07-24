@@ -1,18 +1,42 @@
-<!-- SUBIDA DE IMAGEN AVATAR -->
-<div *ngIf="user && user.avatarImage">
-    <h2>Avatar actual</h2>
-    <img [src]="'http://localhost:3000/uploads/' + user!.avatarImage"
-    style="max-width: 200px;" alt="user avatar"/>
-  
-  </div>
-  
-  <div *ngIf="imagePreview">
-    <h2>Nuevo avatar</h2>
-    <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar"/>
-  </div>
-  
-  <input type="file" hidden (change)="onFileSelected($event)" #fileInput/>
-  <button mat-raised-button (click)="fileInput.click()">Adjuntar Imagen</button>
-  <div>
-    <button mat-raised-button (click)="save()">Enviar</button>
-  </div>
+<mat-grid-list cols="3" rowHeight="200px" *ngIf="user">
+  <mat-grid-tile>
+      <div>
+        <h2 *ngIf="user.avatarImage">Foto de perfil</h2>
+        <img src="{{ user.avatarImage }}" style="max-width: 150px;" />
+        
+        <button mat-menu-item *ngIf="isLoggedIn" routerLink="/users/avatar">
+          <mat-icon>photo_camera</mat-icon>
+          Mi avatar
+        </button>
+      </div>
+
+  </mat-grid-tile>
+
+  <mat-grid-tile rowspan="2">
+    <div>
+      <h2>{{ user.fullName }}</h2>
+      <p>Fecha nacimiento: {{ user.birthday| date : "dd/MM/YYYY" }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Género: {{ user.email }}</p>
+
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile rowspan="2">
+    <div *ngIf="user.pets || user.privateTransport || user.publicTransport">
+      <h2>Más información:</h2>
+      <p *ngIf="user.pets"> Mascotas <mat-icon>done</mat-icon></p>
+      <p *ngIf="user.publicTransport"> Utiliza transporte público <mat-icon>done</mat-icon> </p>
+      <p *ngIf="user.privateTransport"> Utiliza transporte privado <mat-icon>done</mat-icon></p>
+
+    </div>
+  </mat-grid-tile>
+
+  <mat-grid-tile>
+    <button mat-raised-button color="primary"
+        style="width: 100%;" routerLink="/users/register"> <!-- esto debería llevar a un fromulario para cambiar los datos -->
+          <mat-icon>manage_accounts</mat-icon>
+        Editar perfil 
+        </button>
+  </mat-grid-tile>
+</mat-grid-list>
