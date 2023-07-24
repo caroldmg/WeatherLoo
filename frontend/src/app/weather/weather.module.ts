@@ -20,7 +20,12 @@ import {MatCardModule} from '@angular/material/card';
     CommonModule,
     WeatherRoutingModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
+  ],
+  exports: [
+
+    WeatherDetailComponent
   ]
 })
 export class WeatherModule { }

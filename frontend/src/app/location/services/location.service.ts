@@ -55,6 +55,10 @@ export class LocationService {
     return this.httpClient.get<IAutonomy>(`${this.urlAutonomies}/id/${id}`)
   }
   searchByTownName(name: string): Observable <ITown>{
+    const filter = `${this.urlTowns}/name/${name}`;
+    return this.httpClient.get<ITown>(filter)
+  }
+  getdetail(name: string): Observable <ITown>{
     return this.httpClient.get<ITown>(`${this.urlTowns}/name/${name}`)
   }
   
