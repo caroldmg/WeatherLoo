@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Post, UseGuards, Request } from '@nestjs/common';
+import { Body, Controller, Get, Post, UseGuards, Request, UnauthorizedException } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { LoginDTO } from './dto/login.dto';
 import { TokenDTO } from './dto/token.dto';
@@ -37,5 +37,11 @@ export class AuthController {
         return request.user;
     }
 
+    @UseGuards(AuthGuard('jwt'))
+    @Get('refresh')
+    async refreshToken(@Request() request): Promise<TokenDTO> {
+        if(!request.user) throw new UnauthorizedException();
 
+        return this.authService.refreshToken(request.user);
+    }
 }

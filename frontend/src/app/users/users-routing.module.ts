@@ -1,6 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserFormComponent } from './user-form/user-form.component';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { AvatarComponent } from './avatar/avatar.component';
 
@@ -9,7 +9,7 @@ import { AvatarComponent } from './avatar/avatar.component';
 const routes: Routes = [
   {
     path:'register',
-    component:UserRegistrationComponent
+    component:UserFormComponent
   },
   {
     path: 'profile',
@@ -20,10 +20,10 @@ const routes: Routes = [
     component: AvatarComponent // http://localhost:4200/users/avatar
   },
   {
-    path:'', redirectTo: 'user-login' ,pathMatch: 'full'
+    path:'', redirectTo: '/auth/login' ,pathMatch: 'full'
   },
   {
-    path:'**', redirectTo: 'user-login', pathMatch:'full'
+    path:'**', redirectTo: '/auth/login', pathMatch:'full'
   }
   
  

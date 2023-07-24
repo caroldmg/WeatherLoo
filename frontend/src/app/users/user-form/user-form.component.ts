@@ -1,18 +1,17 @@
-import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { IUser } from '../models/user.model';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
-  selector: 'app-user-registration',
-  templateUrl: './user-registration.component.html',
-  styleUrls: ['./user-registration.component.css']
+  selector: 'app-user-form',
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.css']
 })
 
-export class UserRegistrationComponent {
+export class UserFormComponent {
 
   user: IUser | undefined;
 
@@ -71,10 +70,15 @@ export class UserRegistrationComponent {
       publicTransport: publicTransport
     }
 
-    this.userService.update(user)
-      .subscribe(data =>{ 
+    this.userService.update(user).subscribe(data1 => { 
         console.log('usuario actualizado');
-        this.router.navigate(['/users/profile']);
+
+        this.authService.refreshToken().subscribe(data2 => {
+          console.log(data2.token);
+          this.authService.handleLoginResponse(data2.token);
+          this.router.navigate(['/users/profile']);
+        });
+        
       });
 
     

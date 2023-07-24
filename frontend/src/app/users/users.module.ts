@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { UsersRoutingModule } from './users-routing.module';
 
 import { AvatarComponent } from './avatar/avatar.component';
-import { UserRegistrationComponent } from './user-registration/user-registration.component';
+import { UserFormComponent } from './user-form/user-form.component';
 import { UserProfileComponent } from './user-profile/user-profile.component'
 
 import {ReactiveFormsModule,FormsModule } from '@angular/forms';
@@ -25,7 +25,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
-    UserRegistrationComponent,
+    UserFormComponent,
     UserProfileComponent,
     AvatarComponent
   ],

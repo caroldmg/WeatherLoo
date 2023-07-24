@@ -10,6 +10,7 @@ import { User } from 'src/users/users.entity';
 @Injectable()
 export class AuthService {
 
+
     constructor(
         private userService: UsersService,
         private jwtService: JwtService
@@ -38,6 +39,19 @@ export class AuthService {
 
         return token;
 
+    }
+
+    async refreshToken(user: User): Promise<TokenDTO> {
+        let payload = {
+            username: user.fullName,
+            sub: user.id,
+        }
+
+        let token: TokenDTO = {
+            token: await this.jwtService.signAsync(payload)
+        }
+
+        return token;    
     }
 
     async register(register: RegisterDTO): Promise<TokenDTO> {

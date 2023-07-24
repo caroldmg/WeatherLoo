@@ -36,6 +36,10 @@ export class AuthService {
     return this.httpClient.post(`${this.url}/login`, login);
   }
 
+  refreshToken(): Observable<any> {
+    return this.httpClient.get(`${this.url}/refresh`);
+  }
+
   register(user: any): Observable<any> {
     return this.httpClient.post(`${this.url}/register`, user);
   }
