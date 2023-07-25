@@ -1,0 +1,15 @@
+ul li{
+    text-decoration: none;
+    list-style: none;
+}
+h2{
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #023047;
+
+}
+h3{
+    font-size: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #8ECAE6;
+}
