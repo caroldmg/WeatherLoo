@@ -13,6 +13,7 @@ mat-grid-tile{
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;    text-decoration: none;
     background-color: #848F46;
+    border-radius: 10% / 50%;
     
 }
 mat-grid-tile:hover{

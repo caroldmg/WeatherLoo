@@ -1,9 +1,44 @@
 footer{
     background-color: #023047;
     color: #219EBC;
+    font-family: 'Montserrat', sans-serif;
 
 }
 footer a{
     text-decoration: none;
     color: #219EBC;
+    
 }
+.menu-footer h3{
+    font-size: 2rem;
+    padding: 10px;
+    margin: 15px;
+}
+.menu-footer li {
+    list-style: none;
+    font-size: 1.5rem;
+    margin: 22px;
+}
+nav{
+    display: flex;
+    flex-direction: column;
+
+}
+.linkAemet{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    justify-content: center;
+}
+.footer h3{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.newsletter h3{
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+input{
+    border-radius: 30px;
+}
+/*------------------------------------------------------------*/
