@@ -19,11 +19,20 @@ body{
 }
 .card{
     margin-bottom: 20px;
-    border: solid rgb(78, 75, 75);
-    box-shadow: 10px 10px 5px rgb(78, 75, 75);
+    border: solid #023047;
+    box-shadow: 10px 10px 5px #023047;
+}
+.card a{
+    background-color: #023047;
+    color: #fff;
 }
 .card:hover{
     filter: opacity(75%);
+}
+.card a:hover{
+    background-color: #8ECAE6;
+    color: #fff;
+    border: #023047;
 }
 
 .popularNamesTowns{
