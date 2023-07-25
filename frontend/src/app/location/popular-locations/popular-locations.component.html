@@ -12,11 +12,9 @@
                             <img src="assets/images/popularLocations/{{popularTown.image}}" class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h2 class="card-title">{{popularTown.name}}</h2><!--cambiar el nombre de las propiedades-->
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                                    card's content. <br> {{popularTown.image}}
+                                <p class="card-text">Las ciudades presentadas estan por orden alfabético y son seleccionadas por nuestros usuarios como las más buscadas <br> {{popularTown.image}}
                                 </p>
-                                <a [routerLink]="['/weather/weather-detail/',popularTown.townCode]" class="btn btn-dark">Go
-                                    somewhere</a>
+                                <a [routerLink]="['/weather/weather-detail/',popularTown.townCode]" class="btn btn-dark">Saber el clima</a>
                             </div>
                         </div>
 
