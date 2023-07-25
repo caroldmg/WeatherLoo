@@ -15,6 +15,7 @@ ng generate interface weather/models/weather --type=model --prefix=I
 ## Location
 ng generate module location --routing --module app.module
 ng generate component location/province-list
+ng generate component location/town-list
 ng generate component location/fav-locations
 ng generate component location/search
 ng generate component location/popular-locations

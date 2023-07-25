@@ -16,12 +16,14 @@ import { BannerComponent } from '../recommendations/banner/banner.component';
 
 import { RecommendationsModule } from '../recommendations/recommendations.module';
 import { WeatherModule } from '../weather/weather.module';
+import { TownListComponent } from './town-list/town-list.component';
 @NgModule({
   declarations: [
     ProvinceListComponent,
     FavLocationsComponent,
     SearchComponent,
-    PopularLocationsComponent
+    PopularLocationsComponent,
+    TownListComponent
   ],
   imports: [
     CommonModule,

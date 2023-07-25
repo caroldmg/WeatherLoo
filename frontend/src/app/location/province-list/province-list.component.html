@@ -22,7 +22,7 @@
 
 <div class="provincesBox">
   <mat-grid-list cols="4" rowHeight="50px" [gutterSize]="'10px'">
-    <mat-grid-tile *ngFor="let province of provinces" > <a [routerLink]="['/location/search',province.id]">
+    <mat-grid-tile *ngFor="let province of provinces" > <a [routerLink]="['/location/towns',province.id]">
       {{province.name}}</a> 
     </mat-grid-tile>
   </mat-grid-list>
