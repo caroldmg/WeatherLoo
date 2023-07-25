@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MADRID_TOWNCODE, MIN_LLUVIA_ESCASA, TEMP_MAX_FRIO, TEMP_MIN_CALOR } from 'src/app/shared/constants';
+import { MADRID_TOWNCODE, MIN_LLUVIA_ESCASA, TEMP_FRIO, TEMP_CALOR } from 'src/app/shared/constants';
 
 import { IWeather } from 'src/app/weather/models/weather.model';
 import { WeatherService } from 'src/app/weather/services/weather.service';
@@ -60,9 +60,9 @@ export class PersonalRecommendationsComponent implements OnInit {
   }
 
   checkTemperature(temp: number){
-      if(temp > TEMP_MIN_CALOR){
+      if(temp > TEMP_CALOR){
         return "calor"
-      }else if(temp < TEMP_MAX_FRIO){
+      }else if(temp < TEMP_FRIO){
         return "frio"
       } else return ""
   }
