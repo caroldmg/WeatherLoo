@@ -1,4 +1,3 @@
-import { TypeofExpr } from "@angular/compiler";
 
 export enum Type{
     USE = "uso",
