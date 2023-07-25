@@ -2,7 +2,7 @@ import { Controller, Get, Param } from '@nestjs/common';
 import { Recommendation } from './recomendation.model';
 import { RecomendationService } from './recomendation.service';
 
-@Controller('recomendation')
+@Controller('recommendation')
 export class RecomendationController {
 
     constructor(private recommendationService: RecomendationService){}
@@ -18,8 +18,12 @@ export class RecomendationController {
     }
 
     @Get('type/:type')
-    findByType(@Param("type") type: string): Promise<Recommendation>{
+    findByType(@Param("type") type: string): Promise<Recommendation[]>{
         return this.recommendationService.findByType(type);
     }
 
+    @Get('weather/:weather')
+    findByWeather(@Param("weather") weather: string): Promise<Recommendation[]>{
+        return this.recommendationService.findByWeather(weather)
+    }
 }

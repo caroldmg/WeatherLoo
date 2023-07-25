@@ -21,10 +21,18 @@ export class RecomendationService {
             }
         })
     }
-    findByType(type: string): Promise<Recommendation>{
-        return this.recommendationRepo.findOne({
+    findByType(type: string): Promise<Recommendation[]>{
+        return this.recommendationRepo.find({
             where: {
                 type: type
+            }
+        })
+    }
+
+    findByWeather(weather: string): Promise<Recommendation[]>{
+        return this.recommendationRepo.find({
+            where: {
+                weather: weather
             }
         })
     }

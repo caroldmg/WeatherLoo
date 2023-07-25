@@ -4,19 +4,22 @@ import { CommonModule } from '@angular/common';
 import { RecommendationsRoutingModule } from './recommendations-routing.module';
 import { PersonalRecommendationsComponent } from './personal-recommendations/personal-recommendations.component';
 import { BannerComponent } from './banner/banner.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
   declarations: [
     PersonalRecommendationsComponent,
-    BannerComponent
+    BannerComponent,
   ],
   imports: [
     CommonModule,
-    RecommendationsRoutingModule
+    RecommendationsRoutingModule,
+    HttpClientModule
   ],
   exports: [
-    BannerComponent
+    BannerComponent,
+    PersonalRecommendationsComponent
   ]
 })
 export class RecommendationsModule { }

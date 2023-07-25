@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MADRID_TOWNCODE, MIN_LLUVIA_ESCASA, MIN_LLUVIA_INTENSA, TEMP_MAX_FRIO, TEMP_MIN_CALOR } from 'src/app/shared/constants';
-import { RECOMMENDATIONS } from 'src/app/shared/recommendations';
+import { MADRID_TOWNCODE, MIN_LLUVIA_ESCASA, TEMP_MAX_FRIO, TEMP_MIN_CALOR } from 'src/app/shared/constants';
+
 import { IWeather } from 'src/app/weather/models/weather.model';
 import { WeatherService } from 'src/app/weather/services/weather.service';
+import { RecommendationService } from '../services/recommendation.service';
+import { Recommendation } from '../models/recommendation';
 
 @Component({
   selector: 'app-personal-recommendations',
@@ -13,11 +15,14 @@ import { WeatherService } from 'src/app/weather/services/weather.service';
 export class PersonalRecommendationsComponent implements OnInit {
 
   weather: IWeather | undefined;
-  recommendations: any[] = [];
+  recommendationSky: Recommendation[] = [];
+  recommendationRain: Recommendation[] = [];
+  recommendationTemp: Recommendation[] = [];
 
   constructor(
     private weatherService: WeatherService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private recommendationService: RecommendationService
   ) { }
 
   ngOnInit(): void {
@@ -41,12 +46,17 @@ export class PersonalRecommendationsComponent implements OnInit {
   checkWeather(tempActual: number, stateSky: string, lluvia: number){
    
     this.checkTemperature(tempActual);
-    this.checkRain(lluvia)
 
     if (this.checkSky(stateSky) === "despejado" || this.checkSky(stateSky) === "poco nuboso" ){
-      this.recommendations.push()
+     this.recommendationService.findByWeather('sol').subscribe(data => this.recommendationSky = data)
     }
 
+    if (this.checkRain(lluvia))
+      this.recommendationService.findByWeather('lluvia').subscribe(data => this.recommendationRain = data )
+    
+    if (this.checkTemperature(tempActual)){
+       this.recommendationService.findByWeather(this.checkTemperature(tempActual)).subscribe(data => this.recommendationTemp = data )
+    }
   }
 
   checkTemperature(temp: number){
@@ -133,11 +143,9 @@ export class PersonalRecommendationsComponent implements OnInit {
 
   checkRain(rain: number){
     let lluvia: boolean = false
-    if(rain < MIN_LLUVIA_ESCASA){
-      lluvia = false;
-    } else 
-      lluvia = true
-    
+    if(rain > MIN_LLUVIA_ESCASA){
+      lluvia = true;
+    } 
     return lluvia;
   }
 
