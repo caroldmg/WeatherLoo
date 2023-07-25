@@ -31,3 +31,11 @@ mat-grid-tile a{
     margin-bottom: 50px;
 }
 
+.autonomyFilter h2{
+    color: #848F46;
+    font-size: 2rem;
+    font-family: 'Inter', sans-serif;
+    justify-self: center;
+
+}
+
