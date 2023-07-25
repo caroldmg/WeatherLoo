@@ -4,6 +4,7 @@ import { ProvinceListComponent } from './province-list/province-list.component';
 import { PopularLocationsComponent } from './popular-locations/popular-locations.component';
 import { FavLocationsComponent } from './fav-locations/fav-locations.component';
 import { SearchComponent } from './search/search.component';
+import { TownListComponent } from './town-list/town-list.component';
 
 const routes: Routes = [
   {
@@ -22,11 +23,15 @@ const routes: Routes = [
     path: 'popular-location',
     component: PopularLocationsComponent
   },
-  // Revisar si hacen falta estas rutas
   {
-    path: 'fav-locations',
-    component: FavLocationsComponent
+    path: 'towns',
+    component: TownListComponent
   },
+  {
+    path: 'towns/:provinceId',
+    component: TownListComponent
+  },
+  // Revisar si hacen falta estas rutas
   {
     path: 'search',
     component: SearchComponent

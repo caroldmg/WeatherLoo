@@ -1,0 +1,33 @@
+
+<div *ngIf="province"> 
+    <h2> {{province.name}}</h2> 
+  </div>
+  <!-- DE MOMENTO SE MUESTRAN TODAS, HAY QUE PAGINAR -->
+  <mat-accordion>
+  
+    <mat-expansion-panel *ngIf="!province">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Filtrar por provincia
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+        <mat-chip-listbox>
+          <a *ngFor="let province of provinces" [routerLink]="['/location/towns', province.id]">
+            <mat-chip-option>
+              {{province.name}}
+            </mat-chip-option>
+          </a>
+        </mat-chip-listbox>
+    </mat-expansion-panel>
+  </mat-accordion>
+  
+  <div class="provincesBox">
+    <mat-grid-list cols="4" rowHeight="50px" [gutterSize]="'10px'">
+      <mat-grid-tile *ngFor="let town of towns" > <a [routerLink]="['/weather/weather-detail',town.townCode]">
+        {{town.name}}</a> 
+      </mat-grid-tile>
+    </mat-grid-list>
+  
+  </div>
+  
+  
