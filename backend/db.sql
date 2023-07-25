@@ -8215,3 +8215,23 @@ UPDATE `backend_weatherloo`.`town` SET `image` = 'segovia.jpeg' WHERE (`townCode
 UPDATE `backend_weatherloo`.`town` SET `image` = 'sevilla.jpeg' WHERE (`townCode` = '41091');
 UPDATE `backend_weatherloo`.`town` SET `image` = 'valencia.jpeg' WHERE (`townCode` = '46250');
 UPDATE `backend_weatherloo`.`town` SET `image` = 'bilbao.jpeg' WHERE (`townCode` = '48020');
+
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Gafas de sol', 'sol');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Protector solar', 'sol');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Gorra', 'sol');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'paraguas', 'lluvia');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Chubasquero', 'lluvia');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Botas', 'lluvia');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Ropa impermeable', 'lluvia');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Ropa abrigada', 'frio');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Uso de gorro y guantes', 'frio');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Bufanda', 'frio');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Ropa ligera', 'calor');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('uso', 'Abanico', 'calor');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Beber mucha agua', 'sol');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Lavar ropa', 'sol');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Recoger la ropa tendida', 'lluvia');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Cuidado al conducir', 'lluvia');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Demoras en el transporte público', 'lluvia');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Recuerda que en epocas de frio con airear la casa 10 minutos es suficiente para ventilar', 'frio');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Recuerda que en epocas de frio con airear la casa 10 minutos es suficiente para ventilar', 'calor');

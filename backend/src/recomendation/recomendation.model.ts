@@ -1,23 +1,38 @@
-import { Column, Entity, PrimaryColumn } from "typeorm";
 
+import { Column, Entity, PrimaryColumn, PrimaryGeneratedColumn } from "typeorm";
+
+export enum Type{
+    USE = "uso",
+    ACTION = "acción"
+
+}
+export enum Weather{
+
+    SOL = "sol",
+    LLUVIA = "lluvia",
+    FRIO = "frio",
+    CALOR = "calor"
+}
 @Entity()
 export class Recommendation{
 
-    @PrimaryColumn()
+    @PrimaryGeneratedColumn()
     id: number
 
-    @Column()
+    @Column({
+        type: 'enum',
+        enum: Type
+    })
     type: string;
 
-    @Column()
-    sol: string[];
+    @Column({type: "text"})
+    description: string
 
-    @Column()
-    lluvia: string[];
+    @Column({
+        type: 'enum',
+        enum: Weather
+    })
+    weather: string
 
-    @Column()
-    frío: string[];
-
-    @Column()
-    calor: string[]
+    
 }
