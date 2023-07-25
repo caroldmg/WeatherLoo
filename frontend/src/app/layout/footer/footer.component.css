@@ -8,6 +8,11 @@ footer a{
     color: #219EBC;
     
 }
+.menu-footer h3{
+    font-size: 3rem;
+    padding: 10px;
+    margin: 15px;
+}
 .menu-footer li {
     list-style: none;
     font-size: 2rem;
