@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { BASE_URL } from 'src/app/shared/constants';
 import { IUser } from '../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-avatar',
@@ -15,7 +16,8 @@ export class AvatarComponent implements OnInit {
   imageFile: File | undefined; // para subir
   user: IUser | undefined; // traer el usuario para comprobar si tiene avatar y mostrarlo
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient,
+    private router: Router) {}
 
   ngOnInit(): void {
     this.loadCurrentUser();
@@ -59,6 +61,8 @@ export class AvatarComponent implements OnInit {
                   this.imageFile = undefined;
                   this.imagePreview = undefined;
                 });
+    
+    this.router.navigate(['/users/profile']);
   }
 
 
