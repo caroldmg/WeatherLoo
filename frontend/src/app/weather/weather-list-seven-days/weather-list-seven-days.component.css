@@ -1,3 +1,29 @@
-.card-grid{
-    display: grid;
+.weatherDays{
+    
+    padding: 30px;
+}
+.cardBigBox{
+    display: flex;
+    padding: 15px;
+    margin: 20px;
+    background-color: #086788;
+    border-radius: 30px;
+    padding-right: 25px;
+    
+}
+.example-cards{
+    box-shadow: 10px 5px 5px #ffff;
+    border-radius: 30px;
+    margin: 10px;
+    
+    
+    
+    
+}
+
+.weatherDaysTitle{
+    font-size: 3rem;
+    font-family: 'Montserrat', sans-serif; 
+    color: #848F46;
+    text-shadow: #086788 1px 0 10px;;
 }
