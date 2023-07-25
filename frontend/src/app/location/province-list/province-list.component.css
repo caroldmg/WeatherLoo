@@ -12,27 +12,27 @@ mat-grid-tile{
     border-radius: 10% / 50%;
     
 }
+
 mat-grid-tile:hover{
-    
+
     border: solid #848F46;
-    
     background-color: #086788;
-    
 }
+
 mat-grid-tile a{
     
     margin: 30px !important;
     text-decoration: none;
-    color: #FFF;
-    
+    color: #FFF;   
 }
+
 .provincesBox{
     margin: 30px;
     margin-bottom: 50px;
 }
 
 .autonomyFilter h2{
-    color: #848F46;
+    color: #8e9a4c;
     font-size: 2rem;
     font-family: 'Inter', sans-serif;
     justify-self: center;
