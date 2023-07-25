@@ -1,11 +1,14 @@
-<p>personal-recommendations works!</p>
+<h2>RECOMENDACIONES</h2>
 
 <ul *ngIf="recommendationSky">
+    <h3>Hace sol: </h3>
     <li *ngFor="let recommendation of recommendationSky"> {{recommendation.description}} </li>
 </ul>
-<ul *ngIf="recommendationRain">
+<ul *ngIf="recommendationRain.length < 0 ">
+    <h3>Llueve: </h3>
     <li *ngFor="let recommendation of recommendationRain"> {{recommendation.description}} </li>
 </ul>
-<ul *ngIf="recommendationTemp">
+<ul *ngIf="recommendationTemp.length < 0">
+    <h3>Por la temperatura, te recomendamos:</h3>
     <li *ngFor="let recommendation of recommendationTemp"> {{recommendation.description}} </li>
 </ul>
