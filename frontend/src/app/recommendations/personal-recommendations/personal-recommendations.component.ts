@@ -18,6 +18,8 @@ export class PersonalRecommendationsComponent implements OnInit {
   recommendationSky: Recommendation[] = [];
   recommendationRain: Recommendation[] = [];
   recommendationTemp: Recommendation[] = [];
+  tempValue: string = '';
+  stateSkyValue: string = '';
 
   constructor(
     private weatherService: WeatherService,
@@ -44,47 +46,55 @@ export class PersonalRecommendationsComponent implements OnInit {
   }
 
   checkWeather(tempActual: number, stateSky: string, lluvia: number){
-   
-    this.checkTemperature(tempActual);
-
-    if (this.checkSky(stateSky) === "despejado" || this.checkSky(stateSky) === "poco nuboso" ){
+   this.checkSky(stateSky)
+    if (this.stateSkyValue === "despejado" || this.stateSkyValue === "poco nuboso" ){
      this.recommendationService.findByWeather('sol').subscribe(data => this.recommendationSky = data)
     }
 
     if (this.checkRain(lluvia))
       this.recommendationService.findByWeather('lluvia').subscribe(data => this.recommendationRain = data )
     
+    if (this.tempValue)
+    this.recommendationService.findByWeather(this.tempValue).subscribe(data => this.recommendationTemp = data )
+
+    console.log(this.tempValue);
+    
+
     if (this.checkTemperature(tempActual)){
-       this.recommendationService.findByWeather(this.checkTemperature(tempActual)).subscribe(data => this.recommendationTemp = data )
+       this.recommendationService.findByWeather(this.checkTemperature(tempActual)).subscribe(data =>{ 
+        this.recommendationTemp = data;
+        console.log(this.recommendationTemp);
+        
+       })
     }
   }
 
   checkTemperature(temp: number){
       if(temp > TEMP_CALOR){
-        return "calor"
+       this.tempValue = "calor"
       }else if(temp < TEMP_FRIO){
-        return "frio"
-      } else return ""
+        this.tempValue = "frio"
+      } 
+      return this.tempValue
   }
 
   checkSky(stateSky: string){ 
-    let estado: string = ""
     switch (stateSky){
       
       case "11":
       case "11n":
-        estado = "despejado";
+        this.stateSkyValue = "despejado";
         break;
       case "12":
       case "13":
         
-          estado = "poco nuboso"
+      this.stateSkyValue = "poco nuboso"
           break;
         
       case "17":
       case "17n":
         
-        estado = "nubes altas"
+      this.stateSkyValue = "nubes altas"
         break; 
       case "16":
       case "16n":
@@ -92,7 +102,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "15n":
       case "14":
       case "14n":
-        estado = "nuboso";
+        this.stateSkyValue = "nuboso";
         break;
       
       case "64":
@@ -103,7 +113,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "53":
       case "52":
       case "51":
-        estado = "cubierto con tormenta";
+        this.stateSkyValue = "cubierto con tormenta";
         break;
       case "46":
       case "45":
@@ -113,7 +123,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "23":
       case "43":
       case "43n":
-        estado = "lluvia"
+        this.stateSkyValue = "lluvia"
         break;
       case "74":
       case "73":
@@ -123,22 +133,22 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "35":
       case "34":
       case "33":
-        estado = "nieve";
+        this.stateSkyValue = "nieve";
         break;
       case "81":
       case "81n":
       case "82":
       case "82n":
-        estado =  "niebla";
+        this.stateSkyValue =  "niebla";
         break;
 
       default: 
-        estado = "nusé"
+      this.stateSkyValue = "nusé"
     }
 
-    console.log(`estado: ${estado}`);
+    console.log(`estado: ${this.stateSkyValue}`);
     console.log(`statesky: ${stateSky}`);
-    return estado;
+    return this.stateSkyValue;
   }
 
   checkRain(rain: number){

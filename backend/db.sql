@@ -8234,4 +8234,4 @@ INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weath
 INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Cuidado al conducir', 'lluvia');
 INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Demoras en el transporte público', 'lluvia');
 INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Recuerda que en epocas de frio con airear la casa 10 minutos es suficiente para ventilar', 'frio');
-INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', 'Recuerda que en epocas de frio con airear la casa 10 minutos es suficiente para ventilar', 'calor');
+INSERT INTO `backend_weatherloo`.`recommendation` (`type`, `description`, `weather`) VALUES ('accion', "Bajar persianas y/o toldo para mantener temperaturas internas bajas", 'calor');

@@ -8,7 +8,7 @@
     <h3>Llueve: </h3>
     <li *ngFor="let recommendation of recommendationRain"> {{recommendation.description}} </li>
 </ul>
-<ul *ngIf="recommendationTemp.length < 0">
+<ul *ngIf="recommendationTemp.length !== 0">
     <h3>Por la temperatura, te recomendamos:</h3>
     <li *ngFor="let recommendation of recommendationTemp"> {{recommendation.description}} </li>
 </ul>
