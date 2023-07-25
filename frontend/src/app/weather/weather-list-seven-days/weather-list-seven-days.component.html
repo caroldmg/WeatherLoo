@@ -15,9 +15,9 @@
   
           <mat-card-content>
             <ul>
-              <li>Temperatura máxima: {{day.temperatura.maxima}} </li>
-              <li>Temperatura mínima: {{day.temperatura.minima}} </li>
-              <li>Estado del cielo: {{day.estado_cielo_descripcion[3]}} </li>
+              <li>T máxima: {{day.temperatura.maxima}} </li>
+              <li>T mínima: {{day.temperatura.minima}} </li>
+              <li *ngIf="day.estado_cielo_descripcion[3]">Estado del cielo: {{day.estado_cielo_descripcion[3]}} </li>
             </ul>
           </mat-card-content>
         </div>
