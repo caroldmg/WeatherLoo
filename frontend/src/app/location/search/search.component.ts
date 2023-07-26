@@ -50,7 +50,6 @@ export class SearchComponent implements OnInit{
 
 
     else{
-      alert("Ciudad mal escrita, pruebe nuevamente")
       return console.log("fuck off")
     }
   }
