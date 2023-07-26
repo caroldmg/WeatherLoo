@@ -1,32 +1,44 @@
 
-<h2>Iniciar sesión</h2>
+<div class="login-page">
+  <div class="form">
+    <div class="exit">
+      <mat-icon routerLink="/location/popular-location">
+        close
+        </mat-icon>
 
-<mat-icon routerLink="/location/popular-location">
-  close
-  </mat-icon>
+    </div>
+    <div class="titlelog">
+      
+      <h2>Iniciar sesión</h2>
+      
+    </div>
 
-<form [formGroup]="userForm" (ngSubmit)="save()">
+    
+    <form [formGroup]="userForm" (ngSubmit)="save()" class="register-form">
+    
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput type="email" formControlName="email">
+      </mat-form-field>
+    
+    
+      <mat-form-field>
+        <mat-label>Contraseña</mat-label>
+        <input matInput type="password" formControlName="password">
+      </mat-form-field>
+    
+      <button mat-fab extended type="submit"
+            [disabled]="userForm.invalid">
+          Iniciar sesión
+      </button>
+    </form>
+    <!-- REDIRIGIR AL FORMULARIO DE REGISTRO -->
+    <div>
+      <button mat-fab extended color="primary" routerLink="/auth/register">
+          Crear cuenta
+      </button>
+  </div>
 
-  <mat-form-field>
-    <mat-label>Email</mat-label>
-    <input matInput type="email" formControlName="email">
-  </mat-form-field>
+  </div>
 
-
-  <mat-form-field>
-    <mat-label>Contraseña</mat-label>
-    <input matInput type="password" formControlName="password">
-  </mat-form-field>
-
-  <button mat-fab extended type="submit"
-        [disabled]="userForm.invalid">
-      Iniciar sesión
-  </button>
-</form>
-<!-- REDIRIGIR AL FORMULARIO DE REGISTRO -->
-<div>
-  <button mat-fab extended color="primary" routerLink="/auth/register">
-      Crear cuenta
-  </button>
-</div>
-
+</div>  
