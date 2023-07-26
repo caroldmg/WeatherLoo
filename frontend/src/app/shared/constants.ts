@@ -18,6 +18,10 @@ export const MIN_LLUVIA_ESCASA = 30;
 
 export const MIN_LLUVIA_INTENSA = 60;
 
+// constante viento
+
+export const VIENTO_ALERT = 70;
+
 // recomendaciones: alerta
 
 export const ALERTS = {

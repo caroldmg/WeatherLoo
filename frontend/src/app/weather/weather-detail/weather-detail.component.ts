@@ -45,8 +45,6 @@ export class WeatherDetailComponent implements OnInit{
             this.provincia = this.municipio?.province
           });
           
-          console.log(this.provincia);
-          
         } 
         // else {
         //   const townCode = MADRID_TOWNCODE

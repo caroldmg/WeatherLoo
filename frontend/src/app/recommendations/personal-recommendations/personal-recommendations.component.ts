@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MADRID_TOWNCODE, MIN_LLUVIA_ESCASA, TEMP_FRIO, TEMP_CALOR } from 'src/app/shared/constants';
+import { MADRID_TOWNCODE, MIN_LLUVIA_ESCASA, TEMP_FRIO, TEMP_CALOR, ALERTS, MIN_LLUVIA_INTENSA, TEMP_MUCHO_CALOR, TEMP_MUCHO_FRIO, VIENTO_ALERT } from 'src/app/shared/constants';
 
 import { IWeather } from 'src/app/weather/models/weather.model';
 import { WeatherService } from 'src/app/weather/services/weather.service';
@@ -20,6 +20,7 @@ export class PersonalRecommendationsComponent implements OnInit {
   recommendationTemp: Recommendation[] = [];
   tempValue: string = '';
   stateSkyValue: string = '';
+  alerts: string[] = [];
 
   constructor(
     private weatherService: WeatherService,
@@ -38,8 +39,10 @@ export class PersonalRecommendationsComponent implements OnInit {
       console.log(townCode);
 
       this.weatherService.getWeatherRealTime(townCode).subscribe(data => {
+        console.log(data);
         this.weather = data;
-        this.checkWeather(this.weather.temperatura_actual, this.weather.stateSky.id, this.weather.lluvia)
+         this.checkWeather(this.weather.temperatura_actual, this.weather.stateSky.id, this.weather.lluvia);
+
       })
     })
 
@@ -47,17 +50,23 @@ export class PersonalRecommendationsComponent implements OnInit {
 
   checkWeather(tempActual: number, stateSky: string, lluvia: number){
    this.checkSky(stateSky)
-    if (this.stateSkyValue === "despejado" || this.stateSkyValue === "poco nuboso" ){
-     this.recommendationService.findByWeather('sol').subscribe(data => this.recommendationSky = data)
+    if (this.checkSky(stateSky) === "despejado" || this.checkSky(stateSky) === "poco nuboso" ){
+     this.recommendationService.findByWeather('sol').subscribe(data =>this.recommendationSky = data);
+    } else if (this.checkSky(stateSky) === "tormenta"){
+      this.alerts.push(ALERTS["tormenta"]);
+    }else if (this.checkSky(stateSky) === "nieve"){
+      this.alerts.push(ALERTS["nieve"]);
     }
 
-    if (this.checkRain(lluvia))
-      this.recommendationService.findByWeather('lluvia').subscribe(data => this.recommendationRain = data )
-    
-    if (this.tempValue)
-    this.recommendationService.findByWeather(this.tempValue).subscribe(data => this.recommendationTemp = data )
-
-    console.log(this.tempValue);
+    if (this.checkRain(lluvia)){
+      this.recommendationService.findByWeather('lluvia').subscribe(data => this.recommendationRain = data );
+      if(this.checkRain(lluvia) === "lluvia intensa"){
+        this.alerts.push(ALERTS["lluvia"])
+      }
+    }
+    if (this.tempValue){
+      this.recommendationService.findByWeather(this.tempValue).subscribe(data => this.recommendationTemp = data)
+    }
     
 
     if (this.checkTemperature(tempActual)){
@@ -70,11 +79,18 @@ export class PersonalRecommendationsComponent implements OnInit {
   }
 
   checkTemperature(temp: number){
-      if(temp > TEMP_CALOR){
+      
+      if (temp >= TEMP_MUCHO_CALOR){
+        this.tempValue = "calor";
+        this.alerts.push(ALERTS["mucho calor"])
+      }else if(temp > TEMP_CALOR && temp < TEMP_MUCHO_CALOR){
        this.tempValue = "calor"
-      }else if(temp < TEMP_FRIO){
-        this.tempValue = "frio"
-      } 
+      } else if(temp < TEMP_FRIO && temp > TEMP_MUCHO_FRIO ){
+        this.tempValue = "frio";
+        this.alerts.push(ALERTS["mucho frio"])
+      } else if (temp <= TEMP_MUCHO_FRIO){
+        this.tempValue = "mucho frio"
+      }
       return this.tempValue
   }
 
@@ -113,7 +129,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "53":
       case "52":
       case "51":
-        this.stateSkyValue = "cubierto con tormenta";
+        this.stateSkyValue = "tormenta";
         break;
       case "46":
       case "45":
@@ -152,11 +168,25 @@ export class PersonalRecommendationsComponent implements OnInit {
   }
 
   checkRain(rain: number){
-    let lluvia: boolean = false
-    if(rain > MIN_LLUVIA_ESCASA){
-      lluvia = true;
-    } 
+    let lluvia: string = '';
+    if(rain > MIN_LLUVIA_ESCASA && rain < MIN_LLUVIA_INTENSA){
+      lluvia = "lluvia";
+    } else if(rain >= MIN_LLUVIA_INTENSA){
+      lluvia = "lluvia intensa"
+    }
     return lluvia;
+  }
+
+  checkWind(racha: number[]){
+    let wind: number = 0;
+    for(let i=0; i>= racha.length; i++){
+      if(racha[i] >= wind){
+        wind = racha[i];
+      }
+    }
+    if(wind > VIENTO_ALERT ){
+      this.alerts.push(ALERTS["viento"])
+    }
   }
 
 }

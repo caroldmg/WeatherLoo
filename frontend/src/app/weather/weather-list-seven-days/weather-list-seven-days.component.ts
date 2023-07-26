@@ -43,12 +43,9 @@ export class WeatherListSevenDaysComponent implements OnInit {
             this.provincia = this.municipio?.province
           });
           
-          console.log(this.provincia);
-          
         }
        this.weatherService.getWeatherRealTime(townCode).subscribe(data =>{ 
         this.weather = data;
-        console.log(this.weather);
         
       })
    })
