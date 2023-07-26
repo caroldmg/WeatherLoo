@@ -8,8 +8,10 @@
             <div class="tMaxMinBox">
                 <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
                 <div class="MaxandMinT">
-                    <p>Max: <span>{{weather.temperaturas.max}}°C</span></p>
-                    <p>Min: <span>{{weather.temperaturas.min}}°C</span></p>
+                    <p>Max: </p>
+                    <p><span>{{weather.temperaturas.max}}°C</span></p>
+                    <p>Min: </p>
+                    <p><span>{{weather.temperaturas.min}}°C</span></p>
                 </div>
 
 
@@ -29,7 +31,7 @@
     
 </div>
 
-<div *ngIf="weather" class="d-flex justify-content-around">
+<div *ngIf="weather" class="d-flex justify-content-around container">
     <div class="detailRealtime d-flex ">
         <p>Humedad <span class="apiDetailRealtime">{{weather.humedad}} %</span></p>
         <p>Viento <span class="apiDetailRealtime">{{weather.viento}} km/h</span></p>

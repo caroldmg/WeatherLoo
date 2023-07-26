@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ITown } from '../models/town.model';
 import { ActivatedRoute } from '@angular/router';
 import { LocationService } from '../services/location.service';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-popular-locations',
@@ -13,12 +14,14 @@ export class PopularLocationsComponent {
 
   popularTowns: ITown[] = []
 
-  constructor(private locationService: LocationService) {}
+  isLoggedIn = false;
+
+  constructor(private locationService: LocationService, public authService: AuthService) {}
 
   ngOnInit(): void {
-    
     //mostrar todas las localidades
-    this.loadPopularTowns()     
+    this.loadPopularTowns();
+    this.authService.isLoggedIn.subscribe(loggedIn => this.isLoggedIn = loggedIn);
   }
 
   loadPopularTowns() {

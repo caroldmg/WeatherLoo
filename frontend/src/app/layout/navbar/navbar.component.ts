@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from 'src/app/auth/auth.service';
 import { LocationModule } from 'src/app/location/location.module';
 import { SearchComponent } from 'src/app/location/search/search.component';
 
@@ -10,5 +11,12 @@ import { SearchComponent } from 'src/app/location/search/search.component';
 export class NavbarComponent {
 
   showMenu: boolean = false
+  isLoggedIn = false;
+
+  constructor(public authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.isLoggedIn.subscribe(loggedIn => this.isLoggedIn = loggedIn);
+}
  
 }

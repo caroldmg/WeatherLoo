@@ -31,9 +31,12 @@
         <!-- Lista de todas las provincias -->
         <li><a routerLink="/location/provinces"> Provincias </a></li>
         <li><a routerLink="/location/towns"> Localidades</a></li>
-        <li><a routerLink="/users/profile"> Mi perfil </a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="/users/profile"> Mi perfil </a></li>
         <li><a routerLink="/auth/login"> Iniciar sesión </a></li>
         <li><a routerLink="/location/fav-locations"> Favoritos </a></li>
+        <button mat-menu-item *ngIf="isLoggedIn" (click)="authService.logout()">
+          Cerrar sesión
+        </button>
       </ul>
     </div>
 	</div>

@@ -3,6 +3,7 @@ import { IProvince } from '../models/province.model';
 import { LocationService } from '../services/location.service';
 import { ActivatedRoute } from '@angular/router';
 import { IAutonomy } from '../models/autonomy.model';
+import { AuthService } from 'src/app/auth/auth.service';
 
 @Component({
   selector: 'app-province-list',
@@ -11,22 +12,21 @@ import { IAutonomy } from '../models/autonomy.model';
 })
 export class ProvinceListComponent {
 
-  displayedColumns: string[]= [
-    'province',
-    'autonomy'
-  ]
-
   provinces: IProvince[] = []
   autonomy: IAutonomy | undefined;
   autonomies: IAutonomy[] = [];
+  isLoggedIn = false;
 
   constructor(private locationService: LocationService,
-    private activatedRoute: ActivatedRoute){}
+    private activatedRoute: ActivatedRoute,
+    public authService: AuthService
+    ){}
 
   ngOnInit(): void {
     //mostrar todas las provincias
     
     this.loadProvinces();
+    this.authService.isLoggedIn.subscribe(loggedIn => this.isLoggedIn = loggedIn);
   }
 
   loadProvinces(){

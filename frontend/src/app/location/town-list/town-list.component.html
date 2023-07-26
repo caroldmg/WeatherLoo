@@ -30,7 +30,7 @@
   
   </div>
   
-  <div class=" banner">
+  <div class=" banner" *ngIf="!isLoggedIn">
     <app-banner routerLink="/auth/register"></app-banner>
 </div>
   
