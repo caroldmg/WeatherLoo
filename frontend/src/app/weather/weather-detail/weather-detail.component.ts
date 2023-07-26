@@ -29,7 +29,6 @@ export class WeatherDetailComponent implements OnInit{
 
    ngOnInit(): void {
      this.loadWeather();
-   
      }
     
   
