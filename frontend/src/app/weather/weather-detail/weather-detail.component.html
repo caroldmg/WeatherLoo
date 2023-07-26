@@ -1,46 +1,50 @@
-
-<div class="detailToday" *ngIf="weather">
-    <h2 class="detailTitle">Hoy en {{this.municipio?.name}}, {{provincia?.name}} </h2>
-    <div class=" d-flex">
-
-        <div class="d-flex realtimeBox">
-            <h3 class="TnumRealtime">{{weather.temperatura_actual}}°C</h3>
-            <div class="tMaxMinBox">
-                <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
-                <div class="MaxandMinT">
-                    <p>Max: </p>
-                    <p><span>{{weather.temperaturas.max}}°C</span></p>
-                    <p>Min: </p>
-                    <p><span>{{weather.temperaturas.min}}°C</span></p>
+<div class="weatherDetailBox">
+    <div class="detailToday" *ngIf="weather">
+        <h2 class="detailTitle">Hoy en {{this.municipio?.name}}</h2>
+        <h2>{{provincia?.name}}</h2>
+        <div class=" d-flex">
+    
+            <div class="d-flex realtimeBox">
+                <h3 class="TnumRealtime">{{weather.temperatura_actual}}°C</h3>
+                <div class="tMaxMinBox">
+                    <p>Sen.térmica: {{weather.temperatura_actual}}°C</p>
+                    <div class="MaxandMinT">
+                        <p>Max: </p>
+                        <p><span>{{weather.temperaturas.max}}°C</span></p>
+                        <p>Min: </p>
+                        <p><span>{{weather.temperaturas.min}}°C</span></p>
+                    </div>
+    
+    
                 </div>
-
-
+    
             </div>
-
+            <img src="../../../assets/images/Iconos/nube.png" alt="" ngClass="iconTRealtime">
+    
+    
         </div>
-        <img src="../../../assets/images/Iconos/nube.png" alt="" ngClass="iconTRealtime">
-
-
-    </div>
-    
-    
-</div>
-<div class="skyState" *ngIf="weather">
-    <h4>Estado del cielo</h4>
-     <p class="skyStateDescrip">{{weather.stateSky.description}}</p> 
-    
-</div>
-
-<div *ngIf="weather" class="d-flex justify-content-around container">
-    <div class="detailRealtime d-flex ">
-        <p>Humedad <span class="apiDetailRealtime">{{weather.humedad}} %</span></p>
-        <p>Viento <span class="apiDetailRealtime">{{weather.viento}} km/h</span></p>
-        <p *ngIf="weather.lluvia">Probabilidad de lluvia <span class="apiDetailRealtime">{{weather.lluvia}} %</span></p>
+        
         
     </div>
+    <div class="skyState" *ngIf="weather">
+        <h4>Estado del cielo</h4>
+         <p class="skyStateDescrip">{{weather.stateSky.description}}</p> 
+        
+    </div>
+    
+    <div *ngIf="weather" class="d-flex justify-content-around container">
+        <div class="detailRealtime d-flex ">
+            <p>Humedad <span class="apiDetailRealtime">{{weather.humedad}} %</span></p>
+            <p>Viento <span class="apiDetailRealtime">{{weather.viento}} km/h</span></p>
+            <p *ngIf="weather.lluvia">Probabilidad de lluvia <span class="apiDetailRealtime">{{weather.lluvia}} %</span></p>
+            
+        </div>
+    
+    </div>
+    
+    <app-personal-recommendations></app-personal-recommendations>
+    
+    <app-weather-list-seven-days></app-weather-list-seven-days>
+    
 
 </div>
-
-<app-personal-recommendations></app-personal-recommendations>
-
-<app-weather-list-seven-days></app-weather-list-seven-days>

@@ -29,7 +29,7 @@
   justify-content: flex-end;
 }
 .titlelog{
-  color: #76b852;
+  color: #086788;
   font-size: 3rem;
   font-family: 'Inter', sans-serif;
   justify-content: space-between;
@@ -70,7 +70,7 @@
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: #086788;
   width: 100%;
   border: 0;
   padding: 15px;
@@ -81,7 +81,7 @@
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #086788;
 }
 
 button{
