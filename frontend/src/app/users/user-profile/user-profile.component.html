@@ -39,4 +39,14 @@
         Editar perfil 
         </button>
   </mat-grid-tile>
+  
+  <mat-grid-tile>
+    <button mat-raised-button color="accent"
+        style="width: 100%;" (click)="deleteUser()" > <!-- esto debería llevar a un fromulario para cambiar los datos -->
+          <mat-icon><span class="material-symbols-outlined">
+            delete_forever
+            </span></mat-icon>
+        ELIMINAR PERFIL 
+        </button>
+  </mat-grid-tile>
 </mat-grid-list>

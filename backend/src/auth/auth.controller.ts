@@ -8,13 +8,8 @@ import { RegisterDTO } from './dto/register.dto';
 @Controller('auth')
 export class AuthController {
 
-    constructor(private authService: AuthService) {}
+    constructor(private authService: AuthService) { }
 
-    @Post('login')
-    async login(@Body() login: LoginDTO): Promise<TokenDTO> {
-        console.log(login);
-        return this.authService.login(login);
-    }
     /**
      * LOGIN EN POSTMAN
      * {
@@ -22,7 +17,20 @@ export class AuthController {
     "password": "1234"
         }
      */
-
+    @Post('login')
+    async login(@Body() login: LoginDTO): Promise<TokenDTO> {
+        console.log(login);
+        return this.authService.login(login);
+    }
+    /**
+     * 
+     * FUNCION register 
+     * {
+        "fullName": "user1",
+        "email": "user1@gmail.com",
+        "password": "1234"
+    }
+     */
     @Post('register')
     async register(@Body() register: RegisterDTO): Promise<TokenDTO> {
         return this.authService.register(register);
@@ -40,7 +48,7 @@ export class AuthController {
     @UseGuards(AuthGuard('jwt'))
     @Get('refresh')
     async refreshToken(@Request() request): Promise<TokenDTO> {
-        if(!request.user) throw new UnauthorizedException();
+        if (!request.user) throw new UnauthorizedException();
 
         return this.authService.refreshToken(request.user);
     }
