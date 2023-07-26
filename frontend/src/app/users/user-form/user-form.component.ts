@@ -14,6 +14,8 @@ import { AuthService } from 'src/app/auth/auth.service';
 export class UserFormComponent {
 
   user: IUser | undefined;
+  minBirthday = new Date(1910, 0, 1);
+  maxBirthday = new Date(2018, 0, 1);
 
   userForm = new FormGroup({
     id: new FormControl<number>(0),
