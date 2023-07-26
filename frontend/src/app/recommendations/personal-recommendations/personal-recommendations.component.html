@@ -1,10 +1,10 @@
-<h2 *ngIf="recommendationSky.length < 0 ||recommendationRain.length < 0 || recommendationTemp.length < 0 ">RECOMENDACIONES  </h2>
+<h2 *ngIf="recommendationSky.length > 0 ||recommendationRain.length > 0 || recommendationTemp.length > 0 ">RECOMENDACIONES  </h2>
 
-<ul *ngIf="recommendationSky.length < 0">
+<ul *ngIf="recommendationSky.length > 0">
     <h3>Hace sol: </h3>
     <li *ngFor="let recommendation of recommendationSky"> {{recommendation.description}} </li>
 </ul>
-<ul *ngIf="recommendationRain.length < 0 ">
+<ul *ngIf="recommendationRain.length > 0 ">
     <h3>Llueve: </h3>
     <li *ngFor="let recommendation of recommendationRain"> {{recommendation.description}} </li>
 </ul>
