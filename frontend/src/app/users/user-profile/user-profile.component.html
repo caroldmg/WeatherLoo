@@ -15,9 +15,9 @@
   <mat-grid-tile rowspan="2">
     <div>
       <h2>{{ user.fullName }}</h2>
-      <p>Fecha nacimiento: {{ user.birthday| date : "dd/MM/YYYY" }}</p>
+      <p *ngIf="user.birthday">Fecha nacimiento: {{ user.birthday| date : "dd/MM/YYYY" }}</p>
       <p>Email: {{ user.email }}</p>
-      <p>Género: {{ user.email }}</p>
+      <p *ngIf="user.gender!=='undeterminated' ">Género: {{ user.gender }}</p>
 
     </div>
   </mat-grid-tile>
