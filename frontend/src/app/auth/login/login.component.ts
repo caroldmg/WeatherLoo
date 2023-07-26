@@ -33,7 +33,7 @@ export class LoginComponent {
       this.authService.handleLoginResponse(data.token);
 
       // cuando haces el login, te redirige a la lista de provincias
-      this.router.navigate(['/location/provinces']);
+      this.router.navigate(['/location/popular-location']);
 
     });
     
