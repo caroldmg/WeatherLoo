@@ -62,5 +62,8 @@ export class LocationService {
    return this.httpClient.get<ITown>(filter)
   }
   
+  addFavTown(townCode: string): Observable <ITown>{
+    return this.httpClient.get<ITown>(`${this.urlTowns}/fav/${townCode}`)
+  }
   
 }

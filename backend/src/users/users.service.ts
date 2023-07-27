@@ -3,6 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './users.entity';
 import { LoginDTO } from 'src/auth/dto/login.dto';
+import { Town } from 'src/towns/towns.entity';
 
 @Injectable()
 export class UsersService {
@@ -62,7 +63,10 @@ export class UsersService {
             userFromDB.pets = user.pets;
             userFromDB.publicTransport = user.publicTransport;
             userFromDB.privateTransport = user.privateTransport;
+            if (!userFromDB.favTowns) userFromDB.favTowns = [];
+            userFromDB.favTowns = user.favTowns
 
+            // TODO ver si actualizar desde aquí las favTowns o crear un método aparte
             return await this.userRepo.save(userFromDB);
 
          } catch (error) {
@@ -81,6 +85,23 @@ export class UsersService {
 
          try {
             userFromDB.avatarImage = user.avatarImage;
+            return await this.userRepo.save(userFromDB);
+         } catch (error) {
+            console.log(error);
+            throw new ConflictException('Error actualizando user');
+         }
+    }
+
+    async updateFavTowns(user: User): Promise<User>{
+        let userFromDB = await this.userRepo.findOne({ 
+            where: {
+                id: user.id
+            }
+         });
+         if(!userFromDB) throw new NotFoundException('User no encontrado');
+         if (!userFromDB.favTowns) userFromDB.favTowns = [];
+         try {
+            userFromDB.favTowns = user.favTowns; 
             return await this.userRepo.save(userFromDB);
          } catch (error) {
             console.log(error);

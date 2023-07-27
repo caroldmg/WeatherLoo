@@ -8,6 +8,7 @@ import { Town } from './towns.entity';
 @Module({
   imports: [TypeOrmModule.forFeature([Town])],
   providers: [TownsService],
-  controllers: [TownsController]
+  controllers: [TownsController],
+  exports: [TownsService]
 })
 export class TownsModule {}

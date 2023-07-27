@@ -7,6 +7,7 @@ import { diskStorage } from 'multer';
 import { v4 as uuidv4 } from 'uuid';
 import { extname } from 'path';
 import { User } from './users.entity';
+import { TownsModule } from 'src/towns/towns.module';
 
 @Module({
   imports: [
@@ -21,7 +22,8 @@ import { User } from './users.entity';
         }
       })
     }),
-    TypeOrmModule.forFeature([User])
+    TypeOrmModule.forFeature([User]),
+    TownsModule
   ],
   controllers: [UsersController],
   providers: [UsersService],

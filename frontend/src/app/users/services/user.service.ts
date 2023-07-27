@@ -21,11 +21,15 @@ export class UserService {
     return this.httpClient.put<IUser>(`${this.url}`, user);
   }
 
+  addFavTown(townCode: string){
+    return this.httpClient.get<IUser>(`${this.url}/add/${townCode}`)
+  }
+
   httpOptions = {
     observe: 'response' as 'body'
   }
   deleteCurrentUser(id: number): Observable<HttpResponse<{}>> {
-    return this.httpClient.delete<HttpResponse<{}>>(`${this.url}/${id}`, this.httpOptions);
+    return this.httpClient.delete<HttpResponse<{}>>(`${this.url}/delete`, this.httpOptions);
   }
 }
 // TENADRIAMOS Q TENER UN SERVICE UN CONTROLER

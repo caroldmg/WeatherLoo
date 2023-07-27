@@ -33,5 +33,9 @@ export class TownsController {
         return this.townService.searchByTownName(name)
     }
 
+    @Get('fav/:townCode')
+    addFavTown(@Param('townCode') townCode: string): Promise <Town>{
+        return this.townService.addFavTown(townCode);
+    }
 
 }

@@ -1,15 +1,19 @@
-import { Body, Controller, UseGuards, Request, Delete, Get, Post, Put, UnauthorizedException, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, UseGuards, Request, Delete, Get, Post, Put, UnauthorizedException, UploadedFile, UseInterceptors, Param } from '@nestjs/common';
 import { UsersService } from './users.service';
 
 import { AuthGuard } from '@nestjs/passport';
 import { FileInterceptor } from '@nestjs/platform-express';
 import { User } from './users.entity';
+import { TownsService } from 'src/towns/towns.service';
 
 
 @Controller('users')
 export class UsersController {
 
-    constructor(private userService: UsersService) {}
+    constructor(
+        private userService: UsersService,
+        private townService: TownsService
+        ) {}
 
 
     @UseGuards(AuthGuard('jwt'))
@@ -49,5 +53,36 @@ export class UsersController {
         await this.userService.deleteById(userId);
     }
 
+    // llamar aquí desde servicio angular
+    @Get('/add/:townCode')
+    async addFavouriteTown(
+        @Request() request, 
+        @Param("townCode") townCode: string): Promise<void> {
+
+        console.log('soy el request' +request);
+        
+
+       let user = await this.userService.findById(request.user.id);
+
+         if (!user.favTowns) user.favTowns = [];
+
+        let town = await this.townService.findById(townCode);
+        user.favTowns.push(town);
+
+        this.userService.updateFavTowns(request.user);
+    }
+
+    // @Post('/add/:townCode')
+    // async addFavouriteTown(@Request() request, @Param("townCode") townCode: string): Promise<void> {
+
+    //    let user = await this.userService.findById(request.user.id);
+
+    //     if (!user.favTowns) user.favTowns = [];
+
+    //     let town = await this.townService.findById(townCode);
+    //     user.favTowns.push(town);
+
+    //     this.userService.updateFavTowns(request.user);
+    // }
     
 }

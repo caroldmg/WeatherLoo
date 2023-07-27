@@ -19,7 +19,7 @@ export interface IUser {
     pets?: boolean,
     privateTransport?: boolean,
     publicTransport?: boolean,
-    // lugaresFav: ITown[]
+    favTowns?: ITown[]
 }
 
 //duda ----- ¿aquíñ debemos poner un atributo lugaresfavoritos? 

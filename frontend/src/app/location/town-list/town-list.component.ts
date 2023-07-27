@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
 import { ITown } from '../models/town.model';
 import { IProvince } from '../models/province.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LocationService } from '../services/location.service';
 import { AuthService } from 'src/app/auth/auth.service';
+import { UserService } from 'src/app/users/services/user.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { IUser } from 'src/app/users/models/user.model';
 
 @Component({
   selector: 'app-town-list',
@@ -16,12 +19,15 @@ export class TownListComponent {
   towns: ITown[] = []
   province: IProvince | undefined;
   provinces: IProvince[] = [];
+  favTowns: ITown[]=[];
   isLoggedIn = false;
 
   constructor(
     private locationService: LocationService,
     private activatedRoute: ActivatedRoute,
-    public authService: AuthService
+    public authService: AuthService,
+    private userService: UserService,
+    private snackbar: MatSnackBar
     ){}
 
   ngOnInit(): void {
@@ -51,5 +57,21 @@ export class TownListComponent {
       console.log(this.provinces);
       
     })
+  }
+
+  addFavTown(townCode: string){
+    if(this.isLoggedIn){
+      let user: IUser|undefined
+      this.userService.findCurrentUser().subscribe(data => user = data)
+      this.locationService.addFavTown(townCode).subscribe( data =>{
+      this.favTowns.push(data);
+      console.log(this.favTowns);
+      if (user) {
+        if(!user.favTowns) user.favTowns = [];
+        user.favTowns.push(data)
+        this.userService.update(user).subscribe()
+      }
+    })
+    }
   }
 }

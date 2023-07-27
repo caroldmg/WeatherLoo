@@ -41,7 +41,8 @@ export class UserProfileComponent implements OnInit {
         next: response => {
           if (response.status === 200 || response.status === 204) {
             this.snackbar.open('El usuario se ha eliminado correctamente ', 'Cerrar', {duration: 3000});
-            this.router.navigate(['/auth/login'])
+            this.authService.logout();
+            this.router.navigate(['/auth/login']);
           } else {
             console.log('Se ha producido un error');
             this.snackbar.open('Se ha producido un error, inténtalo más tarde.', 'Cerrar', {duration: 3000});

@@ -64,4 +64,15 @@ export class TownsService {
         })
 
     }
+
+    addFavTown(townCode: string): Promise <Town>{
+       return this.townRepo.findOne({
+        relations: {
+            province: true
+        },
+            where: {
+                townCode: townCode
+            }
+        })
+    }
 }
