@@ -40,7 +40,8 @@ export interface IWeather {
     temperatura: number[]
     sens_termica: number[]
     humedad_relativa: number[]
-    viento: Viento[]
+    viento: Viento[];
+    estado_cielo_descripcion: string[]
   }
   
   export interface Attributes {

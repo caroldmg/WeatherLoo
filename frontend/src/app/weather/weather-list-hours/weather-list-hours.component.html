@@ -1,2 +1,22 @@
 <h2> Próximas horas</h2>
 
+<div *ngIf="weather" class="cardBigBox" >
+    <mat-card class="example-cards" *ngFor="let hour of weather.pronostico.hoy.temperatura; index as i"  >
+      <div class="boxCard">
+
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title > Hora: {{i}}:00  </mat-card-title>
+        </mat-card-header>
+        <img mat-card-image style="max-width: 50px;" src="../../../assets/images/Iconos/nube.png" alt="" ngClass="iconTRealtime">
+
+        <mat-card-content>
+          <ul>
+            <li>Temperatura: {{ hour }} </li>
+            <li>Estado del cielo: {{weather.pronostico.hoy.estado_cielo_descripcion[i] }} </li>
+            <li>Precipitación: {{weather.pronostico.hoy.precipitacion[i] }}% </li>
+          </ul>
+        </mat-card-content>
+      </div>
+    </mat-card>
+</div>

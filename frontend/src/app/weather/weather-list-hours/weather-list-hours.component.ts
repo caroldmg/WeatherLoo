@@ -17,6 +17,7 @@ export class WeatherListHoursComponent implements OnInit {
   weather: IWeather|undefined;
   municipio: ITown | undefined;
   provincia: IProvince | undefined;
+  currentHour: number = 0;
 
   constructor(private weatherService: WeatherService,
               private activatedRoute: ActivatedRoute,
@@ -28,7 +29,9 @@ export class WeatherListHoursComponent implements OnInit {
 
    ngOnInit(): void {
      this.loadWeather();
-   
+     this.currentHour = this.getCurrentHour()
+      console.log(this.currentHour);
+      
      }
     
   
@@ -44,14 +47,17 @@ export class WeatherListHoursComponent implements OnInit {
             this.provincia = this.municipio?.province
           });
           
-          console.log(this.provincia);
-          
         } 
-        // else {
-        //   const townCode = MADRID_TOWNCODE
-        // }
-       this.weatherService.getWeatherRealTime(townCode).subscribe(data => this.weather = data)
+       this.weatherService.getWeatherRealTime(townCode).subscribe(data =>{ 
+        this.weather = data;
+        
+      })
    })
 
  }
+
+  getCurrentHour(): number{
+    const currentDate = new Date();
+    return currentDate.getHours()
+  }
 }
