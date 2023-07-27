@@ -21,6 +21,8 @@ export class PersonalRecommendationsComponent implements OnInit {
   tempValue: string = '';
   stateSkyValue: string = '';
   alerts: string[] = [];
+  imgStateSky: string= '';
+  
 
   constructor(
     private weatherService: WeatherService,
@@ -101,8 +103,10 @@ export class PersonalRecommendationsComponent implements OnInit {
     switch (stateSky){
       
       case "11":
+        this.imgStateSky = ""
       case "11n":
         this.stateSkyValue = "despejado";
+        this.imgStateSky = "despejadoNoche"
         break;
       case "12":
       case "13":

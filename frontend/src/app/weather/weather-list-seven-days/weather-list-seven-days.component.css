@@ -1,18 +1,31 @@
 .weatherDays{
     
-    padding: 30px;
+   
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.weatherDaysBox{
+    display: flex;
+    flex-direction: column;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-radius: 30px;   
+    
 }
 .cardBigBox{
     display: flex;
+    flex-direction: row;
     padding: 15px;
     margin: 20px;
-    background-color: #086788;
-    border-radius: 30px;
-    padding-right: 25px;
+    overflow-x: scroll;
+    
+    
     
 }
 .example-cards{
-    box-shadow: 10px 5px 5px #ffff;
+    box-shadow: 5px 5px 5px 5px #1c93ba;
     border-radius: 30px;
     margin: 10px; 
     color: #848F46;
@@ -21,10 +34,18 @@
 
 .weatherDaysTitle{
     font-size: 3rem;
+    font-weight: 900;
     font-family: 'Montserrat', sans-serif; 
     color: #848F46;
-    text-shadow: #086788 1px 0 10px;;
+    text-shadow: #fff 1px 0 10px;
+    margin-bottom: 35px;
+    
 }
  ul li{
     list-style: none;
+}
+
+mat-card-title{
+    text-align: center;
+
 }
