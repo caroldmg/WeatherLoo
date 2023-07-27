@@ -33,26 +33,31 @@ export class PersonalRecommendationsComponent implements OnInit {
     this.loadWeather();
   }
 
-
   loadWeather() {
     this.activatedRoute.params.subscribe((params) => {
       const townCode = params['townCode'] ?? MADRID_TOWNCODE;
       console.log(townCode);
 
       this.weatherService.getWeatherRealTime(townCode).subscribe(data => {
-        console.log(data);
         this.weather = data;
          this.checkWeather(this.weather.temperatura_actual, this.weather.stateSky.id, this.weather.lluvia);
-
+         
+         console.log('recommendationSky --> ' + this.recommendationSky)
       })
     })
 
   }
 
   checkWeather(tempActual: number, stateSky: string, lluvia: number){
-   this.checkSky(stateSky)
-    if (this.checkSky(stateSky) === "despejado" || this.checkSky(stateSky) === "poco nuboso" ){
-     this.recommendationService.findByWeather('sol').subscribe(data =>this.recommendationSky = data);
+   
+    this.checkSky(stateSky)
+    if (this.stateSkyValue === "despejado" || this.stateSkyValue === "poco nuboso" ){
+     this.recommendationService.findByWeather('sol').subscribe(data =>{
+      console.log(data); 
+      this.recommendationSky = data;
+      console.log('dentro de checkweather - checkSky' + this.recommendationSky);
+      
+    });
     } else if (this.checkSky(stateSky) === "tormenta"){
       this.alerts.push(ALERTS["tormenta"]);
     }else if (this.checkSky(stateSky) === "nieve"){
@@ -73,8 +78,6 @@ export class PersonalRecommendationsComponent implements OnInit {
     if (this.checkTemperature(tempActual)){
        this.recommendationService.findByWeather(this.checkTemperature(tempActual)).subscribe(data =>{ 
         this.recommendationTemp = data;
-        console.log(this.recommendationTemp);
-        
        })
     }
   }
@@ -159,7 +162,7 @@ export class PersonalRecommendationsComponent implements OnInit {
         this.stateSkyValue =  "niebla";
         break;
 
-      default: 
+      default:  
       this.stateSkyValue = "nusé"
     }
 
@@ -180,7 +183,7 @@ export class PersonalRecommendationsComponent implements OnInit {
 
   checkWind(racha: number[]){
     let wind: number = 0;
-    for(let i=0; i>= racha.length; i++){
+    for(let i=0; i<= racha.length; i++){
       if(racha[i] >= wind){
         wind = racha[i];
       }

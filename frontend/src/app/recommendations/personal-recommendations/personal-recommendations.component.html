@@ -12,3 +12,10 @@
     <h3>Por la temperatura, te recomendamos:</h3>
     <li *ngFor="let recommendation of recommendationTemp"> {{recommendation.description}} </li>
 </ul>
+
+<div *ngIf="alerts.length > 0">
+    <h2> Alertas: </h2>
+    <ul>
+        <li *ngFor="let alert of alerts"> {{alert}} </li>
+    </ul>
+</div>

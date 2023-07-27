@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BASE_URL } from 'src/app/shared/constants';
@@ -19,6 +19,13 @@ export class UserService {
 
   update(user: IUser): Observable<IUser> {
     return this.httpClient.put<IUser>(`${this.url}`, user);
+  }
+
+  httpOptions = {
+    observe: 'response' as 'body'
+  }
+  deleteCurrentUser(id: number): Observable<HttpResponse<{}>> {
+    return this.httpClient.delete<HttpResponse<{}>>(`${this.url}/${id}`, this.httpOptions);
   }
 }
 // TENADRIAMOS Q TENER UN SERVICE UN CONTROLER

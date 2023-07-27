@@ -1,4 +1,4 @@
-import { Body, Controller, UseGuards, Request, Delete, Get, Param, ParseIntPipe, Post, Put, UnauthorizedException, UploadedFile, UseInterceptors } from '@nestjs/common';
+import { Body, Controller, UseGuards, Request, Delete, Get, Post, Put, UnauthorizedException, UploadedFile, UseInterceptors } from '@nestjs/common';
 import { UsersService } from './users.service';
 
 import { AuthGuard } from '@nestjs/passport';
@@ -40,6 +40,13 @@ export class UsersController {
         request.user.avatarImage = file.filename;
         console.log(request.user);
         return await this.userService.updateAvatar(request.user);
+    }
+
+    @UseGuards(AuthGuard('jwt'))
+    @Delete('delete')
+    async deleteById(@Request() request): Promise <void>{
+        const userId = request.user['id']
+        await this.userService.deleteById(userId);
     }
 
     

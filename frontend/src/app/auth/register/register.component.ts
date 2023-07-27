@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -21,7 +22,8 @@ export class RegisterComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private snackbar: MatSnackBar
     ) {}
 
     passwordConfirmValidator(control: AbstractControl) {
@@ -39,11 +41,18 @@ export class RegisterComponent {
       password: this.userForm.get('password')?.value ?? ''
     }
 
-    this.authService.register(register).subscribe(data => {
+    this.authService.register(register).subscribe({
+      next: data => {
       console.log(data.token);
       // Guardar el token para utilizarlo en las posteriores peticiones
       this.authService.handleLoginResponse(data.token);
+      this.snackbar.open('el usuario se ha guardado correctamente', 'Cerrar', {duration: 3000})
       this.router.navigate(['/users/profile']);
+    },
+      error: error =>{
+      console.log(error);
+      this.snackbar.open('Se ha producido un error, inténtalo más tarde.', 'Cerrar', {duration: 3000});
+    }
 
     });
 

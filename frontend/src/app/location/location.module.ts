@@ -17,6 +17,7 @@ import { BannerComponent } from '../recommendations/banner/banner.component';
 import { RecommendationsModule } from '../recommendations/recommendations.module';
 import { WeatherModule } from '../weather/weather.module';
 import { TownListComponent } from './town-list/town-list.component';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     ProvinceListComponent,
@@ -33,6 +34,7 @@ import { TownListComponent } from './town-list/town-list.component';
     MatChipsModule,
     MatExpansionModule,
     MatGridListModule,
+    MatIconModule,
     RecommendationsModule,
     WeatherModule
   ],

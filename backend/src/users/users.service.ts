@@ -15,6 +15,9 @@ export class UsersService {
 
     findById(id: number): Promise<User | null> {
         return this.userRepo.findOne({ 
+            relations:{
+                favTowns: true
+            },
             where: {
                 id: id
             },
@@ -23,6 +26,9 @@ export class UsersService {
 
     findByEmail(email: string): Promise<User | null> {
         return this.userRepo.findOne({ 
+            relations:{
+                favTowns: true
+            },
             where: {
                 email: email
             },
@@ -80,6 +86,22 @@ export class UsersService {
             console.log(error);
             throw new ConflictException('Error actualizando user');
          }
+    }
+
+    async deleteById(id: number): Promise <void>{
+        let exist = await this.userRepo.exist({
+            where: {
+                id: id
+            }
+        });
+
+        if(!exist) throw new NotFoundException('Not found');
+
+        try {
+            await this.userRepo.delete(id);
+        } catch (error) {
+            throw new ConflictException('No se puede borrar')
+        }
     }
 
 }
