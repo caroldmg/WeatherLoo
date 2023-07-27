@@ -18,6 +18,7 @@ export class WeatherDetailComponent implements OnInit{
   weather: IWeather|undefined;
   municipio: ITown | undefined;
   provincia: IProvince | undefined;
+  imgSky: string = '';
 
   constructor(private weatherService: WeatherService,
               private activatedRoute: ActivatedRoute,
@@ -53,6 +54,7 @@ export class WeatherDetailComponent implements OnInit{
 
  }
  
+
 
 }
 
