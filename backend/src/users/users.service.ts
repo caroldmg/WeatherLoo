@@ -15,6 +15,9 @@ export class UsersService {
 
     findById(id: number): Promise<User | null> {
         return this.userRepo.findOne({ 
+            relations:{
+                favTowns: true
+            },
             where: {
                 id: id
             },
@@ -23,6 +26,9 @@ export class UsersService {
 
     findByEmail(email: string): Promise<User | null> {
         return this.userRepo.findOne({ 
+            relations:{
+                favTowns: true
+            },
             where: {
                 email: email
             },

@@ -56,6 +56,6 @@ export class User{
         joinColumn: {name: 'user_id'},
         inverseJoinColumn: {name: 'town_code'}
     })
-    favTowns: Town[]
+    favTowns?: Town[]
     
 }
