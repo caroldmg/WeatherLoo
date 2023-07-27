@@ -2,9 +2,9 @@
   <mat-grid-tile>
       <div>
         <h2 *ngIf="user.avatarImage">Foto de perfil</h2>
-        <img src="{{ user.avatarImage }}" style="max-width: 150px;" />
+        <img *ngIf="user && user.avatarImage" [src]=" 'http://localhost:3000/uploads/' + user!.avatarImage " style="max-width: 150px;" />
         
-        <button mat-menu-item *ngIf="isLoggedIn" routerLink="/users/avatar">
+        <button mat-menu-item *ngIf="isLoggedIn && !user.avatarImage" routerLink="/users/avatar">
           <mat-icon>photo_camera</mat-icon>
           Mi avatar
         </button>
