@@ -1,14 +1,26 @@
 .weatherDays{
     
-    padding: 30px;
+   
+    display: flex;
+    flex-direction: column;
+    
+
+}
+.weatherDaysBox{
+    display: flex;
+    flex-direction: column;
+    background-color: #086788;
+    border-radius: 30px;   
+    
 }
 .cardBigBox{
     display: flex;
+    flex-direction: row;
     padding: 15px;
     margin: 20px;
-    background-color: #086788;
-    border-radius: 30px;
-    padding-right: 25px;
+    overflow-x: scroll;
+    
+    
     
 }
 .example-cards{
@@ -21,9 +33,12 @@
 
 .weatherDaysTitle{
     font-size: 3rem;
+    font-weight: 900;
     font-family: 'Montserrat', sans-serif; 
     color: #848F46;
-    text-shadow: #086788 1px 0 10px;;
+    text-shadow: #fff 1px 0 10px;
+    margin-bottom: 35px;
+    
 }
  ul li{
     list-style: none;

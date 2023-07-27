@@ -1,7 +1,7 @@
 <div class="weatherDetailBox">
     <div class="detailToday" *ngIf="weather">
-        <h2 class="detailTitle">Hoy en {{this.municipio?.name}}</h2>
-        <h2>{{provincia?.name}}</h2>
+        <h2 class="detailTitle">Municipio de {{this.municipio?.name}}</h2>
+        <h2 class="detailTitle">Hoy en {{provincia?.name}}</h2>
         <div class=" d-flex">
     
             <div class="d-flex realtimeBox">
@@ -32,19 +32,24 @@
         
     </div>
     
-    <div *ngIf="weather" class="d-flex justify-content-around container">
-        <div class="detailRealtime d-flex ">
-            <p>Humedad <span class="apiDetailRealtime">{{weather.humedad}} %</span></p>
-            <p>Viento <span class="apiDetailRealtime">{{weather.viento}} km/h</span></p>
-            <p *ngIf="weather.lluvia">Probabilidad de lluvia <span class="apiDetailRealtime">{{weather.lluvia}} %</span></p>
-            
+    <div class="detailDays">
+
+        <div *ngIf="weather" class="d-flex justify-content-around ">
+            <div class="detailRealtime d-flex ">
+                <p>Humedad <span class="apiDetailRealtime">{{weather.humedad}} %</span></p>
+                <p>Viento <span class="apiDetailRealtime">{{weather.viento}} km/h</span></p>
+                <p *ngIf="weather.lluvia">Probabilidad de lluvia <span class="apiDetailRealtime">{{weather.lluvia}} %</span></p>
+                
+            </div>
+        
         </div>
-    
     </div>
     
     <app-personal-recommendations></app-personal-recommendations>
-    
-    <app-weather-list-seven-days></app-weather-list-seven-days>
+   
+
+    <app-weather-list-seven-days ></app-weather-list-seven-days>
+   
     
 
 </div>

@@ -21,6 +21,7 @@ export class PersonalRecommendationsComponent implements OnInit {
   tempValue: string = '';
   stateSkyValue: string = '';
   alerts: string[] = [];
+  
 
   constructor(
     private weatherService: WeatherService,

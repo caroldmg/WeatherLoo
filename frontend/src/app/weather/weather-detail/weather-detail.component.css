@@ -1,40 +1,41 @@
 
 .weatherDetailBox{
     margin: 30px;
+    padding: 50px;
     border-radius: 100px;
-    box-shadow: 2px 2px 2px rgba(black, 0.1);
+    box-shadow: 2px 2px 2px rgba(rgb(54, 53, 53), 0.1);
     background-color: rgba(255, 255, 255, 0.4);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     
-  /*cursor: pointer;*/
+  
     
 }
 .detailToday{
    
-    margin: 30px;
+    margin: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family:  'Abril Fatface', 'Chakra Petch', cursive,sans-serif;
-    
+    text-shadow: 2px 2px 5px #848F46;
    
     
 }
 .realtimeBox{
     
-    padding: 70px;
-    color: #8ECAE6;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
 
-    
 
 }
 
 .TnumRealtime{
     margin-top: 70px;
     font-size: 10rem;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
     
 }
 
@@ -74,7 +75,7 @@ h2{
 
 .iconTRealtime{
 
-        height: 250px;
+        height: 240px;
         
         
       
@@ -99,15 +100,20 @@ h4{
     font-family: 'Montserrat', sans-serif;
     font-weight: 900;
     justify-content: space-between;
+    
 }
 .skyState{
     font-family: 'Montserrat', sans-serif;
     margin: 20px;
     color: #219EBC;
     font-size: 3rem;
-    /*background-color: #a2d2ff;
-    box-shadow: 0px 0px 25px  #a2d2ff;
-    border-radius: 100% ;*/
+    text-shadow: 2px 2px 5px #848F46;
+    font-weight: 900;
+    
+}
+.skyState h4{
+    text-shadow: 2px 2px 5px #848F46;
+    font-weight: 900;
 }
 .skyStateDescrip{
     
@@ -117,6 +123,7 @@ h4{
 .apiDetailRealtime{
     color: #086788;
 }
+
 /*TODO
 Limpieza de codigo
 reorganizacion de clases

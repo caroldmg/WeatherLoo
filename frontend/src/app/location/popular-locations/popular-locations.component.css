@@ -14,19 +14,22 @@ body{
     display: flex;
     flex-direction: row;
     margin: 15px;
-    color: #023047;
+    color: #404702;
     
 
 }
 .card{
-    margin-bottom: 20px;
-    border: solid #023047;
+    margin-bottom: 10px;
+    border: solid #88ad37;
     border-radius: 25% 10%;
     box-shadow: rgba(255, 255, 255, 0.4)10px 10px 5px ;
+    cursor: pointer;
+    
 }
 .card a{
     background-color: #023047;
     color: #fff;
+    
 }
 .card:hover{
     filter: opacity(75%);
@@ -50,16 +53,35 @@ img{
     border-radius: 25% 10%;
     height: 260px;
     width: 290px;
+    
 
 }
 .btnCloudbtn{
-    margin: 30px;
+    
+    margin-bottom: 20px;
     box-shadow: rgba(255, 255, 255, 0.4)10px 10px 5px ;
-}
-.btnCloud{
-    margin: 15px;
-    display: contents;
+    border: solid #88ad37;
+    color: #88ad37;
+    background-color: #fff ;
     border-radius: 25% 10%;
+    margin-left: 30px;
+
+}
+.btnCloudbtn:hover{
+    background-color: #88ad37 ;
+    color: #fff;
     box-shadow: rgba(255, 255, 255, 0.4)10px 10px 5px ;
 
 }
+.btnCloud{
+    margin: 15px;
+    margin-bottom: 20px;
+    
+    display: contents;
+    border-radius: 25% 10%;
+    
+    box-shadow: rgba(255, 255, 255, 0.4)10px 10px 5px ;
+    
+
+}
+

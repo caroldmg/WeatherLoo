@@ -53,6 +53,7 @@ export class WeatherDetailComponent implements OnInit{
    })
 
  }
+ 
 
 }
 
