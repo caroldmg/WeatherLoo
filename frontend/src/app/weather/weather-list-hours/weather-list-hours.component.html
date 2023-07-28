@@ -8,7 +8,7 @@
       
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title > Hora: {{i}}:00  </mat-card-title>
+                <mat-card-title > Hora: {{(currentHour + (i+1) ) % 24}}:00  </mat-card-title>
               </mat-card-header>
               <img mat-card-image style="max-width: 50px;" src="../../../assets/images/Iconos/nube.png" alt="" ngClass="iconTRealtime">
       

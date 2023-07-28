@@ -58,6 +58,6 @@ export class WeatherListHoursComponent implements OnInit {
 
   getCurrentHour(): number{
     const currentDate = new Date();
-    return currentDate.getHours()
+    return currentDate.getHours() % 24;
   }
 }
