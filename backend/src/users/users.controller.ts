@@ -54,6 +54,7 @@ export class UsersController {
     }
 
     // llamar aquí desde servicio angular
+    @UseGuards(AuthGuard('jwt'))
     @Get('/add/:townCode')
     async addFavouriteTown(
         @Request() request, 
@@ -63,13 +64,16 @@ export class UsersController {
         
 
        let user = await this.userService.findById(request.user.id);
+        console.log(user);
 
          if (!user.favTowns) user.favTowns = [];
 
         let town = await this.townService.findById(townCode);
+        console.log(town);
+        
         user.favTowns.push(town);
 
-        this.userService.updateFavTowns(request.user);
+        this.userService.updateFavTowns(user);
     }
 
     // @Post('/add/:townCode')
