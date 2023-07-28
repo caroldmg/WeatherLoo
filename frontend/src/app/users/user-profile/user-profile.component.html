@@ -32,6 +32,13 @@
     </div>
   </mat-grid-tile>
 
+  <mat-grid-tile rowspan="2">
+    <div *ngIf="user.favTowns">
+      <h2>LOCALIDADES FAVORITAS</h2>
+      <app-fav-locations></app-fav-locations>
+    </div>
+  </mat-grid-tile>
+
   <mat-grid-tile>
     <button mat-raised-button color="primary"
         style="width: 100%;" routerLink="/users/user-form"> <!-- esto debería llevar a un fromulario para cambiar los datos -->

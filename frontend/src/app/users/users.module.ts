@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LocationModule } from '../location/location.module';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     MatGridListModule,
     MatListModule,
     MatCheckboxModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    LocationModule
   ],
   providers: [
     { provide:  MAT_DATE_LOCALE, useValue : 'es-ES'}

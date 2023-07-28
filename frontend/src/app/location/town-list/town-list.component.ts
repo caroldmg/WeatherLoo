@@ -60,18 +60,8 @@ export class TownListComponent {
   }
 
   addFavTown(townCode: string){
-    if(this.isLoggedIn){
-      let user: IUser|undefined
-      this.userService.findCurrentUser().subscribe(data => user = data)
-      this.locationService.addFavTown(townCode).subscribe( data =>{
-      this.favTowns.push(data);
-      console.log(this.favTowns);
-      if (user) {
-        if(!user.favTowns) user.favTowns = [];
-        user.favTowns.push(data)
-        this.userService.update(user).subscribe()
-      }
-    })
-    }
+    this.userService.addFavTown(townCode).subscribe( data =>
+          this.snackbar.open('Se ha añadido la localidad a favoritos', 'Cerrar', {duration: 3000})
+    )
   }
 }
