@@ -22,6 +22,7 @@ export class PersonalRecommendationsComponent implements OnInit {
   stateSkyValue: string = '';
   alerts: string[] = [];
   imgStateSky: string= '';
+  //img: string = 'assets/images/Iconos/' + this.imgStateSky;
   
 
   constructor(
@@ -103,29 +104,35 @@ export class PersonalRecommendationsComponent implements OnInit {
     switch (stateSky){
       
       case "11":
-        this.imgStateSky = ""
+        this.imgStateSky = "despejadoDia";
+        this.stateSkyValue = "despejado";  
         break;
       case "11n":
         this.stateSkyValue = "despejado";
-        this.imgStateSky = "despejadoNoche"
+        this.imgStateSky = "despejadoNoche";
         break;
       case "12":
       case "13":
-        
-      this.stateSkyValue = "poco nuboso"
-          break;
-        
+        this.imgStateSky = "pocoNuboso";
+        this.stateSkyValue = "poco nuboso"
+          break;      
       case "17":
-      case "17n":
+        this.imgStateSky = "pocoNuboso";
+        this.stateSkyValue = "nubes altas";
+        break;
         
-      this.stateSkyValue = "nubes altas"
+      case "17n":
+        this.imgStateSky = "pocoNuboso";
+        this.stateSkyValue = "nubes altas"
         break; 
       case "16":
-      case "16n":
-      case "15":
-      case "15n":
       case "14":
+      case "15":
+      case "16n":
+      case "15n":
       case "14n":
+
+        this.imgStateSky = "nube";
         this.stateSkyValue = "nuboso";
         break;
       
@@ -137,6 +144,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "53":
       case "52":
       case "51":
+        this.imgStateSky = "tormenta";
         this.stateSkyValue = "tormenta";
         break;
       case "46":
@@ -147,7 +155,8 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "23":
       case "43":
       case "43n":
-        this.stateSkyValue = "lluvia"
+        this.imgStateSky = "lluvia";
+        this.stateSkyValue = "lluvia";
         break;
       case "74":
       case "73":
@@ -158,14 +167,15 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "34":
       case "33":
         this.stateSkyValue = "nieve";
+        this.imgStateSky = "nieve";
         break;
       case "81":
       case "81n":
       case "82":
       case "82n":
         this.stateSkyValue =  "niebla";
+        this.imgStateSky = "niebla";
         break;
-
       default:  
       this.stateSkyValue = "nusé"
     }
