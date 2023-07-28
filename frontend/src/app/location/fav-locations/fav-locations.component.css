@@ -1,0 +1,12 @@
+a{
+    
+    margin: 30px !important;
+    text-decoration: none;
+    color: #FFF;
+    
+}
+
+a:hover{
+    border: solid #848F46;    
+    background-color: #086788;    
+}

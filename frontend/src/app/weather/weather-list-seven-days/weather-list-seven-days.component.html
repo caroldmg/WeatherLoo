@@ -18,7 +18,8 @@
               <ul>
                 <li>T máxima: {{day.temperatura.maxima}} </li>
                 <li>T mínima: {{day.temperatura.minima}} </li>
-                <li *ngIf="day.estado_cielo_descripcion[3]">Estado del cielo: {{day.estado_cielo_descripcion[3]}} </li>
+                <li *ngIf="!checkIsString(day.estado_cielo_descripcion)">Estado del cielo: {{day.estado_cielo_descripcion[1]}} </li>
+                <li *ngIf="checkIsString(day.estado_cielo_descripcion)">Estado del cielo: {{day.estado_cielo_descripcion}} </li>
               </ul>
             </mat-card-content>
           </div>

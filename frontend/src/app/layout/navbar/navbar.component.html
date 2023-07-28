@@ -32,9 +32,9 @@
         <li><a routerLink="/location/provinces"> Provincias </a></li>
         <li><a routerLink="/location/towns"> Localidades</a></li>
         <li *ngIf="isLoggedIn"><a routerLink="/users/profile"> Mi perfil </a></li>
-        <li><a routerLink="/auth/login"> Iniciar sesión </a></li>
-        <li><a routerLink="/location/fav-locations"> Favoritos </a></li>
-        <button mat-menu-item *ngIf="isLoggedIn" (click)="authService.logout()">
+        <li *ngIf="!isLoggedIn"><a routerLink="/auth/login"> Iniciar sesión </a></li>
+        <li *ngIf="isLoggedIn"><a routerLink="/location/fav-locations"> Favoritos </a></li>
+        <button mat-menu-item class="btn btnstyle" *ngIf="isLoggedIn" (click)="authService.logout()">
           Cerrar sesión
         </button>
       </ul>

@@ -48,7 +48,11 @@ export class WeatherListSevenDaysComponent implements OnInit {
         this.weather = data;
         
       })
+
    })
 
+ }
+ checkIsString(object: any){
+  return typeof object === 'string' || object instanceof String;
  }
 }
