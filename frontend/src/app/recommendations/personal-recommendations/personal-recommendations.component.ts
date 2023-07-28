@@ -21,15 +21,17 @@ export class PersonalRecommendationsComponent implements OnInit {
   tempValue: string = '';
   stateSkyValue: string = '';
   alerts: string[] = [];
-  imgStateSky: string= '';
-  //img: string = 'assets/images/Iconos/' + this.imgStateSky;
+ 
+  
   
 
   constructor(
     private weatherService: WeatherService,
     private activatedRoute: ActivatedRoute,
     private recommendationService: RecommendationService
-  ) { }
+      
+    
+  ) {}
 
   ngOnInit(): void {
     this.loadWeather();
@@ -42,6 +44,13 @@ export class PersonalRecommendationsComponent implements OnInit {
 
       this.weatherService.getWeatherRealTime(townCode).subscribe(data => {
         this.weather = data;
+        
+        console.log("cargando weather")
+        console.log(this.weather)
+
+        this.stateSkyValue = this.weather.stateSky.description;
+
+
          this.checkWeather(this.weather.temperatura_actual, this.weather.stateSky.id, this.weather.lluvia);
          
          console.log('recommendationSky --> ' + this.recommendationSky)
@@ -104,25 +113,25 @@ export class PersonalRecommendationsComponent implements OnInit {
     switch (stateSky){
       
       case "11":
-        this.imgStateSky = "despejadoDia";
+        
         this.stateSkyValue = "despejado";  
         break;
       case "11n":
         this.stateSkyValue = "despejado";
-        this.imgStateSky = "despejadoNoche";
+        
         break;
       case "12":
       case "13":
-        this.imgStateSky = "pocoNuboso";
+        
         this.stateSkyValue = "poco nuboso"
           break;      
       case "17":
-        this.imgStateSky = "pocoNuboso";
+        
         this.stateSkyValue = "nubes altas";
         break;
         
       case "17n":
-        this.imgStateSky = "pocoNuboso";
+        
         this.stateSkyValue = "nubes altas"
         break; 
       case "16":
@@ -132,7 +141,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "15n":
       case "14n":
 
-        this.imgStateSky = "nube";
+        
         this.stateSkyValue = "nuboso";
         break;
       
@@ -144,7 +153,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "53":
       case "52":
       case "51":
-        this.imgStateSky = "tormenta";
+        
         this.stateSkyValue = "tormenta";
         break;
       case "46":
@@ -155,7 +164,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "23":
       case "43":
       case "43n":
-        this.imgStateSky = "lluvia";
+        
         this.stateSkyValue = "lluvia";
         break;
       case "74":
@@ -167,14 +176,14 @@ export class PersonalRecommendationsComponent implements OnInit {
       case "34":
       case "33":
         this.stateSkyValue = "nieve";
-        this.imgStateSky = "nieve";
+        
         break;
       case "81":
       case "81n":
       case "82":
       case "82n":
         this.stateSkyValue =  "niebla";
-        this.imgStateSky = "niebla";
+        
         break;
       default:  
       this.stateSkyValue = "nusé"

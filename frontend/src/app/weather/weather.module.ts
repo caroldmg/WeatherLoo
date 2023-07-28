@@ -25,7 +25,6 @@ import { RecommendationsModule } from '../recommendations/recommendations.module
     RecommendationsModule
   ],
   exports: [
-
     WeatherDetailComponent
   ]
 })

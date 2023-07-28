@@ -18,6 +18,7 @@ export class WeatherListHoursComponent implements OnInit {
   municipio: ITown | undefined;
   provincia: IProvince | undefined;
   currentHour: number = 0;
+  imgSky: string = '';
 
   constructor(private weatherService: WeatherService,
               private activatedRoute: ActivatedRoute,
@@ -50,8 +51,14 @@ export class WeatherListHoursComponent implements OnInit {
         } 
        this.weatherService.getWeatherRealTime(townCode).subscribe(data =>{ 
         this.weather = data;
+        this.weather.proximos_dias[1].estado_cielo_descripcion.forEach(e => {
+          e.toLocaleLowerCase().replace(' ', '') ?? 'nuboso'
+      
+        });
+        //this.imgSky = this.weather.stateSky.description.toLocaleLowerCase().replace(' ', '') ?? 'nuboso';
         
       })
+      
    })
 
  }
@@ -60,4 +67,5 @@ export class WeatherListHoursComponent implements OnInit {
     const currentDate = new Date();
     return currentDate.getHours() % 24;
   }
+  
 }
