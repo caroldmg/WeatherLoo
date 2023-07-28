@@ -104,6 +104,7 @@ export class PersonalRecommendationsComponent implements OnInit {
       
       case "11":
         this.imgStateSky = ""
+        break;
       case "11n":
         this.stateSkyValue = "despejado";
         this.imgStateSky = "despejadoNoche"
