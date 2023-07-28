@@ -23,9 +23,11 @@
 }
 .titlelog{
   color: #086788;
-  font-size: 3rem;
   font-family: 'Inter', sans-serif;
   justify-content: space-between;
+}
+.titlelog h2{
+  font-size: 2rem;
 }
    
 .login-page {
