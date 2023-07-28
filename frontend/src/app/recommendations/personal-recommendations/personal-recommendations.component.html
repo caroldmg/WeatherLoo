@@ -1,25 +1,28 @@
-<h2 *ngIf="recommendationSky.length > 0 ||recommendationRain.length > 0 || recommendationTemp.length > 0 ">RECOMENDACIONES  </h2>
+<div class="hidden">
 
-<ul *ngIf="recommendationSky.length > 0">
-    <h3>Hace sol: </h3>
-    <li *ngFor="let recommendation of recommendationSky"> {{recommendation.description}} </li>
-</ul>
-<ul *ngIf="recommendationRain.length > 0 ">
-    <h3>Llueve: </h3>
-    <li *ngFor="let recommendation of recommendationRain"> {{recommendation.description}} </li>
-</ul>
-<ul *ngIf="recommendationTemp.length !== 0">
-    <h3>Por la temperatura, te recomendamos:</h3>
-    <li *ngFor="let recommendation of recommendationTemp"> {{recommendation.description}} </li>
-</ul>
-
-<div *ngIf="alerts.length > 0">
-    <h2> Alertas: </h2>
-    <ul>
-        <li *ngFor="let alert of alerts"> {{alert}} </li>
+    <h2 *ngIf="recommendationSky.length > 0 ||recommendationRain.length > 0 || recommendationTemp.length > 0 ">RECOMENDACIONES  </h2>
+    
+    <ul *ngIf="recommendationSky.length > 0">
+        <h3>Hace sol: </h3>
+        <li *ngFor="let recommendation of recommendationSky"> {{recommendation.description}} </li>
     </ul>
+    <ul *ngIf="recommendationRain.length > 0 ">
+        <h3>Llueve: </h3>
+        <li *ngFor="let recommendation of recommendationRain"> {{recommendation.description}} </li>
+    </ul>
+    <ul *ngIf="recommendationTemp.length !== 0">
+        <h3>Por la temperatura, te recomendamos:</h3>
+        <li *ngFor="let recommendation of recommendationTemp"> {{recommendation.description}} </li>
+    </ul>
+    
+    <div *ngIf="alerts.length > 0">
+        <h2> Alertas: </h2>
+        <ul>
+            <li *ngFor="let alert of alerts"> {{alert}} </li>
+        </ul>
+    </div>
 </div>
 <div>
-    <img src="assets/images/Iconos/{{imgStateSky}}"  alt="">
+    <img src="assets/images/Iconos/{{imgStateSky}}.png"  alt="">
 
 </div>
