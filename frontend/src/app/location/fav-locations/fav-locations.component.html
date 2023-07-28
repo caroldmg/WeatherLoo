@@ -1,1 +1,6 @@
-<p>fav-locations works!</p>
+
+<ul>
+    <li *ngFor="let town of favTowns">
+        <a [routerLink]="['/weather/weather-detail',town.townCode]">{{town.name}}</a>
+    </li>
+</ul>

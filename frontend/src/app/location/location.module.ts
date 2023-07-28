@@ -40,8 +40,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   exports:[
     SearchComponent,
-    MatGridListModule,
-    RecommendationsModule
+    FavLocationsComponent
   ]
 })
 export class LocationModule { }

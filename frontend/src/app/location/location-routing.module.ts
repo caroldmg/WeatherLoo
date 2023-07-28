@@ -41,6 +41,10 @@ const routes: Routes = [
     component: SearchComponent
   },
   {
+    path: 'fav',
+    component: FavLocationsComponent
+  },
+  {
     path: '', redirectTo: 'provinces', pathMatch: 'full'
   },
   {
