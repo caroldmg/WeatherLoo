@@ -1,3 +1,18 @@
+.recomendationOutBox{
+    display: flex;
+    flex-direction: column;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border-radius: 30px;
+    padding: 40px;
+}
+.recomendationBox{
+    margin: 20px;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+}
+
 li{
     text-decoration: none;
     list-style: none;
@@ -5,11 +20,12 @@ li{
 h2{
     font-size: 3rem;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
     color: #023047;
 
 }
 h3{
     font-size: 2rem;
     font-family: 'Montserrat', sans-serif;
-    color: #8ECAE6;
+    color: #023047;
 }
