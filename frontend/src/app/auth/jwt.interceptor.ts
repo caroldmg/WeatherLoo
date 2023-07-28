@@ -16,12 +16,14 @@ export class JwtInterceptor implements HttpInterceptor {
 
     let token = localStorage.getItem('jwt_token');
 
-    if(token) {
+    //enviar el token unicamente cuando enviamos peticiones a localhost y no a la API
+    if(token && request.url.includes('localhost')) {
       request = request.clone({
         setHeaders: {
           Authorization: `Bearer ${token}`
-        }
-      });
+        }}
+      );
+
     }
 
     return next.handle(request);
