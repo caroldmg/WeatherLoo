@@ -9,7 +9,8 @@ import { Recommendation } from '../models/recommendation';
 })
 export class RecommendationService {
 
-  url: string = `${BASE_URL}/recommendation`
+  url: string = `${BASE_URL}/recommendation`;
+  
 
   constructor(private httpClient: HttpClient) {}
 

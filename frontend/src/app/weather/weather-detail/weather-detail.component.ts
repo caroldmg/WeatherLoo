@@ -7,6 +7,7 @@ import { MADRID_TOWNCODE } from 'src/app/shared/constants';
 import { LocationService } from 'src/app/location/services/location.service';
 import { IProvince } from 'src/app/location/models/province.model';
 
+
 @Component({
   selector: 'app-weather-detail',
   templateUrl: './weather-detail.component.html',
@@ -22,7 +23,9 @@ export class WeatherDetailComponent implements OnInit{
 
   constructor(private weatherService: WeatherService,
               private activatedRoute: ActivatedRoute,
-              private locationService: LocationService
+              private locationService: LocationService,
+              
+              
               ){}
 
 
@@ -30,6 +33,7 @@ export class WeatherDetailComponent implements OnInit{
 
    ngOnInit(): void {
      this.loadWeather();
+     
      }
     
   
@@ -49,9 +53,19 @@ export class WeatherDetailComponent implements OnInit{
         // else {
         //   const townCode = MADRID_TOWNCODE
         // }
-       this.weatherService.getWeatherRealTime(townCode).subscribe(data => this.weather = data)
+      this.weatherService.getWeatherRealTime(townCode).subscribe(data => {
+        this.weather = data
+        this.imgSky = this.weather.stateSky.description.toLocaleLowerCase().replace(' ', '') ?? 'nuboso';
+        
+      });
    })
 
+ }
+ loadImg(){
+  if(!this.imgSky){
+
+    this.imgSky ='nuboso'
+  }
  }
  
 
