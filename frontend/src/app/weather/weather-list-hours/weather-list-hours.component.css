@@ -28,10 +28,11 @@
     
 }
 .example-cards{
-    box-shadow: 5px 5px 5px 5px #1c93ba;
+    box-shadow: 5px 5px 5px 5px #8ECAE6;
+    background-color: #848F46;
     border-radius: 30px;
     margin: 10px; 
-    color: #848F46;
+    color: #fff;
     
 }
 

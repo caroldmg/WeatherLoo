@@ -2,17 +2,39 @@ footer{
     background-color: #023047;
     color: #219EBC;
     font-family: 'Montserrat', sans-serif;
+    color: #fff;
 
 }
-footer a{
+a{
     text-decoration: none;
-    color: #219EBC;
+    color: #fff;
+    
+
+}
+nav a{
+    text-decoration: none;
+    
+    
+    
+}
+footer a:hover{
+    color: #fff;
+}
+.menu-footer{
+    margin: 40px;
+    padding: 30px;
+    background-color: #FFB703;
+    border-radius: 30% 30%;
     
 }
 .menu-footer h3{
     font-size: 2rem;
     padding: 10px;
     margin: 15px;
+}
+.menu-footer a{
+    color: #023047;
+    font-weight: bolder;
 }
 .menu-footer li {
     list-style: none;
@@ -33,16 +55,17 @@ nav{
 .footer h3{
     font-family: 'Montserrat', sans-serif;
 }
-.newsletter{
+.prop{
     display: flex;
-    flex-direction: row;
-    justify-items: center;
+    flex-direction: column;
+    
 }
-.newsletter h3{
-    font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
-}
+
 input{
     border-radius: 30px;
+}
+.logo{
+    margin: 40px;
+    cursor: pointer;
 }
 /*------------------------------------------------------------*/
