@@ -50,7 +50,7 @@ export class SearchComponent implements OnInit{
 
 
     else{
-      alert('')
+      
       return console.log("fuck off")
     }
   }

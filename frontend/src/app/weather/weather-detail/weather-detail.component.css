@@ -71,7 +71,8 @@ h2{
 }
 .detailTitle{
     padding: 15px;
-    text-shadow: #086788 1px 0 10px;;
+    text-shadow: #086788 1px 0 10px;
+    line-height : 60px;
 }
 
 .iconTRealtime{
