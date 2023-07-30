@@ -21,25 +21,39 @@ footer a:hover{
     color: #fff;
 }
 .menu-footer{
-    margin: 40px;
-    padding: 30px;
-    background-color: #FFB703;
-    border-radius: 30% 30%;
+    
+    
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     
 }
 .menu-footer h3{
     font-size: 2rem;
-    padding: 10px;
-    margin: 15px;
+    padding: 5px;
+    
 }
 .menu-footer a{
-    color: #023047;
+    color: #FFB703;
     font-weight: bolder;
+    padding: 15px;
 }
 .menu-footer li {
     list-style: none;
     font-size: 1.5rem;
-    margin: 22px;
+    padding-bottom: 15px;
+    
+}
+
+.footerMenuList button{
+    background-color: #FFB703;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    color: #fff;
+}
+.footerMenuList button:hover{
+    background-color: #fff;
+    color: #023047;
 }
 nav{
     display: flex;
@@ -49,11 +63,18 @@ nav{
 .linkAemet{
     display: flex;
     flex-direction: column;
-    margin: 15px;
-    justify-content: center;
+    padding: 30px;
+    margin: 35px;
+    
 }
-.footer h3{
-    font-family: 'Montserrat', sans-serif;
+.linkAemet h4{
+    padding: 45px;
+
+}
+footer h3{
+    font-size: 1.2rem;
+    
+    
 }
 .prop{
     display: flex;
@@ -67,5 +88,20 @@ input{
 .logo{
     margin: 40px;
     cursor: pointer;
+}
+.footerlinkOut{
+    margin: 20px;
+    letter-spacing: 8px;
+}
+.footerlinkOut h3{
+    margin: 20px;
+    letter-spacing: 3px;
+
+}
+.footerlinkOut a{
+    margin: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 5px;
 }
 /*------------------------------------------------------------*/

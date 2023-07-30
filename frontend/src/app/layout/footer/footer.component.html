@@ -4,20 +4,23 @@
       
         <div class="menu-footer">
           <h3>Menu</h3>
+          <div class="footerMenuList">
+            <ul>
+              <!-- localidades más buscadas -->
+              <li><a routerLink="/location/popular-location">Inicio</a></li> 
+              <!-- Lista de todas las provincias -->
+              <li><a routerLink="/location/provinces"> Provincias </a></li>
+              <li><a routerLink="/location/towns"> Localidades</a></li>
+              <li *ngIf="isLoggedIn"><a routerLink="/users/profile"> Mi perfil </a></li>
+              <li *ngIf="!isLoggedIn"><a routerLink="/auth/login"> Iniciar sesión </a></li>
+              <li *ngIf="isLoggedIn"><a routerLink="/location/fav-locations"> Favoritos </a></li>
+              <button mat-menu-item class="btn btnstyle" *ngIf="isLoggedIn" (click)="authService.logout()">
+                Cerrar sesión
+              </button>
+            </ul>
+          </div>
 
-          <ul>
-            <!-- localidades más buscadas -->
-            <li><a routerLink="/location/popular-location">Inicio</a></li> 
-            <!-- Lista de todas las provincias -->
-            <li><a routerLink="/location/provinces"> Provincias </a></li>
-            <li><a routerLink="/location/towns"> Localidades</a></li>
-            <li *ngIf="isLoggedIn"><a routerLink="/users/profile"> Mi perfil </a></li>
-            <li *ngIf="!isLoggedIn"><a routerLink="/auth/login"> Iniciar sesión </a></li>
-            <li *ngIf="isLoggedIn"><a routerLink="/location/fav-locations"> Favoritos </a></li>
-            <button mat-menu-item class="btn btnstyle" *ngIf="isLoggedIn" (click)="authService.logout()">
-              Cerrar sesión
-            </button>
-          </ul>
+            
         </div>
       
     </mat-grid-tile>
@@ -25,27 +28,24 @@
     <mat-grid-tile rowspan="3">
       <div class="linkAemet">
         <img src="../../../assets/images/logo/logo.png" alt="logo" class="logo" routerLink="/location/popular-location">
+        
 
+
+      </div>
+
+    </mat-grid-tile>
+    <mat-grid-tile rowspan="3">
+
+      <div class="footerlinkOut">
+  
         <h3>Para más informacion detallada del clima recomendamos el siguiente link</h3>
         <a routerLink="https://www.aemet.es/es/portada">Aemet</a>
-
-      </div>
-
-    </mat-grid-tile>
-
-    <mat-grid-tile colspan="1" rowspan="1" class="prop">
-      <div>
-
-        <h3>Somos una comunidad que crece día a día</h3>
-        <div>
-  
-          <label>Vive la mejor experiencia siendo usuario, somos ese asistente que estabas necesitando</label>
-        </div>
       </div>
     </mat-grid-tile>
 
+    
     <!-- fila que ocupa 3 columnas -->
-    <mat-grid-tile colspan="3" rowspan="1">
+    <mat-grid-tile colspan="3" >
       <p>Copyright 2023. Carolina de Miguel y Magalí Santiago Freyre</p>
     </mat-grid-tile>
 
