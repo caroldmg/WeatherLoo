@@ -51,11 +51,7 @@ export class WeatherListHoursComponent implements OnInit {
         } 
        this.weatherService.getWeatherRealTime(townCode).subscribe(data =>{ 
         this.weather = data;
-        this.weather.proximos_dias[1].estado_cielo_descripcion.forEach(e => {
-          e.toLocaleLowerCase().replace(' ', '') ?? 'nuboso'
-      
-        });
-        //this.imgSky = this.weather.stateSky.description.toLocaleLowerCase().replace(' ', '') ?? 'nuboso';
+        
         
       })
       

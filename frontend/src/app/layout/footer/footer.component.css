@@ -2,22 +2,58 @@ footer{
     background-color: #023047;
     color: #219EBC;
     font-family: 'Montserrat', sans-serif;
+    color: #fff;
 
 }
-footer a{
+a{
     text-decoration: none;
-    color: #219EBC;
+    color: #fff;
+    
+
+}
+nav a{
+    text-decoration: none;
+    
+    
+    
+}
+footer a:hover{
+    color: #fff;
+}
+.menu-footer{
+    
+    
+    padding: 40px;
+    margin-top: 50px;
+    margin-bottom: 20px;
     
 }
 .menu-footer h3{
     font-size: 2rem;
-    padding: 10px;
-    margin: 15px;
+    padding: 5px;
+    
+}
+.menu-footer a{
+    color: #FFB703;
+    font-weight: bolder;
+    padding: 15px;
 }
 .menu-footer li {
     list-style: none;
     font-size: 1.5rem;
-    margin: 22px;
+    padding-bottom: 15px;
+    
+}
+
+.footerMenuList button{
+    background-color: #FFB703;
+    font-family: 'Inter', sans-serif;
+    font-weight: bolder;
+    color: #fff;
+}
+.footerMenuList button:hover{
+    background-color: #fff;
+    color: #023047;
 }
 nav{
     display: flex;
@@ -27,22 +63,45 @@ nav{
 .linkAemet{
     display: flex;
     flex-direction: column;
-    margin: 15px;
-    justify-content: center;
+    padding: 30px;
+    margin: 35px;
+    
 }
-.footer h3{
-    font-family: 'Montserrat', sans-serif;
+.linkAemet h4{
+    padding: 45px;
+
 }
-.newsletter{
+footer h3{
+    font-size: 1.2rem;
+    
+    
+}
+.prop{
     display: flex;
-    flex-direction: row;
-    justify-items: center;
+    flex-direction: column;
+    
 }
-.newsletter h3{
-    font-size: 1.5rem;
-    font-family: 'Montserrat', sans-serif;
-}
+
 input{
     border-radius: 30px;
+}
+.logo{
+    margin: 40px;
+    cursor: pointer;
+}
+.footerlinkOut{
+    margin: 20px;
+    letter-spacing: 8px;
+}
+.footerlinkOut h3{
+    margin: 20px;
+    letter-spacing: 3px;
+
+}
+.footerlinkOut a{
+    margin: 20px;
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: 5px;
 }
 /*------------------------------------------------------------*/

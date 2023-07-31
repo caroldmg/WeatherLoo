@@ -59,6 +59,11 @@ img{
 .btnCloudbtn{
     
     margin-bottom: 20px;
+    /*font-weight: bolder;
+    TODO: CAMBIAR COLOR LETRAS DE LOCALIDADES
+    Probar spinner loading
+    responsive
+    */
     box-shadow: rgba(255, 255, 255, 0.4)10px 10px 5px ;
     border: solid #88ad37;
     color: #88ad37;

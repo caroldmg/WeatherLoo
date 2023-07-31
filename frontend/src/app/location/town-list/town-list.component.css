@@ -2,11 +2,14 @@
     margin: 20px;
 }
 
-mat-grid-list{
-    
+.provincesTitle h2{
+    font-size: 3rem;
+    color: #023047;
+    text-shadow: 1px 1px 2px rgb(161, 153, 153);
+    padding-top: 30px;
    
-
 }
+
 mat-grid-tile{
     
     border: solid #086788;
@@ -25,13 +28,16 @@ mat-grid-tile:hover{
 }
 mat-grid-tile a{
     
-    margin: 30px !important;
+    margin: max-content !important;
     text-decoration: none;
     color: #FFF;
+    padding: 20px;
+    line-height : 25px;
     
 }
 .provincesBox{
     margin: 30px;
     margin-bottom: 50px;
 }
+
 

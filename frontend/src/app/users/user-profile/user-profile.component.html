@@ -1,59 +1,62 @@
-<mat-grid-list cols="3" rowHeight="200px" *ngIf="user">
-  <mat-grid-tile>
-      <div>
-        <h2 *ngIf="user.avatarImage">Foto de perfil</h2>
-        <img *ngIf="user && user.avatarImage" [src]=" 'http://localhost:3000/uploads/' + user!.avatarImage " style="max-width: 150px;" />
-        
-        <button mat-menu-item *ngIf="isLoggedIn && !user.avatarImage" routerLink="/users/avatar">
-          <mat-icon>photo_camera</mat-icon>
-          Mi avatar
-        </button>
-      </div>
+<div class="perfil">
 
-  </mat-grid-tile>
-
-  <mat-grid-tile rowspan="2">
-    <div>
-      <h2>{{ user.fullName }}</h2>
-      <p *ngIf="user.birthday">Fecha nacimiento: {{ user.birthday| date : "dd/MM/YYYY" }}</p>
-      <p>Email: {{ user.email }}</p>
-      <p *ngIf="user.gender!=='undeterminated' ">Género: {{ user.gender }}</p>
-
-    </div>
-  </mat-grid-tile>
-
-  <mat-grid-tile rowspan="2">
-    <div *ngIf="user.pets || user.privateTransport || user.publicTransport">
-      <h2>Más información:</h2>
-      <p *ngIf="user.pets"> Mascotas <mat-icon>done</mat-icon></p>
-      <p *ngIf="user.publicTransport"> Utiliza transporte público <mat-icon>done</mat-icon> </p>
-      <p *ngIf="user.privateTransport"> Utiliza transporte privado <mat-icon>done</mat-icon></p>
-
-    </div>
-  </mat-grid-tile>
-
-  <mat-grid-tile rowspan="2">
-    <div *ngIf="user.favTowns">
-      <h2>LOCALIDADES FAVORITAS</h2>
-      <app-fav-locations></app-fav-locations>
-    </div>
-  </mat-grid-tile>
-
-  <mat-grid-tile>
-    <button mat-raised-button color="primary"
-        style="width: 100%;" routerLink="/users/user-form"> <!-- esto debería llevar a un fromulario para cambiar los datos -->
-          <mat-icon>manage_accounts</mat-icon>
-        Editar perfil 
-        </button>
-  </mat-grid-tile>
+  <mat-grid-list cols="3" rowHeight="200px" *ngIf="user" >
+    <mat-grid-tile>
+        <div>
+          <h2 *ngIf="user.avatarImage">Foto de perfil</h2>
+          <img *ngIf="user && user.avatarImage" [src]=" 'http://localhost:3000/uploads/' + user!.avatarImage " style="max-width: 150px;" />
+          
+          <button mat-menu-item *ngIf="isLoggedIn && !user.avatarImage" routerLink="/users/avatar">
+            <mat-icon>photo_camera</mat-icon>
+            Mi avatar
+          </button>
+        </div>
   
-  <mat-grid-tile>
-    <button mat-raised-button color="accent"
-        style="width: 100%;" (click)="deleteUser()" > <!-- esto debería llevar a un fromulario para cambiar los datos -->
-          <mat-icon><span class="material-symbols-outlined">
-            delete_forever
-            </span></mat-icon>
-        ELIMINAR PERFIL 
-        </button>
-  </mat-grid-tile>
-</mat-grid-list>
+    </mat-grid-tile>
+  
+    <mat-grid-tile rowspan="2">
+      <div>
+        <h2>{{ user.fullName }}</h2>
+        <p *ngIf="user.birthday">Fecha nacimiento: {{ user.birthday| date : "dd/MM/YYYY" }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p *ngIf="user.gender!=='undeterminated' ">Género: {{ user.gender }}</p>
+  
+      </div>
+    </mat-grid-tile>
+  
+    <mat-grid-tile rowspan="2">
+      <div *ngIf="user.pets || user.privateTransport || user.publicTransport">
+        <h2>Más información:</h2>
+        <p *ngIf="user.pets"> Mascotas <mat-icon>done</mat-icon></p>
+        <p *ngIf="user.publicTransport"> Utiliza transporte público <mat-icon>done</mat-icon> </p>
+        <p *ngIf="user.privateTransport"> Utiliza transporte privado <mat-icon>done</mat-icon></p>
+  
+      </div>
+    </mat-grid-tile>
+  
+    <mat-grid-tile rowspan="2">
+      <div *ngIf="user.favTowns">
+        <h2>LOCALIDADES FAVORITAS</h2>
+        <app-fav-locations></app-fav-locations>
+      </div>
+    </mat-grid-tile>
+  
+    <mat-grid-tile>
+      <button mat-raised-button color="primary"
+          style="width: 100%;" routerLink="/users/user-form"> <!-- esto debería llevar a un fromulario para cambiar los datos -->
+            <mat-icon>manage_accounts</mat-icon>
+          Editar perfil 
+          </button>
+    </mat-grid-tile>
+    
+    <mat-grid-tile>
+      <button mat-raised-button color="accent"
+          style="width: 100%;" (click)="deleteUser()" > <!-- esto debería llevar a un fromulario para cambiar los datos -->
+            <mat-icon><span class="material-symbols-outlined">
+              delete_forever
+              </span></mat-icon>
+          ELIMINAR PERFIL 
+          </button>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>

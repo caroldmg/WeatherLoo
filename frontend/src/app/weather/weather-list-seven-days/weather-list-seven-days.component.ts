@@ -47,8 +47,6 @@ export class WeatherListSevenDaysComponent implements OnInit {
         }
        this.weatherService.getWeatherRealTime(townCode).subscribe(data =>{ 
         this.weather = data;
-        //this.imgSky = this.weather.proximos_dias[1].estado_cielo_descripcion[1].toLocaleLowerCase().replace(' ', '') ?? 'nuboso';
-
         
       })
 
