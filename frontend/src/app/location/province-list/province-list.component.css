@@ -2,7 +2,10 @@
     margin: 20px;
 }
 
+mat-grid-list{
+    margin: 20px;
 
+}
 
 mat-grid-tile{
     
@@ -10,7 +13,8 @@ mat-grid-tile{
     font-size: 1.5rem;
     font-family: 'Montserrat', sans-serif;    text-decoration: none;
     background-color: #848F46;
-    border-radius: 20%  40%;
+    padding: 25px;
+    border-radius: 20% / 40%;
     
 }
 
