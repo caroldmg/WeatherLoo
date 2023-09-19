@@ -15,8 +15,8 @@ export class WeatherService {
   constructor(private httpClient: HttpClient) { }
 
 
-  getWeatherRealTime(townId: string): Observable <IWeather> {
-    return this.httpClient.get<IWeather>(`${this.url}/municipios/${townId}`)
+  getWeatherRealTime(townId: string, provinceId: string): Observable <IWeather> {
+    return this.httpClient.get<IWeather>(`${this.url}/provincias/${provinceId}/municipios/${townId}`)
 
   
   }

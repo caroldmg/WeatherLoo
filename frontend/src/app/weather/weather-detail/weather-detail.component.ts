@@ -41,23 +41,23 @@ export class WeatherDetailComponent implements OnInit{
      this.activatedRoute.params.subscribe((params) => {     
       const townCode = params['townCode'] ?? MADRID_TOWNCODE;
       console.log(townCode);
-      
       // si no pones ningún valor en la url, debería dar el tiempo de MAdrid por defecto
-        if (townCode){
-          this.locationService.findTownByTownCode(townCode).subscribe(data =>{ 
-            this.municipio = data;
-            this.provincia = this.municipio?.province
-          });
-          
-        } 
-        // else {
-        //   const townCode = MADRID_TOWNCODE
-        // }
-      this.weatherService.getWeatherRealTime(townCode).subscribe(data => {
-        this.weather = data
-        this.imgSky = this.weather.stateSky.description.toLocaleLowerCase().replace(' ', '') ?? 'nuboso';
+      this.locationService.findTownByTownCode(townCode).subscribe(data =>{ 
+        this.municipio = data;
+        this.provincia = this.municipio.province
+        console.log(this.provincia?.id)
         
-      });
+          this.weatherService.getWeatherRealTime(townCode, this.provincia?.id).subscribe(data => {
+          this.weather = data
+          this.imgSky = this.weather.stateSky.description.toLocaleLowerCase().replace(' ', '') ?? 'nuboso';
+  
+          console.log("hola")
+        });
+      
+          });
+        
+      
+
    })
 
  }

@@ -35,21 +35,18 @@ export class WeatherListSevenDaysComponent implements OnInit {
   
    loadWeather(){    
      this.activatedRoute.params.subscribe((params) => {     
-      const townCode = params['townCode']
-      // si no pones ningún valor en la url, debería dar el tiempo de Madrid por defecto
-      // const townCode = MADRID_TOWNCODE
-        if (townCode){
+      const townCode = params['townCode'] ?? MADRID_TOWNCODE;
+      
           this.locationService.findTownByTownCode(townCode).subscribe(data =>{ 
             this.municipio = data;
             this.provincia = this.municipio?.province
+            this.weatherService.getWeatherRealTime(townCode, this.provincia?.id).subscribe(data => {
+              this.weather = data
+              this.imgSky = this.weather.stateSky.description.toLocaleLowerCase().replace(' ', '') ?? 'nuboso';
+              
+            });
           });
-          
-        }
-       this.weatherService.getWeatherRealTime(townCode).subscribe(data =>{ 
-        this.weather = data;
-        
-      })
-
+      
    })
 
  }

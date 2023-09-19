@@ -6,6 +6,9 @@ import { IWeather } from 'src/app/weather/models/weather.model';
 import { WeatherService } from 'src/app/weather/services/weather.service';
 import { RecommendationService } from '../services/recommendation.service';
 import { Recommendation } from '../models/recommendation';
+import { ITown } from 'src/app/location/models/town.model';
+import { IProvince } from 'src/app/location/models/province.model';
+import { LocationService } from 'src/app/location/services/location.service';
 
 @Component({
   selector: 'app-personal-recommendations',
@@ -15,6 +18,11 @@ import { Recommendation } from '../models/recommendation';
 export class PersonalRecommendationsComponent implements OnInit {
 
   weather: IWeather | undefined;
+
+  //añadir dato de provincia a llamada de weather
+  municipio: ITown | undefined;
+  provincia: IProvince | undefined;
+
   recommendationSky: Recommendation[] = [];
   recommendationRain: Recommendation[] = [];
   recommendationTemp: Recommendation[] = [];
@@ -27,10 +35,9 @@ export class PersonalRecommendationsComponent implements OnInit {
 
   constructor(
     private weatherService: WeatherService,
+    private locationService: LocationService,
     private activatedRoute: ActivatedRoute,
     private recommendationService: RecommendationService
-      
-    
   ) {}
 
   ngOnInit(): void {
@@ -42,19 +49,25 @@ export class PersonalRecommendationsComponent implements OnInit {
       const townCode = params['townCode'] ?? MADRID_TOWNCODE;
       console.log(townCode);
 
-      this.weatherService.getWeatherRealTime(townCode).subscribe(data => {
-        this.weather = data;
-        
-        console.log("cargando weather")
-        console.log(this.weather)
+      this.locationService.findTownByTownCode(townCode).subscribe(data =>{ 
+        this.municipio = data;
+        this.provincia = this.municipio.province
+        this.weatherService.getWeatherRealTime(townCode, this.provincia.id).subscribe(data => {
+          this.weather = data;
+          
+          console.log("cargando weather")
+          console.log(this.weather)
+  
+          this.stateSkyValue = this.weather.stateSky.description;
+  
+  
+           this.checkWeather(this.weather.temperatura_actual, this.weather.stateSky.id, this.weather.lluvia);
+           
+           console.log('recommendationSky --> ' + this.recommendationSky)
+        })
+      });
 
-        this.stateSkyValue = this.weather.stateSky.description;
-
-
-         this.checkWeather(this.weather.temperatura_actual, this.weather.stateSky.id, this.weather.lluvia);
-         
-         console.log('recommendationSky --> ' + this.recommendationSky)
-      })
+    
     })
 
   }
