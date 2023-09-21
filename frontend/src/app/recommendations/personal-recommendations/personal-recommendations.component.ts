@@ -72,6 +72,13 @@ export class PersonalRecommendationsComponent implements OnInit {
 
   }
 
+  /**
+   * la funcion checkWeather trae las recomendaciones finales (busca en BD) según los valores que traigan las funciones de checkSky, checkTemp y checkRain
+   * @param tempActual 
+   * @param stateSky 
+   * @param lluvia 
+   */
+
   checkWeather(tempActual: number, stateSky: string, lluvia: number){
    
     this.checkSky(stateSky)
@@ -106,6 +113,7 @@ export class PersonalRecommendationsComponent implements OnInit {
     }
   }
 
+  //analizamos individualmente los valores de cielo, temperatura y lluvia y asignamos un valor
   checkTemperature(temp: number){
       
       if (temp >= TEMP_MUCHO_CALOR){
@@ -122,6 +130,11 @@ export class PersonalRecommendationsComponent implements OnInit {
       return this.tempValue
   }
 
+  /**
+   * este switch tangrande es así porque la API nos trae los valores como un string con esta serie de números 
+   * @param stateSky 
+   * @returns 
+   */
   checkSky(stateSky: string){ 
     switch (stateSky){
       

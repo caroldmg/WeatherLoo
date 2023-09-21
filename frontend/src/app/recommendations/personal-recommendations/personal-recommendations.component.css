@@ -27,5 +27,13 @@ h2{
 h3{
     font-size: 2rem;
     font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
     color: #023047;
+}
+
+.recom{
+    font-size: rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    color: black;
 }

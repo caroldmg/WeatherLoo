@@ -5,21 +5,21 @@
 
         <ul *ngIf="recommendationSky.length > 0">
             <h3>Soleado: </h3>
-            <li *ngFor="let recommendation of recommendationSky"> {{recommendation.description}} </li>
+            <li *ngFor="let recommendation of recommendationSky" class="skyRecom recom"> {{recommendation.description}} </li>
         </ul>
         <ul *ngIf="recommendationRain.length > 0 ">
             <h3>Llueve: </h3>
-            <li *ngFor="let recommendation of recommendationRain"> {{recommendation.description}} </li>
+            <li *ngFor="let recommendation of recommendationRain"  class="rainRecom recom "> {{recommendation.description}} </li>
         </ul>
         <ul *ngIf="recommendationTemp.length !== 0">
             <h3>Por la temperatura, te recomendamos:</h3>
-            <li *ngFor="let recommendation of recommendationTemp"> {{recommendation.description}} </li>
+            <li *ngFor="let recommendation of recommendationTemp"  class="tempRecom recom"> {{recommendation.description}} </li>
         </ul>
         
         <div *ngIf="alerts.length > 0">
-            <h2> Alertas: </h2>
+            <h3> Alertas: </h3>
             <ul>
-                <li *ngFor="let alert of alerts"> {{alert}} </li>
+                <li *ngFor="let alert of alerts" class="alerts recom"> {{alert}} </li>
             </ul>
         </div>
     </div>
