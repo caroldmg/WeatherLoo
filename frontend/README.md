@@ -55,6 +55,7 @@ npm install jwt-decode
 ng generate module recommendations --routing --module app.module
 ng generate component recommendations/personal-recommendations
 ng generate component recommendations/banner
+ng generate component recommendations/hour-recommendation
 ng generate interface recommendations/models/recommendation
 ng generate service recommendations/services/recommendation
 
@@ -80,6 +81,9 @@ ng add @angular/material -y --theme=indigo-pink --typography=true
 * RECOMENDATION MODULE 
     - Recomendaciones día
     - recomendaciones personales
+
+?? ¿Añadimos recomendaciones por horas?
+
 * LAYOUT 
     - Footer
     - Navbar (menú)
