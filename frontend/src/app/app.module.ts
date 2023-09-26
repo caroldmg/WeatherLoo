@@ -15,13 +15,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MatGridListModule } from '@angular/material/grid-list';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { SpinnerModule } from './shared/components/spinner/spinner.module';
+import { SpinnerInterceptor } from './shared/components/interceptors/spinner.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -35,8 +37,11 @@ import { MatGridListModule } from '@angular/material/grid-list';
     MatToolbarModule,
     BrowserAnimationsModule,
     MatGridListModule,
+    SpinnerModule
   ],
-  providers: [],
+ providers:[
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

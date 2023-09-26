@@ -115,3 +115,17 @@ Se habló de dos opciones de buscador
 
 ## AVATAR
 Aprovechand el código de ejemplo de Alan, podemos añadir una imagen de perfil editable en un formulario aparte
+
+
+## Spinner
+
+ng generate module shared/components/spinner
+ng generate component shared/components/spinner
+
+* creamos un servicio y un interceptor para spinner
+ng generate service shared/components/services/spinner
+ ng generate interceptor shared/components/interceptors/spinner
+
+* en loading.io puedes encontrar distintos spinner y conseguir la imagen o el css directamente (copiamos el css y el html)
+
+¿Cómo usarlo? hay que tener en el archivo de módulo la importación de HttpClient y ahí poner el provider HTTP_INTERCEPTOR.

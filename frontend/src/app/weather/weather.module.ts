@@ -6,9 +6,11 @@ import { WeatherDetailComponent } from './weather-detail/weather-detail.componen
 import { WeatherListHoursComponent } from './weather-list-hours/weather-list-hours.component';
 import { WeatherListSevenDaysComponent } from './weather-list-seven-days/weather-list-seven-days.component';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { RecommendationsModule } from '../recommendations/recommendations.module';
+import { SpinnerModule } from '../shared/components/spinner/spinner.module';
+import { SpinnerInterceptor } from '../shared/components/interceptors/spinner.interceptor';
 
 
 @NgModule({
@@ -22,10 +24,14 @@ import { RecommendationsModule } from '../recommendations/recommendations.module
     WeatherRoutingModule,
     HttpClientModule,
     MatCardModule,
-    RecommendationsModule
+    RecommendationsModule,
+    SpinnerModule
   ],
   exports: [
     WeatherDetailComponent
+  ],
+  providers:[
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
   ]
 })
 export class WeatherModule { }

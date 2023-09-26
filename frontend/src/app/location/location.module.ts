@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 
 import { LocationRoutingModule } from './location-routing.module';
 import { ProvinceListComponent } from './province-list/province-list.component';
@@ -18,6 +18,8 @@ import { RecommendationsModule } from '../recommendations/recommendations.module
 import { WeatherModule } from '../weather/weather.module';
 import { TownListComponent } from './town-list/town-list.component';
 import { MatIconModule } from '@angular/material/icon';
+import { SpinnerInterceptor } from '../shared/components/interceptors/spinner.interceptor';
+import { SpinnerModule } from '../shared/components/spinner/spinner.module';
 @NgModule({
   declarations: [
     ProvinceListComponent,
@@ -36,11 +38,15 @@ import { MatIconModule } from '@angular/material/icon';
     MatGridListModule,
     MatIconModule,
     RecommendationsModule,
-    WeatherModule
+    WeatherModule,
+    SpinnerModule
   ],
   exports:[
     SearchComponent,
     FavLocationsComponent
+  ],
+  providers:[
+    { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}
   ]
 })
 export class LocationModule { }
