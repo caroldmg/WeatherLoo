@@ -4,6 +4,7 @@ import { UserService } from '../services/user.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ITown } from 'src/app/location/models/town.model';
 
 @Component({
   selector: 'app-user-profile',
@@ -14,6 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class UserProfileComponent implements OnInit {
 
   user: IUser | undefined;
+  favTowns: ITown[] = []
   isLoggedIn = false;
   username = '';
 
@@ -25,9 +27,12 @@ export class UserProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.userService.findCurrentUser()
-      .subscribe(data => 
-        this.user = data
-      );
+      .subscribe(data => {
+        this.user = data;
+        if (this.user.favTowns){
+          this.favTowns = this.user.favTowns
+        }
+      });
         this.authService.isLoggedIn.subscribe(loggedIn => this.isLoggedIn = loggedIn);
         this.authService.currentUserName.subscribe(currentUserName => this.username = currentUserName);
   }

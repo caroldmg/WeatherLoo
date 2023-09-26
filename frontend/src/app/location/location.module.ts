@@ -6,7 +6,6 @@ import { LocationRoutingModule } from './location-routing.module';
 import { ProvinceListComponent } from './province-list/province-list.component';
 
 import { MatTableModule } from '@angular/material/table';
-import { FavLocationsComponent } from './fav-locations/fav-locations.component';
 import { SearchComponent } from './search/search.component';
 import { PopularLocationsComponent } from './popular-locations/popular-locations.component';
 import { MatChipsModule } from '@angular/material/chips';
@@ -23,7 +22,6 @@ import { SpinnerModule } from '../shared/components/spinner/spinner.module';
 @NgModule({
   declarations: [
     ProvinceListComponent,
-    FavLocationsComponent,
     SearchComponent,
     PopularLocationsComponent,
     TownListComponent
@@ -42,8 +40,7 @@ import { SpinnerModule } from '../shared/components/spinner/spinner.module';
     SpinnerModule
   ],
   exports:[
-    SearchComponent,
-    FavLocationsComponent
+    SearchComponent
   ],
   providers:[
     { provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor, multi: true}

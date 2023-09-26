@@ -22,6 +22,8 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatDividerModule} from '@angular/material/divider';
+
 import { LocationModule } from '../location/location.module';
 
 @NgModule({
@@ -48,6 +50,7 @@ import { LocationModule } from '../location/location.module';
     MatListModule,
     MatCheckboxModule,
     MatSnackBarModule,
+    MatDividerModule,
     LocationModule
   ],
   providers: [

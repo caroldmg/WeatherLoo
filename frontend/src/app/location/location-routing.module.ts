@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProvinceListComponent } from './province-list/province-list.component';
 import { PopularLocationsComponent } from './popular-locations/popular-locations.component';
-import { FavLocationsComponent } from './fav-locations/fav-locations.component';
 import { SearchComponent } from './search/search.component';
 import { TownListComponent } from './town-list/town-list.component';
 
@@ -39,10 +38,6 @@ const routes: Routes = [
   {
     path: 'search/:provinceId',
     component: SearchComponent
-  },
-  {
-    path: 'fav',
-    component: FavLocationsComponent
   },
   {
     path: '', redirectTo: 'provinces', pathMatch: 'full'
