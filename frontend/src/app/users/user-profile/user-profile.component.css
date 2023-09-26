@@ -6,6 +6,15 @@
 body {
     background-color: #f9f9fa
 }
+a{
+    text-decoration: none;
+    color: #919aa3;
+}
+
+a:hover{
+    font-weight: 500;
+    color: black;
+}
 
 .padding {
     padding: 3rem !important
