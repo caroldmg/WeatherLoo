@@ -1,78 +1,80 @@
 
-  <form [formGroup]="userForm" (ngSubmit)="save()">
-
-    <input type="hidden" formControlName="id">
+  <div class="center">
+    <form [formGroup]="userForm" (ngSubmit)="save()">
   
-    <div>
-      <mat-form-field>
-        <mat-label>Nombre </mat-label>
-        <input matInput formControlName="fullName" placeholder="Ejemplo: Domingo Minolas" required>
+      <input type="hidden" formControlName="id">
+    
+      <div >
+        <mat-form-field>
+          <mat-label>Nombre </mat-label>
+          <input matInput formControlName="fullName" placeholder="Ejemplo: Domingo Minolas" required>
+        </mat-form-field>
+      
+      </div>
+  
+      <div>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input type="email" matInput formControlName="email"
+                 placeholder="Ex. pat@example.com">
+          <mat-icon matSuffix color="primary">email</mat-icon>
+    
+        <mat-error *ngIf="userForm.get('email')?.invalid &&
+                          userForm.get('email')?.touched &&
+                          userForm.get('email')?.getError('required')">
+          Email obligatorio.
+        </mat-error>
+        <mat-error *ngIf="userForm.get('email')?.invalid &&
+                          userForm.get('email')?.touched &&
+                          userForm.get('email')?.getError('email')">
+        Formato email incorrecto.
+        </mat-error>
+      </mat-form-field>
+    </div>
+  
+  <div>
+      <mat-form-field color="primary">
+        <mat-label>Fecha de Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="birthday" [min]="minBirthday" [max]="maxBirthday">
+        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
+        <mat-datepicker #picker color="primary"></mat-datepicker>
       </mat-form-field>
     
-    </div>
-
-    <div>
-      <mat-form-field>
-        <mat-label>Email</mat-label>
-        <input type="email" matInput formControlName="email"
-               placeholder="Ex. pat@example.com">
-        <mat-icon matSuffix>email</mat-icon>
-  
-      <mat-error *ngIf="userForm.get('email')?.invalid &&
-                        userForm.get('email')?.touched &&
-                        userForm.get('email')?.getError('required')">
-        Email obligatorio.
-      </mat-error>
-      <mat-error *ngIf="userForm.get('email')?.invalid &&
-                        userForm.get('email')?.touched &&
-                        userForm.get('email')?.getError('email')">
-      Formato email incorrecto.
-      </mat-error>
-    </mat-form-field>
   </div>
-
-<div>
-    <mat-form-field>
-      <mat-label>Fecha de Nacimiento</mat-label>
-      <input matInput [matDatepicker]="picker" formControlName="birthday" [min]="minBirthday" [max]="maxBirthday">
-      <mat-hint>MM/DD/YYYY</mat-hint>
-      <mat-datepicker-toggle matIconSuffix [for]="picker" ></mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
   
-</div>
-
+    <div>
+      <mat-label>Género</mat-label>
+      <mat-radio-group formControlName="gender" >
+    <mat-radio-button value="masc"  > Masculino </mat-radio-button>
+    <mat-radio-button value="fem"> Femenino</mat-radio-button>
+    <mat-radio-button value="nb"> No binario</mat-radio-button>
+    <mat-radio-button value="underterminated"> No determinado</mat-radio-button>
+    </mat-radio-group>
+  </div>
+  
   <div>
-    <mat-label>Género</mat-label>
-    <mat-radio-group formControlName="gender">
-  <mat-radio-button value="masc"> Masculino </mat-radio-button>
-  <mat-radio-button value="fem"> Femenino</mat-radio-button>
-  <mat-radio-button value="nb"> No binario</mat-radio-button>
-  <mat-radio-button value="underterminated"> No determinado</mat-radio-button>
-  </mat-radio-group>
-</div>
-
-<div>
-  <mat-checkbox formControlName="pets">¿Tienes mascotas?</mat-checkbox>
+    <mat-checkbox formControlName="pets" >¿Tienes mascotas?</mat-checkbox>
+    
+  </div>
   
-</div>
-
-<div>
+  <div>
+    
+    <mat-checkbox formControlName="publicTransport">¿Usas el tansporte público?</mat-checkbox>
+    
+  </div>
   
-  <mat-checkbox formControlName="publicTransport">¿Usas el tansporte público?</mat-checkbox>
-  
-</div>
-
-<div>
-  
-  <mat-checkbox formControlName="privateTransport">¿Tienes un transporte privado? (coche, moto, etc.)</mat-checkbox>
-  
-</div>
-  
-    <button mat-fab extended type="submit"
-          [disabled]="userForm.invalid">
-      <mat-icon>send</mat-icon>
-        Enviar
-    </button>
-  </form>
-  
+  <div>
+    
+    <mat-checkbox formControlName="privateTransport">¿Tienes un transporte privado? (coche, moto, etc.)</mat-checkbox>
+    
+  </div>
+    
+      <button mat-fab extended type="submit" class="yellowbck"
+            [disabled]="userForm.invalid">
+        <mat-icon>send</mat-icon>
+          Enviar
+      </button>
+    </form>
+    
+  </div>

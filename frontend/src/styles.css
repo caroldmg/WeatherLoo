@@ -18,6 +18,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     justify-content: center;
 }
 
+.yellowbck {
+    background-color: #fd9e02 !important;
+  }
+
+.bluebck{
+    background-color: #086788 !important;
+}
+
+.yellow{
+    color: #fd9e02 !important;
+}
+
+
 @media (min-width: 576px) {
     *{
         display: column;
