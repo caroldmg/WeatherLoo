@@ -11,6 +11,9 @@ import {MatCardModule} from '@angular/material/card';
 import { RecommendationsModule } from '../recommendations/recommendations.module';
 import { SpinnerModule } from '../shared/components/spinner/spinner.module';
 import { SpinnerInterceptor } from '../shared/components/interceptors/spinner.interceptor';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -24,6 +27,8 @@ import { SpinnerInterceptor } from '../shared/components/interceptors/spinner.in
     WeatherRoutingModule,
     HttpClientModule,
     MatCardModule,
+    MatButtonModule,
+    MatIconModule,
     RecommendationsModule,
     SpinnerModule
   ],
