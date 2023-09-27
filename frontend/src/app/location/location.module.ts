@@ -11,14 +11,14 @@ import { PopularLocationsComponent } from './popular-locations/popular-locations
 import { MatChipsModule } from '@angular/material/chips';
 import { MatExpansionModule }from '@angular/material/expansion';
 import { MatGridListModule } from '@angular/material/grid-list';
-import { BannerComponent } from '../recommendations/banner/banner.component';
 
 import { RecommendationsModule } from '../recommendations/recommendations.module';
-import { WeatherModule } from '../weather/weather.module';
 import { TownListComponent } from './town-list/town-list.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 import { SpinnerInterceptor } from '../shared/components/interceptors/spinner.interceptor';
 import { SpinnerModule } from '../shared/components/spinner/spinner.module';
+
 @NgModule({
   declarations: [
     ProvinceListComponent,
@@ -35,8 +35,8 @@ import { SpinnerModule } from '../shared/components/spinner/spinner.module';
     MatExpansionModule,
     MatGridListModule,
     MatIconModule,
+    MatButtonModule,
     RecommendationsModule,
-    WeatherModule,
     SpinnerModule
   ],
   exports:[

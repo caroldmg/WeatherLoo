@@ -21,16 +21,24 @@
     </mat-expansion-panel>
   </mat-accordion>
   
-  <div class="provincesBox">
+  <!-- <div class="provincesBox">
     <mat-grid-list cols="4" rowHeight="50px" [gutterSize]="'10px'">
       <mat-grid-tile *ngFor="let town of towns" > 
         <a [routerLink]="['/weather/weather-detail',town.townCode]" class="townTitle">
         {{town.name}}</a> 
-        <!-- arreglar star -->
+        
         <button *ngIf="isLoggedIn" (click)="addFavTown(town.townCode)" > <mat-icon>star</mat-icon> </button> 
       </mat-grid-tile>
     </mat-grid-list>
   
+  </div> -->
+
+  <div class="location-grid" >
+    <div *ngFor="let town of towns"  class="town" >
+      <a [routerLink]="['/weather/weather-detail',town.townCode]" class="townTitle">
+        {{town.name}}</a> 
+                
+    </div>
   </div>
   
   <div class=" banner" *ngIf="!isLoggedIn">

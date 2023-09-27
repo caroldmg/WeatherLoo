@@ -19,7 +19,6 @@ export class TownListComponent {
   towns: ITown[] = []
   province: IProvince | undefined;
   provinces: IProvince[] = [];
-  favTowns: ITown[]=[];
   isLoggedIn = false;
 
   constructor(
@@ -58,10 +57,13 @@ export class TownListComponent {
       
     })
   }
+  
+  
 
   addFavTown(townCode: string){
     this.userService.addFavTown(townCode).subscribe( data =>
           this.snackbar.open('Se ha añadido la localidad a favoritos', 'Cerrar', {duration: 3000})
     )
   }
+
 }

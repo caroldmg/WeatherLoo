@@ -1,5 +1,21 @@
-*{
+body{
     margin: 20px;
+}
+.provincesTitle{
+    margin: 20px;
+}
+
+mat-accordion{
+    margin: 20px;
+}
+mat-accordion > * {
+    margin: 20px;
+}
+mat-chip-option{
+    background-color: #8fd0df !important;
+}
+mat-chip-option:hover{
+    background-color: #219EBC !important;
 }
 
 .provincesTitle h2{
@@ -7,7 +23,6 @@
     color: #023047;
     text-shadow: 1px 1px 2px rgb(161, 153, 153);
     padding-top: 30px;
-   
 }
 
 mat-grid-tile{
@@ -17,7 +32,10 @@ mat-grid-tile{
     font-family: 'Montserrat', sans-serif;    text-decoration: none;
     background-color: #848F46;
     border-radius: 10% / 50%;
-    
+    display: flex;
+   justify-content: center;
+   align-items: center;
+   word-wrap: normal;
 }
 mat-grid-tile:hover{
     
@@ -40,4 +58,48 @@ mat-grid-tile a{
     margin-bottom: 50px;
 }
 
+/* prueba */
+
+.location-grid {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-rows: max-content;
+    grid-template-columns: repeat(auto-fill, 186px);
+    overflow-wrap: break-word;
+  }
+  
+  .town {
+    border: solid #086788;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;    
+    text-decoration: none;
+    text-align: center;
+    background-color: #848F46;
+    padding: 3px;
+    border-radius: 10% / 50%;
+    overflow-wrap: break-word;
+  }
+
+.town:hover{
+    border: solid #848F46;
+    
+    background-color: #086788;
+}
+
+.town a{
+    
+    text-decoration: none;
+    color: #FFF;
+    padding: 20px;
+    line-height : 25px;
+    padding: 10px;
+    overflow-wrap: break-word;
+    
+}
+/* .town button{
+    display: block;
+    position:static;
+    margin-top: 3px;
+
+} */
 
