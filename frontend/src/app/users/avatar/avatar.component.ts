@@ -16,8 +16,7 @@ export class AvatarComponent implements OnInit {
   imageFile: File | undefined; // para subir
   user: IUser | undefined; // traer el usuario para comprobar si tiene avatar y mostrarlo
 
-  constructor(private httpClient: HttpClient,
-    private router: Router) {}
+  constructor(private httpClient: HttpClient, private router: Router) {}
 
   ngOnInit(): void {
     this.loadCurrentUser();
@@ -61,9 +60,7 @@ export class AvatarComponent implements OnInit {
                   this.imageFile = undefined;
                   this.imagePreview = undefined;
                 });
-    
     this.router.navigate(['/users/profile']);
   }
-
 
 }

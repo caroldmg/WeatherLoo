@@ -15,6 +15,9 @@ a:hover{
     font-weight: 500;
     color: black;
 }
+button{
+    margin: 10px;
+}
 
 .padding {
     padding: 3rem !important

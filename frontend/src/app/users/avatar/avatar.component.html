@@ -1,4 +1,4 @@
-<div class="avatar">
+<!-- <div class="avatar">
   <h2>Imagen de perfil de usuario</h2>
   
   <div *ngIf="user && user.avatarImage">
@@ -19,4 +19,43 @@
     <button mat-raised-button (click)="save()">Enviar</button>
   </div>
 
-</div>
+</div> -->
+
+<div class="avatar">
+  <div class="formbold-main-wrapper">
+    <!-- Author: FormBold Team -->
+    <!-- Learn More: https://formbold.com -->
+    <div class="formbold-form-wrapper">
+        <div class="formbold-mb-5" *ngIf="user && user.avatarImage">
+          <h3 for="email" class="formbold-form-label">
+            Imagen actual
+          </h3>
+          <img  [src]=" 'http://localhost:3000/uploads/' + user!.avatarImage " class="img-radius" style="max-width: 200px;"
+                    alt="{{user.fullName}}">
+        </div>
+  
+        <div class="mb-6 pt-4">
+          <label class="formbold-form-label formbold-form-label-2">
+            Subir archivo
+          </label>
+  
+          <div class="formbold-mb-5 formbold-file-input">
+            <input type="file" hidden (change)="onFileSelected($event)" #fileInput/>
+            <label for="file">
+              <div>
+                <span class="formbold-drop-file"> Puedes arrastrar aquí tu nueva imagen </span>
+                <span class="formbold-or"> O </span>
+                <button  class="formbold-browse" (click)="fileInput.click()">Adjuntar Imagen</button>
+              </div>
+            </label>
+          </div>
+          <div *ngIf="imagePreview" class="formbold-mb-5 img-preview">
+            <h2>Nuevo avatar</h2>
+            <img [src]="imagePreview" style="max-width: 200px;" alt="user avatar"/>
+          </div>
+
+        <div>
+          <button class="formbold-btn w-full" (click)="save()"> Enviar</button>
+        </div>
+  
+  </div>

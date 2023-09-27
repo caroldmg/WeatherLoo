@@ -8,10 +8,18 @@
             <div class="col-sm-4 bg-c-lite-green user-profile">
               <div class="card-block text-center text-white">
                 <div class="m-b-25">
-                  <img *ngIf="user && user.avatarImage" [src]=" 'http://localhost:3000/uploads/' + user!.avatarImage " class="img-radius"
+                  <img *ngIf="user && user.avatarImage" [src]=" 'http://localhost:3000/uploads/' + user.avatarImage " style="max-width: 100px;" class="img-radius"
                     alt="{{user.fullName}}">
-                  <img *ngIf="user && !user.avatarImage" src="  http://localhost:3000/uploads/default.png"  >
+                  <img *ngIf="user && !user.avatarImage" src="  http://localhost:3000/uploads/default.png" width="100px" >
                 </div>
+                <button mat-fab extended class="bluebck" *ngIf="isLoggedIn && !user.avatarImage" routerLink="/users/avatar">
+                  <mat-icon>photo_camera</mat-icon>
+                  Añadir imagen
+                </button>
+                <button mat-fab extended color="primary" *ngIf="isLoggedIn && user.avatarImage" routerLink="/users/avatar">
+                  <mat-icon>photo_camera</mat-icon>
+                  Cambiar imagen
+                </button>
                 <h6 class="f-w-600">{{user.fullName}}</h6>
                 <p> {{user.email}} </p>
                 
@@ -62,7 +70,7 @@
                     <div class="example-flex-container">
   
                       <div class="example-button-container">
-                        <button mat-fab class="bluebck" aria-label="Example icon button with a bookmark icon" routerLink="/users/user-form">
+                        <button mat-fab class="bluebck" routerLink="/users/user-form">
                           <mat-icon>edit</mat-icon>
                         </button>
                       </div>
