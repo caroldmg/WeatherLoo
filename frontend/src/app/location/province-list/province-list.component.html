@@ -20,13 +20,25 @@
   </mat-expansion-panel>
 </mat-accordion>
 
-<div class="provincesBox">
+<!-- <div class="provincesBox">
   <mat-grid-list cols="4" rowHeight="50px" [gutterSize]="'10px'">
     <mat-grid-tile *ngFor="let province of provinces" > <a [routerLink]="['/location/towns',province.id]">
       {{province.name}}</a> 
     </mat-grid-tile>
   </mat-grid-list>
 
+</div> -->
+
+<div class="location-grid" >
+  <div *ngFor="let province of provinces"  class="province" >
+    <a [routerLink]="['/location/towns',province.id]" class="provinceName">
+      {{province.name}}</a> 
+              
+  </div>
+</div>
+
+<div class=" banner" *ngIf="!isLoggedIn">
+  <app-banner routerLink="/auth/register"></app-banner>
 </div>
 
 <div class=" banner" *ngIf="!isLoggedIn">
