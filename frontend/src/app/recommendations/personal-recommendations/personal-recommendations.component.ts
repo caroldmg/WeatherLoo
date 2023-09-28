@@ -30,7 +30,7 @@ export class PersonalRecommendationsComponent implements OnInit {
   stateSkyValue: string = '';
   alerts: string[] = [];
  
-  
+  randomValue: string = '';
   
 
   constructor(
@@ -42,6 +42,7 @@ export class PersonalRecommendationsComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadWeather();
+    this.randomRecom()
   }
 
   loadWeather() {
@@ -240,6 +241,21 @@ export class PersonalRecommendationsComponent implements OnInit {
     if(wind > VIENTO_ALERT ){
       this.alerts.push(ALERTS["viento"])
     }
+  }
+
+  jokes = [
+    'Si no sabes qué ponerte, ponte feliz!',
+    'Si tu día no ha empezado bien, échate una siesta y vuelve a empezar de nuevo',
+    'Ilumina tu día con una sonrisa',
+    'Deja marcado en tu corazón que cada día es el mejor día del año',
+    'La única diferencia entre un buen y un mal día es tu actitud',
+    'Sé la EXTRA en extraordinaria',
+    'Lo que hagas hoy puede mejorar el resto de tus mañanas'
+  ];
+
+  randomRecom() {
+    let index = Math.floor((Math.random() * this.jokes.length) - 1);
+    this.randomValue = this.jokes[index]
   }
 
 }
