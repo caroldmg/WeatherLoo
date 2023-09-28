@@ -4,8 +4,7 @@
     <div class="detailToday" *ngIf="weather">
         <div>
             <h2 class="detailTitle">Municipio de {{this.municipio?.name}}</h2>
-            <button mat-icon-button *ngIf="isLoggedIn && municipio" (click)="addFavTown(municipio.townCode)"
-            [ngClass]="{'favTown':isFavTown(municipio.townCode),'normal': !isFavTown(municipio.townCode)}" >
+            <button mat-icon-button *ngIf="isLoggedIn && municipio" (click)="addFavTown(municipio.townCode)" >
                 <mat-icon>favorite</mat-icon>
               </button>
             <h2 class="detailTitle">Hoy en {{provincia?.name}}</h2>
