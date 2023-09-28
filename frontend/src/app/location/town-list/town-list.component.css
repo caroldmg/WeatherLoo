@@ -98,6 +98,10 @@ mat-grid-tile a{
     overflow-wrap: break-word;
     
 }
+
+.banner{
+    margin-bottom: 20px;
+}
 /* .town button{
     display: block;
     position:static;
