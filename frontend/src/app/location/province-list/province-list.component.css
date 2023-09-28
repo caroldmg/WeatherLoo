@@ -99,3 +99,6 @@ mat-chip-option:hover{
     padding: 10px;
     overflow-wrap: break-word;
 }
+.banner{
+    margin-bottom: 20px;
+}
