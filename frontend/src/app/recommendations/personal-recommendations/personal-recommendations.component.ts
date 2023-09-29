@@ -250,6 +250,8 @@ export class PersonalRecommendationsComponent implements OnInit {
     'Deja marcado en tu corazón que cada día es el mejor día del año',
     'La única diferencia entre un buen y un mal día es tu actitud',
     'Sé la EXTRA en extraordinaria',
+    '¡Sal ahí fuera y brilla!',
+    '¡Sonríe! Hoy puede ser tu día',
     'Lo que hagas hoy puede mejorar el resto de tus mañanas'
   ];
 

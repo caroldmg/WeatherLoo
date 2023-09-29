@@ -1,5 +1,5 @@
 
-<div class="weatherDays">
+<!-- <div class="weatherDays">
 
   <h2 class="weatherDaysTitle">El tiempo por días</h2>
 
@@ -27,4 +27,19 @@
 
   </div>
   
+</div> -->
+
+<div class="week-container" *ngIf="weather">
+  <h2 class="weatherDaysTitle">El tiempo por días</h2>
+  <ul class="week-list">
+    <li class="active" *ngFor="let day of weather.proximos_dias" >
+      <span class="day-name"> {{ day['@attributes'].fecha | date }} </span>
+      <span class="day-temp">Máx: {{day.temperatura.maxima}} </span>
+      <span class="day-temp">Min: {{day.temperatura.minima}} </span>
+      <span *ngIf="!checkIsString(day.estado_cielo_descripcion)"> {{day.estado_cielo_descripcion[1]}} </span>
+      <span *ngIf="checkIsString(day.estado_cielo_descripcion)"> {{day.estado_cielo_descripcion}} </span>
+      </li>
+
+    <div class="clear"></div>
+  </ul>
 </div>

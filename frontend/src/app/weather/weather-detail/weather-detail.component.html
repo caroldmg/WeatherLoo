@@ -1,6 +1,6 @@
 <app-spinner></app-spinner>
 
-<div class="weatherDetailBox">
+<!-- <div class="weatherDetailBox">
     <div class="detailToday" *ngIf="weather">
         <div>
             <h2 class="detailTitle">Municipio de {{this.municipio?.name}}</h2>
@@ -53,13 +53,57 @@
             </div>
         
         </div>
-    </div>
-    <app-personal-recommendations></app-personal-recommendations>
+    </div> -->
+   <div class="whole-container">
+        <div class="date-container">
+            <h2 class="date-dayname"> Hoy en {{provincia?.name}} </h2>
+            <mat-icon>location_on</mat-icon>
+            <span
+            class="location">Municipio de {{this.municipio?.name}}</span>
+        </div>
+        <div class="container">
+        <div class="weather-side" *ngIf="weather">
+            <div class="weather-container">
     
-    <app-weather-list-hours></app-weather-list-hours>
-    <app-weather-list-seven-days ></app-weather-list-seven-days>
-</div>
+                    <img  src="assets/images/Iconos/{{imgSky}}.png" alt="Descripcion grafica" ngClass="iconTRealtime">          
+                <h1 class="weather-temp">{{weather.temperatura_actual}}°C</h1>
+                <h3 class="weather-desc">Sen.térmica: {{weather.temperatura_actual}}°C</h3>
+                <h3 class="weather-desc">{{weather.stateSky.description}}</h3>
+            </div>
+        </div>
+        <div class="info-side" *ngIf="weather">
+            <div class="today-info-container">
+                <div class="today-info">
+                    <div class="precipitation"> 
+                        <span class="title">TEMP MÁXIMA:</span><span class="value">{{weather.temperaturas.max}}°C</span>
+                        <div class="clear"></div>
+                    </div>
+    
+                    <div class="precipitation"> 
+                        <span class="title">TEMP MÍNIMA:</span><span class="value">{{weather.temperaturas.min}}°C</span>
+                        <div class="clear"></div>
+                    </div>
+    
+                    <div class="precipitation"> <span class="title">PROBABILIDAD DE LLUVIA</span><span class="value">{{weather.lluvia}} %</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="humidity"> <span class="title">HUMEDAD</span><span class="value">{{weather.humedad}} %</span>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="wind"> <span class="title">VIENTO</span><span class="value">{{weather.viento}} km/h</span>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        
+        </div>
+        <div class="week-container"><app-weather-list-seven-days></app-weather-list-seven-days></div>
+        <div class=" hourly-container"><app-weather-list-hours></app-weather-list-hours></div>
+        <div class="recommendation">
+            <app-personal-recommendations></app-personal-recommendations>
+        </div>
+    </div>
+   </div>
 
 
-
-
+<!-- </div> -->

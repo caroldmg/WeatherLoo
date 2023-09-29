@@ -1,23 +1,25 @@
-
+/* 
 .weatherDetailBox{
     margin: 30px;
     padding: 50px;
     border-radius: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     box-shadow: 2px 2px 2px rgba(rgb(54, 53, 53), 0.1);
     background-color: rgba(255, 255, 255, 0.4);
     -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
-    
-  
+    backdrop-filter: blur(5px);    
     
 }
+
 .detailToday{
    
     margin: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family:  'Abril Fatface', 'Chakra Petch', cursive,sans-serif;
+    font-family:  'Montserrat', 'Chakra Petch', cursive,sans-serif;
     text-shadow: 2px 2px 5px #848F46;
     
    
@@ -156,3 +158,148 @@ Limpieza de codigo
 reorganizacion de clases
 
 */
+
+/* PRUEBA */
+body{
+    margin-top: 30px;
+	width: 100%;
+	height: 100vh;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.clear {
+	clear: both;
+}
+
+.whole-container{
+    margin-top: 30px;
+	border-radius: 25px;
+	box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+	background-color: rgba(255, 255, 255, 0.4);
+	color: #ffffff;
+}
+
+
+.date-container {
+    font-size: 3.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: #086788;
+    text-align: center;
+    padding: 30px;
+	margin: 20px;
+    padding: 15px;
+    text-shadow: #086788 1px 0 10px;
+    line-height : 80px;
+}
+.date-container h2{
+    margin: 20px;
+    font-size: 4rem;
+    font-weight: lighter;
+}
+
+.location {
+	margin: 10px;
+}
+/* .container {
+    
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 50px;
+    align-items: normal;
+    justify-content: center;
+} */
+
+.container {
+    display: grid; 
+    grid-template-columns: 0.9fr 1fr 1.1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "weather-side . today-info"
+      "recommendation week-container week-container"
+      "hourly-container hourly-container hourly-container"; 
+  }
+
+.weather-side {
+    grid-area: weather-side;
+    width: 30vw;
+	border-radius: 25px;
+    padding: 40px;
+	 transition: transform 300ms ease; 
+	transform: translateZ(0) scale(1.02) perspective(1000px); 
+}
+
+.weather-side:hover {
+	transform: scale(1.1) perspective(1500px);
+}
+
+
+
+.weather-container{
+    padding: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+.iconTRealtime{
+    height: 100px;
+    margin-left: 30px;
+    float: right;
+    object-position: 20%;
+}
+
+.weather-temp {
+	margin-top: 70px;
+    margin-bottom: 50px;
+    font-size: 6rem;
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.weather-desc {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.info-side {
+    margin-top: 50px;
+	padding-top: 30px;
+    font-family: 'Montserrat', sans-serif;
+    grid-area: today-info;
+    transition: transform 300ms ease; 
+	transform: translateZ(0) scale(1.02) perspective(1000px); 
+}
+
+.info-side:hover {
+	transform: scale(1.1) perspective(1500px);
+}
+
+.today-info {
+    margin-right: 100px;
+	padding: 25px;
+    width: 40vw;
+	box-shadow: 0 0 50px -5px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+}
+
+.today-info>div:not(:last-child) {
+	margin: 0 0 10px 0;
+}
+
+.today-info>div .title {
+	float: left;
+	font-weight: 700;
+}
+
+.today-info>div .value {
+	float: right;
+}
+
+.week-container { grid-area: week-container; }
+
+.hourly-container { grid-area: hourly-container; }
+
+.recommendation{
+    grid-area: recommendation;
+}
