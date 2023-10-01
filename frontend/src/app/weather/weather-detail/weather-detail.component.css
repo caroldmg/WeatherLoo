@@ -216,8 +216,8 @@ body{
     gap: 0px 0px; 
     grid-template-areas: 
       "weather-side . today-info"
-      "recommendation week-container week-container"
-      "hourly-container hourly-container hourly-container"; 
+      "hourly-container hourly-container hourly-container" 
+      "recommendation week-container week-container";
   }
 
 .weather-side {
@@ -266,6 +266,8 @@ body{
     margin-top: 50px;
 	padding-top: 30px;
     font-family: 'Montserrat', sans-serif;
+    font-size: large;
+    text-shadow: #848F46 1px 0 10px;
     grid-area: today-info;
     transition: transform 300ms ease; 
 	transform: translateZ(0) scale(1.02) perspective(1000px); 

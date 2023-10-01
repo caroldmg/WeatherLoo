@@ -1,14 +1,14 @@
 <div class="recomendationOutBox">
 
-    <h2>Consejo del día </h2>
+    <h2>Tips del día </h2>
     <div class="recomendationBox" >
 
         <ul *ngIf="recommendationSky.length > 0">
-            <h3>Soleado: </h3>
+            <h3> ¡Hace sol! Te recomendamos:  </h3>
             <li *ngFor="let recommendation of recommendationSky" class="skyRecom recom"> {{recommendation.description}} </li>
         </ul>
         <ul *ngIf="recommendationRain.length > 0 ">
-            <h3>Llueve: </h3>
+            <h3> ¡Atento a la lluvia! Estas son nuestras recomendaciones: </h3>
             <li *ngFor="let recommendation of recommendationRain"  class="rainRecom recom "> {{recommendation.description}} </li>
         </ul>
         <ul *ngIf="recommendationTemp.length !== 0">

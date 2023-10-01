@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
 
   <div class="weatherDays">
     <h2 class="weatherDaysTitle">El tiempo por horas </h2>
@@ -16,7 +16,7 @@
               <ul>
                 <li>Temperatura: {{ hour }}ºC</li>
                 <li>Estado del cielo: {{weather.pronostico.hoy.estado_cielo_descripcion[i] }} </li>
-                <!-- <li>Precipitación: {{weather.pronostico.hoy.precipitacion[i] }}% </li> -->
+                <!-- <li>Precipitación: {{weather.pronostico.hoy.precipitacion[i] }}% </li> 
               </ul>
             </mat-card-content>
           </div>
@@ -26,4 +26,20 @@
 
 
   </div>
+</div> -->
+
+<!-- PRUEBA -->
+
+<div class="hour-container" *ngIf="weather">
+  <h2 class="weatherDaysTitle">El tiempo por horas</h2>
+  <ul class="hour-list">
+    <li class="active" *ngFor="let hour of weather.pronostico.hoy.temperatura; index as i" >
+      <span class="hour-name"> {{(currentHour + (i+0) ) % 24}}:00 </span>
+      <span class="hour-temp"> {{ hour }}ºC </span>
+      <span class="hour-desc"> {{weather.pronostico.hoy.estado_cielo_descripcion[i] }} </span>
+      <span class="hour-prec" > Precipitación: {{weather.pronostico.hoy.precipitacion[i] }}% </span>
+      </li>
+
+    <div class="clear"></div>
+  </ul>
 </div>

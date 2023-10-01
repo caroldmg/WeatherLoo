@@ -1,4 +1,4 @@
-.weatherDays{
+/* .weatherDays{
     
    
     display: flex;
@@ -52,4 +52,82 @@
 mat-card-header{
     text-align: center;
 
+} */
+
+/* PRUEBA */
+
+.hour-container{
+	
+    padding: 20px;
+
+}
+.weatherDaysTitle{
+    margin-left: 30px;
+    font-size: 2rem;
+    color: #086788;
+    text-shadow: #848F46 1px 0 10px;
+}
+.hour-list{
+	list-style-type: none;
+    display: flex;
+    flex-direction: row;
+	border-radius: 10px;
+	padding-top: 25px;
+    padding: 20px;
+    overflow-x: scroll;   
+}
+
+
+.hour-list>li {
+    margin: 4px;
+	padding: 15px;
+	cursor: pointer;
+	transition: 200ms ease;
+	border-radius: 10px;
+    width: 125px;
+    height: 40vh;
+    color: #fff;
+    background-color: #656D36;
+    border: solid 1px #8ECAE6;
+}
+
+.hour-list>li:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 40px -5px #848F46(0, 0, 0, 0.2);
+    background-color: #848F46;
+}
+
+.hour-list>li.active {
+	border-radius: 10px;
+}
+
+.hour-list>li .hour-name {
+	display: block;
+	margin: 10px;
+    padding-bottom: 5px;
+	text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+
+
+.hour-list>li .hour-temp {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+    font-size: 1.3rem;
+	
+}
+
+.hour-list>li .hour-desc {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
+}
+
+.hour-list>li .hour-prec {
+	display: block;
+	text-align: center;
+	margin: 10px 0 0 0;
 }

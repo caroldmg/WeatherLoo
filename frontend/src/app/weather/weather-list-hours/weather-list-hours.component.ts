@@ -31,7 +31,7 @@ export class WeatherListHoursComponent implements OnInit {
    ngOnInit(): void {
      this.loadWeather();
      this.currentHour = this.getCurrentHour()
-      console.log(this.currentHour);
+      console.log( 'hora actual: ' +this.currentHour);
       
      }
     

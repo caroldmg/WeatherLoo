@@ -62,6 +62,8 @@ mat-card-title{
 }
 .weatherDaysTitle{
     position: inline-start;
+    margin-left: 30px;
+    font-size: 2rem;
     color: #086788;
     text-shadow: #848F46 1px 0 10px;
 }
