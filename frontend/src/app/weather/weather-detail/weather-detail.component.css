@@ -208,6 +208,15 @@ body{
     align-items: normal;
     justify-content: center;
 } */
+button{
+    box-shadow: none;
+}
+.fav-btn{
+    margin-left: 20px;
+    line-height : normal;
+    size: 25px;
+}
+
 
 .container {
     display: grid; 

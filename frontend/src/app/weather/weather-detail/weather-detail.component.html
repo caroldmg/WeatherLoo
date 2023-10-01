@@ -57,10 +57,16 @@
    <div class="whole-container">
         <div class="date-container">
             <h2 class="date-dayname"> Hoy en {{provincia?.name}} </h2>
-            <mat-icon>location_on</mat-icon>
+            <mat-icon class="location">location_on</mat-icon>
             <span
             class="location">Municipio de {{this.municipio?.name}}</span>
+            
+            <button class="fav-btn mat-x-large" mat-icon-button *ngIf="isLoggedIn && municipio" (click)="addFavTown(municipio.townCode)" >
+                <mat-icon>favorite</mat-icon>
+            </button> 
+            
         </div>
+        
         <div class="container">
         <div class="weather-side" *ngIf="weather">
             <div class="weather-container">
