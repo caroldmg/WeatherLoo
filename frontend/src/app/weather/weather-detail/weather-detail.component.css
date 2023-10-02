@@ -231,13 +231,15 @@ button{
 
 .container {
     display: grid; 
-    grid-template-columns: 0.9fr 1fr 1.1fr; 
-    grid-template-rows: 1fr 1fr 1fr; 
+    grid-template-columns: 0.9fr 1fr 1.1fr 1fr; 
+    grid-template-rows: 1fr 0.5fr 0.5fr 0.5fr; 
     gap: 0px 0px; 
     grid-template-areas: 
       "weather-side . today-info"
       "hourly-container hourly-container hourly-container" 
-      "recommendation week-container week-container";
+      "recommendation recommendation recommendation" 
+      "week-container week-container week-container"
+      ; 
   }
 
 .weather-side {
@@ -327,7 +329,4 @@ button{
     transition: transform 300ms ease; 
 	transform: translateZ(0) scale(1.02) perspective(1000px); 
 
-}
-.recommendation:hover {
-	transform: scale(1.1) perspective(1500px);
 }
