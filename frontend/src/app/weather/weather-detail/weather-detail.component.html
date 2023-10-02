@@ -92,13 +92,13 @@
                         <div class="clear"></div>
                     </div>
     
-                    <div class="precipitation"> <span class="title">PROBABILIDAD DE LLUVIA</span><span class="value">{{weather.lluvia}} %</span>
+                    <div class="precipitation" *ngIf="weather.lluvia" > <span class="title">PROBABILIDAD DE LLUVIA</span><span class="value">{{weather.lluvia}} %</span>
                         <div class="clear"></div>
                     </div>
-                    <div class="humidity"> <span class="title">HUMEDAD</span><span class="value">{{weather.humedad}} %</span>
+                    <div class="humidity" *ngIf="weather.humedad" > <span class="title">HUMEDAD</span><span class="value">{{weather.humedad}} %</span>
                         <div class="clear"></div>
                     </div>
-                    <div class="wind"> <span class="title">VIENTO</span><span class="value">{{weather.viento}} km/h</span>
+                    <div class="wind" *ngIf="weather.viento"> <span class="title">VIENTO</span><span class="value">{{weather.viento}} km/h</span>
                         <div class="clear"></div>
                     </div>
                 </div>
