@@ -1,0 +1,27 @@
+
+<div  class="title"> 
+    <h2> Mis localidades favoritas</h2> 
+  </div>
+
+<div class="location-grid" >
+
+    <div *ngFor="let town of favTowns"  class="town" >
+      <a [routerLink]="['/weather/weather-detail',town.townCode]" class="townTitle">
+        {{town.name}}</a> 
+    
+    </div>
+
+</div>
+
+<div *ngIf="favTowns.length <= 0 " class="error" >
+    <p>
+        ¡Vaya! Parece que aún no has marcado ninguna localidad como favorita. <br>
+        Te recomendamos echar un vistazo a las localidades más populares.
+    </p>
+
+    <button mat-raised-button class="error-btn" routerLink="/location/popular-location"> 
+        Ver localidades populares
+    </button>
+
+</div>
+  

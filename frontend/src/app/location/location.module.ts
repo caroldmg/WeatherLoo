@@ -18,13 +18,15 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { SpinnerInterceptor } from '../shared/components/interceptors/spinner.interceptor';
 import { SpinnerModule } from '../shared/components/spinner/spinner.module';
+import { FavLocationsComponent } from './fav-locations/fav-locations.component';
 
 @NgModule({
   declarations: [
     ProvinceListComponent,
     SearchComponent,
     PopularLocationsComponent,
-    TownListComponent
+    TownListComponent,
+    FavLocationsComponent
   ],
   imports: [
     CommonModule,
