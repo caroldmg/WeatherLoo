@@ -41,6 +41,7 @@ export class WeatherDetailComponent implements OnInit{
    ngOnInit(): void {
      this.loadWeather();
      this.authService.isLoggedIn.subscribe(loggedIn => this.isLoggedIn = loggedIn);
+     this.loadFavTowns()
      }
     
   
@@ -61,9 +62,7 @@ export class WeatherDetailComponent implements OnInit{
           console.log("hola")
         });
       
-          });
-        
-      
+          }); 
 
    })
 
@@ -76,17 +75,29 @@ export class WeatherDetailComponent implements OnInit{
  }
  
  addFavTown(townCode: string){
-  this.userService.addFavTown(townCode).subscribe( data =>
+    this.userService.addFavTown(townCode).subscribe( data =>
         this.snackbar.open('Se ha añadido la localidad a favoritos', 'Cerrar', {duration: 3000})
     )
+    if(this.municipio) this.favTowns.push(this.municipio)
   }
 
-  async isFavTown(townCode: string){
-    return await this.locationService.findTownByTownCode(townCode).subscribe(town =>
-      (this.favTowns.findIndex(currentTown => currentTown === town) !== -1 )
-    )
-    
+  loadFavTowns(){
+    this.userService.findCurrentUser().subscribe( data =>{
+      if (data.favTowns){
+        this.favTowns = data.favTowns
+      }
+    })
   }
 
+  isFavTown(townCode: string){
+    let fav = false;
+    if (this.favTowns.length > 0){
+      let index = this.favTowns.findIndex(town => town.townCode === townCode)
+      if(index !== -1){
+        fav = true
+      }
+    }
+    return fav
+  }
 }
 

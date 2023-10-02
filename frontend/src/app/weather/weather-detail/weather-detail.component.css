@@ -200,6 +200,8 @@ body{
 .location {
 	margin: 10px;
 }
+
+
 /* .container {
     
     display: grid;
@@ -214,7 +216,15 @@ button{
 .fav-btn{
     margin-left: 20px;
     line-height : normal;
-    size: 25px;
+    width: 250px;
+}
+
+.full{
+    color: #DD1C1A !important;
+}
+
+.empty{
+    color: gray !important;
 }
 
 
