@@ -11,6 +11,7 @@
     display: flex;
     text-align: center;
     justify-content: space-around;
+    
 }
 
 li{
@@ -32,8 +33,9 @@ h3{
 }
 
 .recom{
-    font-size: rem;
     font-family: 'Roboto', Helvetica, sans-serif;
     text-align: left;
-    color: black;
+    color: #fff;
+    text-shadow:#023047 1px 0 15px;
+    
 }

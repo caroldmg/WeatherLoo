@@ -256,8 +256,9 @@ export class PersonalRecommendationsComponent implements OnInit {
   ];
 
   randomRecom() {
-    let index = Math.floor((Math.random() * this.jokes.length) - 1);
+    let index = Math.floor((Math.random() * this.jokes.length) );
     this.randomValue = this.jokes[index]
+    console.log('INDEX ' + index)
   }
 
 }
